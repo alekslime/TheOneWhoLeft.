@@ -40,6 +40,7 @@ script = ExtResource("2_qek5x")
 
 [node name="WeaponHolder" type="Node3D" parent="Head/Camera3D" unique_id=867462404]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, -0.5)
+visible = false
 script = ExtResource("2_gmlin")
 
 [node name="Remnant" parent="Head/Camera3D/WeaponHolder" unique_id=79001301 instance=ExtResource("4_fm80t")]
@@ -59,6 +60,7 @@ projectile_scene = ExtResource("8_myrg7")
 script = ExtResource("6_5gtgg")
 
 [node name="Spotlight" type="Node3D" parent="Head/Camera3D" unique_id=471484083]
+visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Head/Camera3D/Spotlight" unique_id=1919912149]
 transform = Transform3D(1, 0, 0, 0, 0.9993927, 0.034847163, 0, -0.034847163, 0.9993927, 0, -0.091780245, -0.75933343)

@@ -1,0 +1,192 @@
+[gd_scene format=3 uid="uid://b7y3bs8dw3lmd"]
+
+[ext_resource type="PackedScene" uid="uid://bqty0xxlecre1" path="res://Level1.tscn" id="2_iatiw"]
+[ext_resource type="PackedScene" uid="uid://bsy4kx5xs0j6l" path="res://scenes/player/player.tscn" id="2_teox7"]
+[ext_resource type="PackedScene" uid="uid://i6qmjyspjyp6" path="res://assets/house/GoodHouse.glb" id="3_teox7"]
+[ext_resource type="PackedScene" uid="uid://b1rg435musikf" path="res://door/DoorController.tscn" id="4_8yty6"]
+[ext_resource type="PackedScene" uid="uid://k60sfbhvduh5" path="res://door/DoorAnimatable.tscn" id="5_exgwc"]
+[ext_resource type="PackedScene" uid="uid://cf3jr3e0ibn54" path="res://scenes/player/DoorFrame.tscn" id="6_xk0cr"]
+[ext_resource type="Texture2D" uid="uid://cpk3q1cmd2uxx" path="res://assets/door/door_Image_6.jpg" id="7_y6uum"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_teox7"]
+sky_top_color = Color(0.08034753, 0.53571516, 0.8216351, 1)
+sky_horizon_color = Color(0.2834242, 0.7178859, 0.8308035, 1)
+sky_curve = 0.0941015
+ground_horizon_color = Color(0.22211146, 0.7182164, 0.8684773, 1)
+
+[sub_resource type="Sky" id="Sky_8twl8"]
+sky_material = SubResource("ProceduralSkyMaterial_teox7")
+
+[sub_resource type="Environment" id="Environment_ir5dn"]
+background_mode = 2
+sky = SubResource("Sky_8twl8")
+ssao_radius = 1.15
+glow_enabled = true
+glow_intensity = 3.35
+glow_bloom = 0.05
+fog_enabled = true
+fog_light_color = Color(0, 0.28627452, 0.5411765, 1)
+fog_light_energy = 5.95
+fog_density = 0.0001
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0053
+volumetric_fog_albedo = Color(0, 0.9019608, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1rrv8"]
+size = Vector3(161.88562, 1, 268.27426)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8yty6"]
+albedo_color = Color(0.4627451, 0.79607844, 0.3019608, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_exgwc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0mgqj"]
+albedo_texture = ExtResource("7_y6uum")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ueo4n"]
+albedo_texture = ExtResource("7_y6uum")
+
+[sub_resource type="FogMaterial" id="FogMaterial_8yty6"]
+density = 0.05
+albedo = Color(1, 0.8821839, 0.86264116, 1)
+
+[node name="Node3D" type="Node3D" unique_id=2008775777]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1278234781]
+environment = SubResource("Environment_ir5dn")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=559350526]
+light_energy = 0.01
+
+[node name="Ground" type="Node3D" parent="." unique_id=285604726]
+transform = Transform3D(1, 0, 0, 0, 0.417, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ground" unique_id=743616740]
+transform = Transform3D(3.095704, 0, 0, 0, 1, 0, 0, 0, 3.4310956, -25.934486, 0, 1097.892)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D" unique_id=1465943894]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.597595, 2.0187225, -316.42575)
+shape = SubResource("BoxShape3D_1rrv8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground/StaticBody3D" unique_id=1067692501]
+transform = Transform3D(159.40506, 0, 0, 0, 2.7999997, 0, 0, 0, 271.27698, 13.217136, 1.2521782, -318.05368)
+material_override = SubResource("StandardMaterial3D_8yty6")
+mesh = SubResource("BoxMesh_exgwc")
+
+[node name="House" type="Node3D" parent="." unique_id=283588934]
+transform = Transform3D(0.3, 0, 0, 0, 0.125, 0, 0, 0, 0.3, 0, 0, 0)
+
+[node name="Grass" parent="." unique_id=1858996503 instance=ExtResource("2_iatiw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 135)
+
+[node name="Grass2" parent="." unique_id=111860190 instance=ExtResource("2_iatiw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112, 0, -68)
+
+[node name="Grass3" parent="." unique_id=820390976 instance=ExtResource("2_iatiw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -109, 0, -68)
+
+[node name="Grass4" parent="." unique_id=547921973 instance=ExtResource("2_iatiw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -103)
+
+[node name="Player" parent="." unique_id=2004408079 instance=ExtResource("2_teox7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 168.93951)
+
+[node name="GoodHouse" parent="." unique_id=1737628127 instance=ExtResource("3_teox7")]
+transform = Transform3D(1.6500001, 0, 0, 0, 1.6500001, 0, 0, 0, 1.6500001, -0.006309986, 1.0090117, 23.00054)
+
+[node name="Door2" type="Node3D" parent="GoodHouse" unique_id=762027373]
+transform = Transform3D(-3.7373237e-08, 0, 0.565, 0, 0.675, 0, -0.855, 0, -2.4696934e-08, -2.864995, 1.6001611, 5.290414)
+
+[node name="DoorController" parent="GoodHouse/Door2" unique_id=886908276 node_paths=PackedStringArray("door_mesh") instance=ExtResource("4_8yty6")]
+transform = Transform3D(1.3754599, 0, 0, 0, 1.5219433, 0, 0, 0, 1.5617077, -0.021102965, -0.8923187, 0.7361965)
+door_mesh = NodePath("../Door_016_22")
+
+[node name="Door_016_22" parent="GoodHouse/Door2" unique_id=818727118 instance=ExtResource("5_exgwc")]
+transform = Transform3D(1.0058389, 0, 0, 0, 1.2163005, 0, 0, 0, 1.1947064, -0.44981384, -0.24417925, 0.6724148)
+
+[node name="DoorFrame_23" parent="GoodHouse/Door2" unique_id=414300137 instance=ExtResource("6_xk0cr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.002914369, -1.0766873, 0.73627853)
+
+[node name="InsideLimits" type="Node3D" parent="GoodHouse" unique_id=1381104710]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="GoodHouse/InsideLimits" unique_id=894554517]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18424967, 0, 0.39414692)
+material_override = SubResource("StandardMaterial3D_0mgqj")
+use_collision = true
+size = Vector3(11.165619, 1, 8.2022705)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="GoodHouse/InsideLimits" unique_id=677478955]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8700945, 0, 5.572259)
+material_override = SubResource("StandardMaterial3D_ueo4n")
+use_collision = true
+size = Vector3(3.0569305, 1, 2.2144165)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="GoodHouse/InsideLimits" unique_id=180268761]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4389124, 2.5280974, 1.5932598)
+transparency = 1.0
+use_collision = true
+size = Vector3(0.05102539, 4.522461, 10.489258)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="GoodHouse/InsideLimits" unique_id=1832480010]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.783732, 2.5280974, 0.47045708)
+transparency = 1.0
+use_collision = true
+size = Vector3(0.05102539, 4.522461, 8.243652)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="GoodHouse/InsideLimits" unique_id=1320949546]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3328316, 1.6741545, 6.235814)
+transparency = 1.0
+use_collision = true
+size = Vector3(0.05102539, 2.8145752, 0.9664917)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="GoodHouse/InsideLimits" unique_id=1539336047]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.65264, 2.5280974, 4.408656)
+transparency = 1.0
+use_collision = true
+size = Vector3(0.05102539, 4.522461, 8.126465)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="GoodHouse/InsideLimits" unique_id=659845827]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.19403183, 2.22257, -3.6181087)
+transparency = 1.0
+use_collision = true
+size = Vector3(0.05102539, 4.522461, 11.321472)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="GoodHouse/InsideLimits" unique_id=942240425]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.940474, 1.7832851, 6.7476625)
+transparency = 1.0
+use_collision = true
+size = Vector3(0.05102539, 3.032837, 3.2229004)
+
+[node name="FogVolume" type="FogVolume" parent="GoodHouse" unique_id=87202204]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13036717, 1.3532715, 0.41151428)
+size = Vector3(10.628181, 4.706543, 7.8904114)
+material = SubResource("FogMaterial_8yty6")
+
+[node name="FogVolume2" type="FogVolume" parent="GoodHouse" unique_id=901630073]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9024105, 1.0355222, 5.284608)
+size = Vector3(2.562626, 4.071045, 2.5009882)
+material = SubResource("FogMaterial_8yty6")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="GoodHouse" unique_id=1570744143]
+transform = Transform3D(0.60606056, 0, 0, 0, 0.60606056, 0, 0, 0, 0.60606056, -2.8691247, 1.5350173, 0)
+light_color = Color(0, 1, 1, 1)
+light_energy = 16.0
+light_negative = true
+omni_range = 4096.0
+omni_attenuation = 2.025
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="GoodHouse" unique_id=1020973059]
+transform = Transform3D(0.60606056, 0, 0, 0, 0.60606056, 0, 0, 0, 0.60606056, 3.7068825, 1.5350173, 0)
+light_color = Color(0, 1, 1, 1)
+light_energy = 16.0
+light_negative = true
+omni_range = 4096.0
+omni_attenuation = 2.025
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="GoodHouse" unique_id=114937569]
+transform = Transform3D(0.60606056, 0, 0, 0, 0.60606056, 0, 0, 0, 0.60606056, -3.5962608, 1.5350173, 3.0565128)
+light_color = Color(0, 1, 1, 1)
+light_energy = 16.0
+light_negative = true
+omni_range = 3.227
+omni_attenuation = 2.025

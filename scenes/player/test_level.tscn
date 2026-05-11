@@ -1,42 +1,42 @@
 [gd_scene format=3 uid="uid://eqbaw6lqu8a"]
 
-[ext_resource type="PackedScene" uid="uid://bsy4kx5xs0j6l" path="res://scenes/player/player.tscn" id="1_ddwea"]
-[ext_resource type="PackedScene" uid="uid://cwskuqe5ucrp3" path="res://scenes/enemies/demon.tscn" id="2_42xw0"]
-[ext_resource type="PackedScene" uid="uid://deo0vwl776d74" path="res://menus/PauseMenu.tscn" id="3_hc6b8"]
-[ext_resource type="PackedScene" uid="uid://dessxnq7084o1" path="res://scenes/ui/hud.tscn" id="3_nweu1"]
-[ext_resource type="Script" uid="uid://cf66vaypto2ba" path="res://scenes/ui/hud.gd" id="4_acnbp"]
-[ext_resource type="Script" uid="uid://bojnf7n3oyreg" path="res://scripts/level_manager.gd" id="6_lj68t"]
-[ext_resource type="Script" uid="uid://bp3ej00i1affb" path="res://scripts/end_zone.gd" id="7_opgfa"]
-[ext_resource type="PackedScene" uid="uid://pb1g2me3jg55" path="res://enemies/RangedEnemy.tscn" id="8_yfsjt"]
-[ext_resource type="PackedScene" uid="uid://ds6sf5d1whcst" path="res://scenes/enemies/fast_enemy.tscn" id="10_daqkd"]
-[ext_resource type="PackedScene" uid="uid://cfe5po52luu80" path="res://pickupable/HealthPickup.tscn" id="11_uoxps"]
-[ext_resource type="PackedScene" uid="uid://brrfftrnv42ls" path="res://pickupable/Medkit.tscn" id="12_0ajne"]
-[ext_resource type="PackedScene" uid="uid://1a5brlttxmhf" path="res://music/MusicManager.tscn" id="14_fixga"]
-[ext_resource type="Shader" uid="uid://d0de685sshyn4" path="res://scenes/player/crt.gdshader" id="15_aapoj"]
-[ext_resource type="Shader" uid="uid://cfsunswhajpkq" path="res://scenes/player/test_level.gdshader" id="15_e14y5"]
-[ext_resource type="PackedScene" uid="uid://dpd2ur7mc21pd" path="res://Enemies/the_vicar.tscn" id="15_kdquw"]
-[ext_resource type="PackedScene" uid="uid://dt1pceq6yhijb" path="res://assets/chapel/low-poly_church.glb" id="16_kdquw"]
-[ext_resource type="PackedScene" uid="uid://1lj3jb270nl1" path="res://enemies/Echo.tscn" id="18_4v5r2"]
-[ext_resource type="PackedScene" uid="uid://bvdw5wp0ebksk" path="res://enemies/TheBound.tscn" id="19_fydxc"]
-[ext_resource type="PackedScene" uid="uid://djetk5lq8x13l" path="res://enemies/RemnantBeliever.tscn" id="20_cddy5"]
-[ext_resource type="PackedScene" uid="uid://qbux8phgwvb4" path="res://assets/ui/DeathScreenOverlay.tscn" id="21_cddy5"]
-[ext_resource type="Texture2D" uid="uid://kt75fjh2bw81" path="res://assets/sigil/sigil.png" id="24_at43v"]
-[ext_resource type="Script" uid="uid://btk1jeveetki7" path="res://scenes/player/mara_zone.gd" id="25_ota02"]
-[ext_resource type="AudioStream" uid="uid://7ey03odyetkj" path="res://assets/audio/mara/they came in the night.ogg" id="26_8yd48"]
-[ext_resource type="AudioStream" uid="uid://bgucyvrgppxq" path="res://assets/audio/mara/they didnt scream.ogg" id="26_rui7k"]
-[ext_resource type="PackedScene" uid="uid://bqty0xxlecre1" path="res://Level1.tscn" id="28_aa4jf"]
-[ext_resource type="PackedScene" uid="uid://b1rg435musikf" path="res://door/DoorController.tscn" id="31_t0ar4"]
-[ext_resource type="PackedScene" uid="uid://k60sfbhvduh5" path="res://door/DoorAnimatable.tscn" id="31_wnmek"]
-[ext_resource type="Environment" uid="uid://c7ryv36kk50e3" path="res://environment.tres" id="31_wo3vv"]
-[ext_resource type="PackedScene" uid="uid://cf3jr3e0ibn54" path="res://scenes/player/DoorFrame.tscn" id="32_wo3vv"]
+[ext_resource type="PackedScene" uid="uid://1a5brlttxmhf" path="res://music/MusicManager.tscn" id="1_3c7ay"]
+[ext_resource type="PackedScene" uid="uid://dessxnq7084o1" path="res://scenes/ui/hud.tscn" id="2_bftpq"]
+[ext_resource type="Script" uid="uid://cf66vaypto2ba" path="res://scenes/ui/hud.gd" id="3_6kmh7"]
+[ext_resource type="Shader" uid="uid://cfsunswhajpkq" path="res://scenes/player/test_level.gdshader" id="4_21l1e"]
+[ext_resource type="Shader" uid="uid://d0de685sshyn4" path="res://scenes/player/crt.gdshader" id="5_0tkw3"]
+[ext_resource type="PackedScene" uid="uid://deo0vwl776d74" path="res://menus/PauseMenu.tscn" id="6_wo2pp"]
+[ext_resource type="PackedScene" uid="uid://bsy4kx5xs0j6l" path="res://scenes/player/player.tscn" id="7_1umwl"]
+[ext_resource type="PackedScene" uid="uid://cwskuqe5ucrp3" path="res://scenes/enemies/demon.tscn" id="8_y66oe"]
+[ext_resource type="PackedScene" uid="uid://pb1g2me3jg55" path="res://enemies/RangedEnemy.tscn" id="9_3oi7e"]
+[ext_resource type="PackedScene" uid="uid://ds6sf5d1whcst" path="res://scenes/enemies/fast_enemy.tscn" id="10_vyqp5"]
+[ext_resource type="PackedScene" uid="uid://cfe5po52luu80" path="res://pickupable/HealthPickup.tscn" id="11_kc1kr"]
+[ext_resource type="PackedScene" uid="uid://1lj3jb270nl1" path="res://enemies/Echo.tscn" id="12_gyi02"]
+[ext_resource type="PackedScene" uid="uid://bvdw5wp0ebksk" path="res://enemies/TheBound.tscn" id="13_ns3e2"]
+[ext_resource type="PackedScene" uid="uid://djetk5lq8x13l" path="res://enemies/RemnantBeliever.tscn" id="14_kt0r7"]
+[ext_resource type="PackedScene" uid="uid://dpd2ur7mc21pd" path="res://Enemies/the_vicar.tscn" id="15_yaaem"]
+[ext_resource type="Script" uid="uid://bojnf7n3oyreg" path="res://scripts/level_manager.gd" id="16_que8e"]
+[ext_resource type="Script" uid="uid://bp3ej00i1affb" path="res://scripts/end_zone.gd" id="17_hcgou"]
+[ext_resource type="PackedScene" uid="uid://brrfftrnv42ls" path="res://pickupable/Medkit.tscn" id="18_fmwmt"]
+[ext_resource type="PackedScene" uid="uid://dt1pceq6yhijb" path="res://assets/chapel/low-poly_church.glb" id="19_3tw8e"]
+[ext_resource type="Texture2D" uid="uid://kt75fjh2bw81" path="res://assets/sigil/sigil.png" id="20_7k078"]
+[ext_resource type="PackedScene" uid="uid://qbux8phgwvb4" path="res://assets/ui/DeathScreenOverlay.tscn" id="21_qcjms"]
+[ext_resource type="Script" uid="uid://btk1jeveetki7" path="res://scenes/player/mara_zone.gd" id="22_ea5gm"]
+[ext_resource type="AudioStream" uid="uid://7ey03odyetkj" path="res://assets/audio/mara/they came in the night.ogg" id="23_ss6v5"]
+[ext_resource type="AudioStream" uid="uid://bgucyvrgppxq" path="res://assets/audio/mara/they didnt scream.ogg" id="24_yuh3c"]
+[ext_resource type="PackedScene" uid="uid://b1rg435musikf" path="res://door/DoorController.tscn" id="25_nyjl7"]
+[ext_resource type="PackedScene" uid="uid://k60sfbhvduh5" path="res://door/DoorAnimatable.tscn" id="26_ncwnv"]
+[ext_resource type="PackedScene" uid="uid://cf3jr3e0ibn54" path="res://scenes/player/DoorFrame.tscn" id="27_5gbk0"]
+[ext_resource type="PackedScene" uid="uid://bqty0xxlecre1" path="res://Level1.tscn" id="28_i3pjm"]
+[ext_resource type="Environment" uid="uid://c7ryv36kk50e3" path="res://environment.tres" id="29_sf3hv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kdquw"]
-shader = ExtResource("15_e14y5")
+shader = ExtResource("4_21l1e")
 shader_parameter/grain_strength = 0.08
 shader_parameter/grain_scale = 1.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4v5r2"]
-shader = ExtResource("15_aapoj")
+shader = ExtResource("5_0tkw3")
 shader_parameter/resolution_x = 793
 shader_parameter/resolution_y = 484
 shader_parameter/color_bit_depth = 4
@@ -68,11 +68,11 @@ size = Vector3(337.51837, 17.444366, 7.229553)
 
 [node name="TestLevel" type="Node3D" unique_id=1500266787]
 
-[node name="MusicManager" parent="." unique_id=634783044 instance=ExtResource("14_fixga")]
+[node name="MusicManager" parent="." unique_id=634783044 instance=ExtResource("1_3c7ay")]
 
-[node name="HUD" parent="." unique_id=464664150 instance=ExtResource("3_nweu1")]
+[node name="HUD" parent="." unique_id=464664150 instance=ExtResource("2_bftpq")]
 visible = false
-script = ExtResource("4_acnbp")
+script = ExtResource("3_6kmh7")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=764981364]
 layer = 10
@@ -101,10 +101,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PauseMenu" parent="." unique_id=252563126 instance=ExtResource("3_hc6b8")]
+[node name="PauseMenu" parent="." unique_id=252563126 instance=ExtResource("6_wo2pp")]
 visible = false
 
-[node name="Player" parent="." unique_id=2004408079 instance=ExtResource("1_ddwea")]
+[node name="Player" parent="." unique_id=2004408079 instance=ExtResource("7_1umwl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.73086, 3.5612335, -10.943848)
 
 [node name="Enemies" type="Node3D" parent="." unique_id=1956567446]
@@ -112,94 +112,94 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 543.9769)
 
 [node name="Demons" type="Node3D" parent="Enemies" unique_id=206401794]
 
-[node name="Demon" parent="Enemies/Demons" unique_id=2137241024 instance=ExtResource("2_42xw0")]
+[node name="Demon" parent="Enemies/Demons" unique_id=2137241024 instance=ExtResource("8_y66oe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.245281, 10.297092, -776.7378)
 
-[node name="Demon2" parent="Enemies/Demons" unique_id=1670029955 instance=ExtResource("2_42xw0")]
+[node name="Demon2" parent="Enemies/Demons" unique_id=1670029955 instance=ExtResource("8_y66oe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.508947, 10.297093, -770.6144)
 
-[node name="Demon3" parent="Enemies/Demons" unique_id=1947657061 instance=ExtResource("2_42xw0")]
+[node name="Demon3" parent="Enemies/Demons" unique_id=1947657061 instance=ExtResource("8_y66oe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.15863, 10.297092, -777.13794)
 
-[node name="Demon4" parent="Enemies/Demons" unique_id=2106381293 instance=ExtResource("2_42xw0")]
+[node name="Demon4" parent="Enemies/Demons" unique_id=2106381293 instance=ExtResource("8_y66oe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.338375, 10.297094, -771.0237)
 
-[node name="Demon5" parent="Enemies/Demons" unique_id=1498914160 instance=ExtResource("2_42xw0")]
+[node name="Demon5" parent="Enemies/Demons" unique_id=1498914160 instance=ExtResource("8_y66oe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1178856, 10.297092, -780.59644)
 
-[node name="Demon6" parent="Enemies/Demons" unique_id=1209973784 instance=ExtResource("2_42xw0")]
+[node name="Demon6" parent="Enemies/Demons" unique_id=1209973784 instance=ExtResource("8_y66oe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.738699, 10.297092, -781.0293)
 
-[node name="CharacterBody3D6" parent="Enemies" unique_id=408617571 instance=ExtResource("8_yfsjt")]
+[node name="CharacterBody3D6" parent="Enemies" unique_id=408617571 instance=ExtResource("9_3oi7e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.280689, 4.007948, -755.17944)
 
-[node name="CharacterBody3D7" parent="Enemies" unique_id=1337854314 instance=ExtResource("8_yfsjt")]
+[node name="CharacterBody3D7" parent="Enemies" unique_id=1337854314 instance=ExtResource("9_3oi7e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.275864, 4.007948, -786.1046)
 
-[node name="CharacterBody3D8" parent="Enemies" unique_id=33195878 instance=ExtResource("8_yfsjt")]
+[node name="CharacterBody3D8" parent="Enemies" unique_id=33195878 instance=ExtResource("9_3oi7e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.31886, 4.007948, -765.2449)
 
-[node name="FastEnemy10" parent="Enemies" unique_id=1849370541 instance=ExtResource("10_daqkd")]
+[node name="FastEnemy10" parent="Enemies" unique_id=1849370541 instance=ExtResource("10_vyqp5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.530807, 8.022303, -755.60974)
-health_pickup_scene = ExtResource("11_uoxps")
+health_pickup_scene = ExtResource("11_kc1kr")
 
-[node name="FastEnemy11" parent="Enemies" unique_id=1784090868 instance=ExtResource("10_daqkd")]
+[node name="FastEnemy11" parent="Enemies" unique_id=1784090868 instance=ExtResource("10_vyqp5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.436417, 8.022303, -750.50586)
-health_pickup_scene = ExtResource("11_uoxps")
+health_pickup_scene = ExtResource("11_kc1kr")
 
-[node name="FastEnemy12" parent="Enemies" unique_id=208355562 instance=ExtResource("10_daqkd")]
+[node name="FastEnemy12" parent="Enemies" unique_id=208355562 instance=ExtResource("10_vyqp5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.407917, 8.022303, -744.1577)
-health_pickup_scene = ExtResource("11_uoxps")
+health_pickup_scene = ExtResource("11_kc1kr")
 
-[node name="FastEnemy13" parent="Enemies" unique_id=1743478775 instance=ExtResource("10_daqkd")]
+[node name="FastEnemy13" parent="Enemies" unique_id=1743478775 instance=ExtResource("10_vyqp5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.407917, 8.022303, -751.1577)
-health_pickup_scene = ExtResource("11_uoxps")
+health_pickup_scene = ExtResource("11_kc1kr")
 
-[node name="FastEnemy14" parent="Enemies" unique_id=1825090908 instance=ExtResource("10_daqkd")]
+[node name="FastEnemy14" parent="Enemies" unique_id=1825090908 instance=ExtResource("10_vyqp5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.407917, 8.022303, -755.1577)
-health_pickup_scene = ExtResource("11_uoxps")
+health_pickup_scene = ExtResource("11_kc1kr")
 
-[node name="FastEnemy15" parent="Enemies" unique_id=1495343466 instance=ExtResource("10_daqkd")]
+[node name="FastEnemy15" parent="Enemies" unique_id=1495343466 instance=ExtResource("10_vyqp5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.407917, 8.022303, -755.1577)
-health_pickup_scene = ExtResource("11_uoxps")
+health_pickup_scene = ExtResource("11_kc1kr")
 
 [node name="newEnemies" type="Node3D" parent="Enemies" unique_id=110525854]
 visible = false
 
-[node name="Echo" parent="Enemies/newEnemies" unique_id=598788183 instance=ExtResource("18_4v5r2")]
+[node name="Echo" parent="Enemies/newEnemies" unique_id=598788183 instance=ExtResource("12_gyi02")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.02939, 4.4314704, 225.05371)
 
-[node name="Echo2" parent="Enemies/newEnemies" unique_id=1147390314 instance=ExtResource("18_4v5r2")]
+[node name="Echo2" parent="Enemies/newEnemies" unique_id=1147390314 instance=ExtResource("12_gyi02")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.15712, 4.4314704, 236.08908)
 
-[node name="Echo3" parent="Enemies/newEnemies" unique_id=1095760177 instance=ExtResource("18_4v5r2")]
+[node name="Echo3" parent="Enemies/newEnemies" unique_id=1095760177 instance=ExtResource("12_gyi02")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.839188, 4.431474, 243.15865)
 
-[node name="TheBound" parent="Enemies/newEnemies" unique_id=1429322609 instance=ExtResource("19_fydxc")]
+[node name="TheBound" parent="Enemies/newEnemies" unique_id=1429322609 instance=ExtResource("13_ns3e2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.589687, 4.3643723, 218.88678)
 
-[node name="TheBound2" parent="Enemies/newEnemies" unique_id=1168037819 instance=ExtResource("19_fydxc")]
+[node name="TheBound2" parent="Enemies/newEnemies" unique_id=1168037819 instance=ExtResource("13_ns3e2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.09268, 4.3643723, 236.09007)
 
-[node name="TheBound3" parent="Enemies/newEnemies" unique_id=457527652 instance=ExtResource("19_fydxc")]
+[node name="TheBound3" parent="Enemies/newEnemies" unique_id=457527652 instance=ExtResource("13_ns3e2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.09268, 4.3643723, 231.09007)
 
-[node name="TheBound4" parent="Enemies/newEnemies" unique_id=1684558740 instance=ExtResource("19_fydxc")]
+[node name="TheBound4" parent="Enemies/newEnemies" unique_id=1684558740 instance=ExtResource("13_ns3e2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2196026, 4.3643723, 220.1357)
 
-[node name="RemnantBeliever" parent="Enemies/newEnemies" unique_id=918495341 instance=ExtResource("20_cddy5")]
+[node name="RemnantBeliever" parent="Enemies/newEnemies" unique_id=918495341 instance=ExtResource("14_kt0r7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47, 10.5884285, 230)
 
-[node name="RemnantBeliever2" parent="Enemies/newEnemies" unique_id=260303250 instance=ExtResource("20_cddy5")]
+[node name="RemnantBeliever2" parent="Enemies/newEnemies" unique_id=260303250 instance=ExtResource("14_kt0r7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.656765, 10.5884285, 225.65639)
 
-[node name="RemnantBeliever3" parent="Enemies/newEnemies" unique_id=2122340508 instance=ExtResource("20_cddy5")]
+[node name="RemnantBeliever3" parent="Enemies/newEnemies" unique_id=2122340508 instance=ExtResource("14_kt0r7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.142971, 10.588425, 248.77182)
 
-[node name="RemnantBeliever4" parent="Enemies/newEnemies" unique_id=912693877 instance=ExtResource("20_cddy5")]
+[node name="RemnantBeliever4" parent="Enemies/newEnemies" unique_id=912693877 instance=ExtResource("14_kt0r7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.142971, 10.588425, 248.77182)
 
-[node name="TheVicar" parent="Enemies" unique_id=1440458563 instance=ExtResource("15_kdquw")]
+[node name="TheVicar" parent="Enemies" unique_id=1440458563 instance=ExtResource("15_yaaem")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -51.71913, 7.414157, 0)
 visible = false
 
@@ -218,7 +218,7 @@ transform = Transform3D(159.40506, 0, 0, 0, 2.8, 0, 0, 0, 271.27695, 13.217136, 
 mesh = SubResource("BoxMesh_cddy5")
 
 [node name="LevelManager" type="Node" parent="." unique_id=1797066187 node_paths=PackedStringArray("door")]
-script = ExtResource("6_lj68t")
+script = ExtResource("16_que8e")
 door = NodePath("LevelEnd")
 
 [node name="LevelEnd" type="StaticBody3D" parent="LevelManager" unique_id=1877258599]
@@ -235,7 +235,7 @@ shape = SubResource("BoxShape3D_opgfa")
 
 [node name="EndZone" type="Area3D" parent="LevelManager/LevelEnd" unique_id=216492895]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20854044, -0.11110401, -0.4828844)
-script = ExtResource("7_opgfa")
+script = ExtResource("17_hcgou")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LevelManager/LevelEnd/EndZone" unique_id=1950813684]
 transform = Transform3D(5.794061, 0, 0, 0, 6.3497467, 0, 0, 0, -4.733121, 0, 0, 0)
@@ -243,13 +243,13 @@ shape = SubResource("BoxShape3D_yfsjt")
 
 [node name="Medkits" type="Node3D" parent="." unique_id=1760557411]
 
-[node name="Medkit" parent="Medkits" unique_id=1483463105 instance=ExtResource("12_0ajne")]
+[node name="Medkit" parent="Medkits" unique_id=1483463105 instance=ExtResource("18_fmwmt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.70444, 2.9429126, 22.991299)
 
-[node name="Medkit2" parent="Medkits" unique_id=725636732 instance=ExtResource("12_0ajne")]
+[node name="Medkit2" parent="Medkits" unique_id=725636732 instance=ExtResource("18_fmwmt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.446915, 2.9429126, 19.96429)
 
-[node name="Chapel" parent="." unique_id=1544220290 instance=ExtResource("16_kdquw")]
+[node name="Chapel" parent="." unique_id=1544220290 instance=ExtResource("19_3tw8e")]
 transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 20.16505, 8.329899, 39.822083)
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="Chapel" unique_id=1710544918]
@@ -275,8 +275,8 @@ omni_range = 21.125116
 [node name="Decal" type="Decal" parent="Chapel" unique_id=1658929455]
 transform = Transform3D(0.14294948, -0.4740075, 0.069873564, -0.011671402, -0.07634039, -0.49399993, 0.47898778, 0.13960302, -0.03289031, 41.149292, -1.180515, -27.720589)
 size = Vector3(2.2373047, 2, 2.1726074)
-texture_albedo = ExtResource("24_at43v")
-texture_emission = ExtResource("24_at43v")
+texture_albedo = ExtResource("20_7k078")
+texture_emission = ExtResource("20_7k078")
 emission_energy = 0.0
 modulate = Color(1, 0.13333334, 0, 1)
 upper_fade = 0.1
@@ -285,71 +285,71 @@ lower_fade = 0.1
 [node name="Decal2" type="Decal" parent="Chapel" unique_id=221296712]
 transform = Transform3D(4.2120013, -13.966634, 2.0588186, -4.590599, -3.3867104, -13.583194, 13.350355, 3.2418947, -5.320214, 51.52774, 5.1382847, -26.847363)
 size = Vector3(2.2373047, 2, 2.1726074)
-texture_albedo = ExtResource("24_at43v")
-texture_emission = ExtResource("24_at43v")
+texture_albedo = ExtResource("20_7k078")
+texture_emission = ExtResource("20_7k078")
 emission_energy = 0.0
 modulate = Color(1, 0.13333334, 0, 1)
 upper_fade = 0.1
 lower_fade = 0.1
 
-[node name="DeathScreenOverlay" parent="." unique_id=2101101841 instance=ExtResource("21_cddy5")]
+[node name="DeathScreenOverlay" parent="." unique_id=2101101841 instance=ExtResource("21_qcjms")]
 
 [node name="MaraZone1" type="Area3D" parent="." unique_id=1461448507]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 65.3324)
-script = ExtResource("25_ota02")
+script = ExtResource("22_ea5gm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MaraZone1" unique_id=631632740]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.77884, 8.222183, 30.96991)
 shape = SubResource("BoxShape3D_at43v")
 
 [node name="Audio" type="AudioStreamPlayer" parent="MaraZone1" unique_id=463315206]
-stream = ExtResource("26_8yd48")
+stream = ExtResource("23_ss6v5")
 bus = &"Mara"
 
 [node name="MaraZone2" type="Area3D" parent="." unique_id=1954742857]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.762451)
-script = ExtResource("25_ota02")
+script = ExtResource("22_ea5gm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MaraZone2" unique_id=1729975601]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.77884, 9.969414, 30.96991)
 shape = SubResource("BoxShape3D_at43v")
 
 [node name="Audio" type="AudioStreamPlayer" parent="MaraZone2" unique_id=1184113101]
-stream = ExtResource("26_rui7k")
+stream = ExtResource("24_yuh3c")
 bus = &"Mara"
 
 [node name="Door2" type="Node3D" parent="." unique_id=1059824722]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 152.25558, 5.2863793, 976.8289)
 
-[node name="DoorController" parent="Door2" unique_id=886908276 node_paths=PackedStringArray("door_mesh") instance=ExtResource("31_t0ar4")]
+[node name="DoorController" parent="Door2" unique_id=886908276 node_paths=PackedStringArray("door_mesh") instance=ExtResource("25_nyjl7")]
 transform = Transform3D(1.37546, 0, 0, 0, 1.5219433, 0, 0, 0, 1.561708, -0.021102905, -0.8923192, -968.3547)
 door_mesh = NodePath("../Door_016_22")
 
-[node name="Door_016_22" parent="Door2" unique_id=818727118 instance=ExtResource("31_wnmek")]
+[node name="Door_016_22" parent="Door2" unique_id=818727118 instance=ExtResource("26_ncwnv")]
 transform = Transform3D(1.0058389, 0, 0, 0, 1.2163005, 0, 0, 0, 1.1947064, -0.44981384, -0.24417925, -968.4184)
 
-[node name="DoorFrame_23" parent="Door2" unique_id=414300137 instance=ExtResource("32_wo3vv")]
+[node name="DoorFrame_23" parent="Door2" unique_id=414300137 instance=ExtResource("27_5gbk0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0029144287, -1.0766873, -968.35455)
 
 [node name="Door3" type="Node3D" parent="." unique_id=2123554787]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 152.25558, 3.8541532, 1089.6393)
 
-[node name="DoorController" parent="Door3" unique_id=67282497 node_paths=PackedStringArray("door_mesh") instance=ExtResource("31_t0ar4")]
+[node name="DoorController" parent="Door3" unique_id=67282497 node_paths=PackedStringArray("door_mesh") instance=ExtResource("25_nyjl7")]
 transform = Transform3D(1.37546, 0, 0, 0, 1.5219433, 0, 0, 0, 1.561708, -0.021102905, -0.8923192, -968.3547)
 door_mesh = NodePath("../Door_016_22")
 
-[node name="Door_016_22" parent="Door3" unique_id=1612169746 instance=ExtResource("31_wnmek")]
+[node name="Door_016_22" parent="Door3" unique_id=1612169746 instance=ExtResource("26_ncwnv")]
 transform = Transform3D(1.0058389, 0, 0, 0, 1.2163005, 0, 0, 0, 1.1947064, -0.44981384, -0.24417901, -968.4184)
 
-[node name="DoorFrame_23" parent="Door3" unique_id=1942199212 instance=ExtResource("32_wo3vv")]
+[node name="DoorFrame_23" parent="Door3" unique_id=1942199212 instance=ExtResource("27_5gbk0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0029144287, -1.0766873, -968.35455)
 
-[node name="Grass" parent="." unique_id=1858996503 instance=ExtResource("28_aa4jf")]
+[node name="Grass" parent="." unique_id=1858996503 instance=ExtResource("28_i3pjm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108.040436, 1.4104514, 951.6331)
 visible = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=800313407]
-environment = ExtResource("31_wo3vv")
+environment = ExtResource("29_sf3hv")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=274841640]
 visible = false
