@@ -41,7 +41,7 @@ albedo_color = Color(0.4627451, 0.79607844, 0.3019608, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_exgwc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0okxm"]
-size = Vector3(1.1966858, 1.7827148, 1.2126617)
+size = Vector3(1.1966858, 1.7827148, 2.2083817)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y6uum"]
 size = Vector3(1, 1.6837158, 0.31085205)
@@ -223,12 +223,13 @@ door_mesh = NodePath("../Door_016_22")
 [node name="TriggerArea" type="Area3D" parent="GoodHouse/Door2/DoorController" unique_id=829998844]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GoodHouse/Door2/DoorController/TriggerArea" unique_id=735605927]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.045913696, 0.39135742, 0.65746284)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.045913696, 0.39135742, 0.15960264)
 shape = SubResource("BoxShape3D_0okxm")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="GoodHouse/Door2/DoorController" unique_id=1880377378]
 
 [node name="InnerTrigger" type="Area3D" parent="GoodHouse/Door2/DoorController" unique_id=1362523175]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.2310059)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GoodHouse/Door2/DoorController/InnerTrigger" unique_id=688605189]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.38397253, -0.044922113)

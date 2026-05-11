@@ -10,42 +10,27 @@ var is_animating: bool = false
 var tween: Tween = null
 var transformation_done: bool = false
 var cursed_env = preload("res://environment.tres")
-var inside_count: int = 0
 
 func _ready() -> void:
 	if has_node("TriggerArea"):
 		$TriggerArea.body_entered.connect(_on_player_entered_outside)
 		$TriggerArea.body_exited.connect(_on_player_exited_outside)
 	if has_node("InnerTrigger"):
-		$InnerTrigger.monitoring = false
-		$InnerTrigger.body_exited.connect(_on_player_exited_inside)
+		$InnerTrigger.body_entered.connect(_on_player_entered_inner)
 
 func _on_player_entered_outside(body: Node) -> void:
 	if body.is_in_group("player") and not is_open:
 		_animate(open_angle, open_duration)
 		is_open = true
 
+func _on_player_exited_outside(body: Node) -> void:
+	if body.is_in_group("player"):
+		_animate(0.0, close_duration)
+		is_open = false
 
 func _on_player_entered_inner(body: Node) -> void:
 	if body.is_in_group("player") and not transformation_done:
-		inside_count += 1
-		if inside_count >= 2:
-			transformation_done = true
-			$InnerTrigger.monitoring = false
-			_animate(0.0, close_duration)
-			is_open = false
-			_trigger_transformation()
-
-func _on_player_exited_outside(body: Node) -> void:
-	if body.is_in_group("player") and is_open:
-		$InnerTrigger.monitoring = true
-
-func _on_player_exited_inside(body: Node) -> void:
-	if body.is_in_group("player") and not transformation_done:
 		transformation_done = true
-		$InnerTrigger.monitoring = false
-		_animate(0.0, close_duration)
-		is_open = false
 		_trigger_transformation()
 
 func _trigger_transformation() -> void:
