@@ -44,7 +44,7 @@ albedo_color = Color(0.4627451, 0.79607844, 0.3019608, 1)
 size = Vector3(1.1966858, 1.7827148, 1.2126617)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y6uum"]
-size = Vector3(1, 1.6837158, 0.63305664)
+size = Vector3(1, 1.6837158, 0.31085205)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o6q8w"]
 resource_name = "Wood"
@@ -231,7 +231,7 @@ shape = SubResource("BoxShape3D_0okxm")
 [node name="InnerTrigger" type="Area3D" parent="GoodHouse/Door2/DoorController" unique_id=1362523175]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GoodHouse/Door2/DoorController/InnerTrigger" unique_id=688605189]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.38397253, 0.22287464)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.38397253, -0.044922113)
 shape = SubResource("BoxShape3D_y6uum")
 
 [node name="Door_016_22" type="Node3D" parent="GoodHouse/Door2" unique_id=818727118]

@@ -12,7 +12,6 @@ sky_material = SubResource("ProceduralSkyMaterial_yk5tl")
 [resource]
 background_mode = 2
 sky = SubResource("Sky_0wybp")
-sdfgi_enabled = true
 glow_enabled = true
 glow_bloom = 1.0
 fog_light_color = Color(0.1370742, 0.031934, 0.0044499408, 1)

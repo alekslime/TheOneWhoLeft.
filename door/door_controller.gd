@@ -8,14 +8,16 @@ extends Node3D
 var is_open: bool = false
 var is_animating: bool = false
 var tween: Tween = null
+var transformation_done: bool = false
 var cursed_env = preload("res://environment.tres")
+var inside_count: int = 0
 
 func _ready() -> void:
 	if has_node("TriggerArea"):
 		$TriggerArea.body_entered.connect(_on_player_entered_outside)
 		$TriggerArea.body_exited.connect(_on_player_exited_outside)
 	if has_node("InnerTrigger"):
-		$InnerTrigger.monitoring = false  # disabled until player is inside
+		$InnerTrigger.monitoring = false
 		$InnerTrigger.body_exited.connect(_on_player_exited_inside)
 
 func _on_player_entered_outside(body: Node) -> void:
@@ -23,20 +25,28 @@ func _on_player_entered_outside(body: Node) -> void:
 		_animate(open_angle, open_duration)
 		is_open = true
 
-func _on_player_exited_outside(body: Node) -> void:
-	if body.is_in_group("player"):
-		if is_open:
-			_trigger_transformation()  # ← swaps environment as you pass through
-		else:
+
+func _on_player_entered_inner(body: Node) -> void:
+	if body.is_in_group("player") and not transformation_done:
+		inside_count += 1
+		if inside_count >= 2:
+			transformation_done = true
+			$InnerTrigger.monitoring = false
 			_animate(0.0, close_duration)
+			is_open = false
+			_trigger_transformation()
+
+func _on_player_exited_outside(body: Node) -> void:
+	if body.is_in_group("player") and is_open:
+		$InnerTrigger.monitoring = true
 
 func _on_player_exited_inside(body: Node) -> void:
-	if body.is_in_group("player"):
-		# player is walking back out
+	if body.is_in_group("player") and not transformation_done:
+		transformation_done = true
+		$InnerTrigger.monitoring = false
+		_animate(0.0, close_duration)
+		is_open = false
 		_trigger_transformation()
-		_animate(open_angle, open_duration)
-		is_open = true
-		$InnerTrigger.monitoring = false  # reset for safety
 
 func _trigger_transformation() -> void:
 	var world_env = get_tree().get_root().find_child("WorldEnvironment", true, false)
