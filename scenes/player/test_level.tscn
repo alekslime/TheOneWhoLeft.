@@ -24,7 +24,7 @@
 [ext_resource type="Script" uid="uid://btk1jeveetki7" path="res://scenes/player/mara_zone.gd" id="25_ota02"]
 [ext_resource type="AudioStream" uid="uid://7ey03odyetkj" path="res://assets/audio/mara/they came in the night.ogg" id="26_8yd48"]
 [ext_resource type="AudioStream" uid="uid://bgucyvrgppxq" path="res://assets/audio/mara/they didnt scream.ogg" id="26_rui7k"]
-[ext_resource type="PackedScene" uid="uid://bqty0xxlecre1" path="res://Level1.tscn" id="28_aa4jf"]
+[ext_resource type="PackedScene" uid="uid://bqty0xxlecre1" path="res://Bari.tscn" id="28_aa4jf"]
 [ext_resource type="PackedScene" uid="uid://b1rg435musikf" path="res://door/DoorController.tscn" id="31_t0ar4"]
 [ext_resource type="PackedScene" uid="uid://k60sfbhvduh5" path="res://door/DoorAnimatable.tscn" id="31_wnmek"]
 [ext_resource type="Environment" uid="uid://c7ryv36kk50e3" path="res://environment.tres" id="31_wo3vv"]
