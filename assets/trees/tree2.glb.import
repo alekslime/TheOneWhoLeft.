@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://vp3eg6bc74w5"
-path="res://.godot/imported/tree1.glb-c2903d497c0c19366886acb73917dd2e.scn"
+uid="uid://bivc8k5aokon4"
+path="res://.godot/imported/tree2.glb-815b51c3a113d11a0f0ce2ac66508216.scn"
 
 [deps]
 
-source_file="res://assets/enemy_meshes/tree1.glb"
-dest_files=["res://.godot/imported/tree1.glb-c2903d497c0c19366886acb73917dd2e.scn"]
+source_file="res://assets/trees/tree2.glb"
+dest_files=["res://.godot/imported/tree2.glb-815b51c3a113d11a0f0ce2ac66508216.scn"]
 
 [params]
 
@@ -37,6 +37,15 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:Bark/Bark_Bark_0": {
+"generate/physics": true
+},
+"PATH:Ground/Ground_Grass_0": {
+"generate/physics": true
+}
+}
+}
 gltf/naming_version=2
 gltf/embedded_image_handling=1

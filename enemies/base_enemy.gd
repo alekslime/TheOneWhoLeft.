@@ -21,13 +21,14 @@ var current_health: float
 var is_dead: bool = false
 var player: Node3D = null
 var attack_timer: float = 0.0
-
 const GRAVITY: float = 25.0
+
 
 func _ready() -> void:
 	current_health = max_health
 	add_to_group("enemies")
 	player = get_tree().get_first_node_in_group("player")
+
 
 func _physics_process(delta: float) -> void:
 	if is_dead:
@@ -39,12 +40,14 @@ func _physics_process(delta: float) -> void:
 	_try_attack()
 	move_and_slide()
 
+
 func _update_navigation() -> void:
 	if not player:
 		return
 	var dir = (player.global_position - global_position).normalized()
 	velocity.x = dir.x * move_speed
 	velocity.z = dir.z * move_speed
+
 
 func _try_attack() -> void:
 	if not player or attack_timer > 0.0:
@@ -53,9 +56,11 @@ func _try_attack() -> void:
 		attack_timer = attack_cooldown
 		_do_attack()
 
+
 func _do_attack() -> void:
 	if player.has_method("take_damage"):
 		player.take_damage(attack_damage)
+
 
 func take_damage(amount: float) -> void:
 	if is_dead:
@@ -67,18 +72,26 @@ func take_damage(amount: float) -> void:
 	if current_health <= 0:
 		die()
 
+
 func die() -> void:
 	if is_dead:
 		return
 	is_dead = true
-	# ULTRAKILL kill freeze
-	Engine.time_scale = 0.05
-	await get_tree().create_timer(0.06 * 0.05).timeout
-	Engine.time_scale = 1.0
+
 	if gives_rage and player and player.has_method("add_rage"):
 		player.add_rage(rage_on_kill)
 	if death_sound:
 		death_sound.play()
 	$CollisionShape3D.set_deferred("disabled", true)
+
+	# Only freeze if no freeze is already running AND cooldown has expired
+	if not GameManager.is_freeze_active and GameManager.freeze_cooldown <= 0.0:
+		GameManager.is_freeze_active = true
+		GameManager.freeze_cooldown = GameManager.FREEZE_COOLDOWN_TIME
+		Engine.time_scale = 0.05
+		await get_tree().create_timer(0.06 * 0.05).timeout
+		Engine.time_scale = 1.0
+		GameManager.is_freeze_active = false
+
 	await get_tree().create_timer(0.6).timeout
 	queue_free()

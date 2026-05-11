@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ke4w0kbs1rmu"
-path.s3tc="res://.godot/imported/tree1_Image_2.jpg-c28f5509def914f7c25606f351330742.s3tc.ctex"
+uid="uid://cwm2vd7c42ndd"
+path.s3tc="res://.godot/imported/tree2_Image_2.jpg-6cc1f2f4e77347bbea3df03621362e8c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/enemy_meshes/tree1_Image_2.jpg"
-dest_files=["res://.godot/imported/tree1_Image_2.jpg-c28f5509def914f7c25606f351330742.s3tc.ctex"]
+source_file="res://assets/trees/tree2_Image_2.jpg"
+dest_files=["res://.godot/imported/tree2_Image_2.jpg-6cc1f2f4e77347bbea3df03621362e8c.s3tc.ctex"]
 
 [params]
 

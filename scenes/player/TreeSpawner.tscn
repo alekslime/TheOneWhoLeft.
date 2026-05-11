@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dipyl7l7bq614"]
+
+[ext_resource type="Script" uid="uid://uy16paupk1rx" path="res://scenes/player/tree_spawner.gd" id="1_ddxai"]
+[ext_resource type="ArrayMesh" uid="uid://brhe7axcrptsy" path="res://assets/trees/optimized trees/bark1.obj" id="2_wel5v"]
+[ext_resource type="ArrayMesh" uid="uid://dgm31uri5vv6u" path="res://assets/trees/optimized trees/leave1.obj" id="3_kryqk"]
+[ext_resource type="ArrayMesh" uid="uid://da4m8r2udyjm" path="res://assets/trees/optimized trees/bark2.obj" id="4_gejr0"]
+[ext_resource type="ArrayMesh" uid="uid://cuhv3w6ogph47" path="res://assets/trees/optimized trees/leave2.obj" id="5_brooy"]
+
+[node name="TreeSpawner" type="Node3D" unique_id=252320416]
+script = ExtResource("1_ddxai")
+tree1_bark_mesh = ExtResource("2_wel5v")
+tree1_leaves_mesh = ExtResource("3_kryqk")
+tree2_bark_mesh = ExtResource("4_gejr0")
+tree2_leaves_mesh = ExtResource("5_brooy")

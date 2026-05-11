@@ -423,7 +423,7 @@ func _handle_rage(delta: float) -> void:
 	if Input.is_action_just_pressed("rage") and rage >= 100.0 and not is_raging:
 		_activate_rage()
 	if is_raging:
-		rage_timer -= get_process_delta_time() / Engine.time_scale
+		rage_timer -= delta / Engine.time_scale
 		rage_vignette_alpha = 0.2 + sin(rage_timer * 4.0) * 0.08
 		if hud:
 			hud.set_rage_vignette(rage_vignette_alpha)

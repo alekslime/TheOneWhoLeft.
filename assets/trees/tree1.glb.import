@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bivc8k5aokon4"
-path="res://.godot/imported/tree2.glb-83735e1ad576fe81a7d790291983b591.scn"
+uid="uid://bpgb3f8jucxjy"
+path="res://.godot/imported/tree1.glb-e1a80ba534483983598fc0890923b1da.scn"
 
 [deps]
 
-source_file="res://assets/env/tree2.glb"
-dest_files=["res://.godot/imported/tree2.glb-83735e1ad576fe81a7d790291983b591.scn"]
+source_file="res://assets/trees/tree1.glb"
+dest_files=["res://.godot/imported/tree1.glb-e1a80ba534483983598fc0890923b1da.scn"]
 
 [params]
 
@@ -39,10 +39,7 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "nodes": {
-"PATH:Bark/Bark_Bark_0": {
-"generate/physics": true
-},
-"PATH:Ground/Ground_Grass_0": {
+"PATH:Sketchfab_model/2 Trees_fbx/RootNode/Bark_1/Bark_1_Bark_0": {
 "generate/physics": true
 }
 }

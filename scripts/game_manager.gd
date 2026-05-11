@@ -7,6 +7,11 @@ var is_timing: bool = false
 var total_enemies: int = 0
 var health_drop_toggle: bool = false
 
+# --- KILL FREEZE GATE ---
+var is_freeze_active: bool = false
+var freeze_cooldown: float = 0.0
+const FREEZE_COOLDOWN_TIME: float = 1.0  # seconds before another freeze can trigger
+
 # --- SIGNALS ---
 signal all_enemies_dead
 
@@ -14,6 +19,8 @@ signal all_enemies_dead
 func _process(delta: float) -> void:
 	if is_timing:
 		time_elapsed += delta
+	if freeze_cooldown > 0.0:
+		freeze_cooldown -= delta
 
 
 func start_level(enemy_count: int) -> void:
@@ -46,4 +53,4 @@ func get_rank() -> String:
 	elif time < 120.0:
 		return "B"
 	else:
-		return "C"
+		return "C" 
