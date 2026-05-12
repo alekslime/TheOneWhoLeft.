@@ -13,6 +13,18 @@ cutoff_hz = 3500.0
 [sub_resource type="AudioEffectDelay" id="AudioEffectDelay_j3pel"]
 resource_name = "Delay"
 
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_g28q7"]
+resource_name = "Reverb"
+wet = 0.42
+
+[sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_g28q7"]
+resource_name = "LowPassFilter"
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_n8wo2"]
+resource_name = "Reverb"
+room_size = 0.5
+wet = 0.3
+
 [resource]
 bus/1/name = &"Mara"
 bus/1/solo = false
@@ -26,3 +38,21 @@ bus/1/effect/1/effect = SubResource("AudioEffectLowPassFilter_j3pel")
 bus/1/effect/1/enabled = true
 bus/1/effect/2/effect = SubResource("AudioEffectDelay_j3pel")
 bus/1/effect/2/enabled = true
+bus/2/name = &"Reverb"
+bus/2/solo = false
+bus/2/mute = false
+bus/2/bypass_fx = false
+bus/2/volume_db = 0.0
+bus/2/send = &"Master"
+bus/2/effect/0/effect = SubResource("AudioEffectReverb_g28q7")
+bus/2/effect/0/enabled = true
+bus/3/name = &"HouseReverb"
+bus/3/solo = false
+bus/3/mute = false
+bus/3/bypass_fx = false
+bus/3/volume_db = 0.0
+bus/3/send = &"Master"
+bus/3/effect/0/effect = SubResource("AudioEffectLowPassFilter_g28q7")
+bus/3/effect/0/enabled = true
+bus/3/effect/1/effect = SubResource("AudioEffectReverb_n8wo2")
+bus/3/effect/1/enabled = false

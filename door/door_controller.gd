@@ -10,6 +10,7 @@ var is_open: bool = false
 var is_animating: bool = false
 var tween: Tween = null
 var transformation_done: bool = false
+var wife_played: bool = false
 var cursed_env = preload("res://environment.tres")
 
 func _ready() -> void:
@@ -21,6 +22,9 @@ func _ready() -> void:
 
 func _on_player_entered_outside(body: Node) -> void:
 	if body.is_in_group("player") and not is_open:
+		if not wife_played and not transformation_done:
+			wife_played = true
+			audio.trigger_wife()
 		_animate(open_angle, open_duration)
 		is_open = true
 

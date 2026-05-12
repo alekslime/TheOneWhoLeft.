@@ -11,8 +11,9 @@
 [ext_resource type="Shader" uid="uid://d0de685sshyn4" path="res://scenes/player/crt.gdshader" id="8_ptvbf"]
 [ext_resource type="AudioStream" uid="uid://dprmuavpkut" path="res://assets/audio/intro/MusicWarm.mp3" id="9_j1dhv"]
 [ext_resource type="AudioStream" uid="uid://bddf22vwpgpe3" path="res://assets/audio/intro/MusicEerie.mp3" id="10_k2w6b"]
-[ext_resource type="AudioStream" uid="uid://cvxxjvndtsysb" path="res://assets/audio/intro/MusicClassical.mp3" id="11_gijeg"]
-[ext_resource type="AudioStream" uid="uid://crr07hhjnmfqk" path="res://assets/audio/intro/VoiceDaughter.mp3" id="12_tp7jy"]
+[ext_resource type="AudioStream" uid="uid://omwyogxturip" path="res://assets/audio/intro/MusicClassical.mp3" id="11_gijeg"]
+[ext_resource type="AudioStream" uid="uid://cn47bxud3mgjr" path="res://assets/audio/intro/VoiceDaughter.mp3" id="12_tp7jy"]
+[ext_resource type="AudioStream" uid="uid://bsd44ry0bnr6e" path="res://assets/audio/intro/VoiceWife.mp3" id="13_gijeg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_teox7"]
 sky_top_color = Color(0.08034753, 0.53571516, 0.8216351, 1)
@@ -391,10 +392,16 @@ stream = ExtResource("10_k2w6b")
 
 [node name="MusicClassical" type="AudioStreamPlayer" parent="IntroAudio" unique_id=384171332]
 stream = ExtResource("11_gijeg")
+volume_db = 2.5
 
 [node name="AmbientOutside" type="AudioStreamPlayer" parent="IntroAudio" unique_id=2146796768]
 
-[node name="VoiceWife" type="AudioStreamPlayer" parent="IntroAudio" unique_id=912367903]
+[node name="VoiceWife" type="AudioStreamPlayer3D" parent="IntroAudio" unique_id=572167108]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 23.93254)
+stream = ExtResource("13_gijeg")
+bus = &"HouseReverb"
 
 [node name="VoiceDaughter" type="AudioStreamPlayer" parent="IntroAudio" unique_id=1330653861]
 stream = ExtResource("12_tp7jy")
+volume_db = -6.0
+bus = &"Reverb"
