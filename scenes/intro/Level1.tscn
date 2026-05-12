@@ -6,7 +6,9 @@
 [ext_resource type="Script" uid="uid://buwfmn2hw1nqf" path="res://door/door_controller.gd" id="4_hxyfr"]
 [ext_resource type="Texture2D" uid="uid://cpk3q1cmd2uxx" path="res://assets/door/door_Image_6.jpg" id="5_jvk70"]
 [ext_resource type="Texture2D" uid="uid://dhtxd82ik111t" path="res://assets/door/door_Image_7.png" id="6_j1dhv"]
+[ext_resource type="AudioStream" uid="uid://bytylug815aqo" path="res://assets/audio/door/OpenSound.mp3" id="6_pqli2"]
 [ext_resource type="Shader" uid="uid://cfsunswhajpkq" path="res://scenes/player/test_level.gdshader" id="7_2c2tb"]
+[ext_resource type="AudioStream" uid="uid://c5e14102espg4" path="res://assets/audio/door/DoorShut.mp3" id="7_8fxrl"]
 [ext_resource type="Texture2D" uid="uid://b5c6xc6j3dhe7" path="res://assets/door/door_Image_8.jpg" id="7_k2w6b"]
 [ext_resource type="Shader" uid="uid://d0de685sshyn4" path="res://scenes/player/crt.gdshader" id="8_ptvbf"]
 [ext_resource type="AudioStream" uid="uid://dprmuavpkut" path="res://assets/audio/intro/MusicWarm.mp3" id="9_j1dhv"]
@@ -14,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://omwyogxturip" path="res://assets/audio/intro/MusicClassical.mp3" id="11_gijeg"]
 [ext_resource type="AudioStream" uid="uid://cn47bxud3mgjr" path="res://assets/audio/intro/VoiceDaughter.mp3" id="12_tp7jy"]
 [ext_resource type="AudioStream" uid="uid://bsd44ry0bnr6e" path="res://assets/audio/intro/VoiceWife.mp3" id="13_gijeg"]
+[ext_resource type="Script" uid="uid://deredh4gyiwm" path="res://scenes/intro/approach_trigger.gd" id="15_tp7jy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_teox7"]
 sky_top_color = Color(0.08034753, 0.53571516, 0.8216351, 1)
@@ -47,11 +50,14 @@ albedo_color = Color(0.4627451, 0.79607844, 0.3019608, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_exgwc"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_tp7jy"]
+size = Vector3(107.125, 14.95, 147.285)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_0okxm"]
-size = Vector3(1.1966858, 1.7827148, 1.6353474)
+size = Vector3(1.1966858, 1.7827148, 1.9822245)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y6uum"]
-size = Vector3(1, 1.6837158, 0.78928375)
+size = Vector3(1, 1.6837158, 0.36839676)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o6q8w"]
 resource_name = "Wood"
@@ -220,8 +226,15 @@ mesh = SubResource("BoxMesh_exgwc")
 [node name="House" type="Node3D" parent="." unique_id=283588934]
 transform = Transform3D(0.3, 0, 0, 0, 0.125, 0, 0, 0, 0.3, 0, 0, 0)
 
+[node name="ApproachTrigger" type="Area3D" parent="House" unique_id=2069843409]
+transform = Transform3D(3.3333333, 0, 0, 0, 8, 0, 0, 0, 3.3333333, -3.532257, 0, 74.471146)
+script = ExtResource("15_tp7jy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="House/ApproachTrigger" unique_id=994720566]
+shape = SubResource("BoxShape3D_tp7jy")
+
 [node name="Player" parent="." unique_id=2004408079 instance=ExtResource("2_2c2tb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 78.245)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 102.55436)
 
 [node name="GoodHouse" parent="." unique_id=1920522606 instance=ExtResource("3_ptvbf")]
 transform = Transform3D(1.6500001, 0, 0, 0, 1.6500001, 0, 0, 0, 1.6500001, -0.006309986, 1.0090117, 23.00054)
@@ -237,16 +250,21 @@ door_mesh = NodePath("../Door_016_22")
 [node name="TriggerArea" type="Area3D" parent="GoodHouse/Door2/DoorController" unique_id=829998844]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GoodHouse/Door2/DoorController/TriggerArea" unique_id=735605927]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.045913696, 0.39135742, 0.017221928)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.045913696, 0.39135742, 0.8266556)
 shape = SubResource("BoxShape3D_0okxm")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="GoodHouse/Door2/DoorController" unique_id=1880377378]
+[node name="CreakSound" type="AudioStreamPlayer3D" parent="GoodHouse/Door2/DoorController" unique_id=1880377378]
+stream = ExtResource("6_pqli2")
+
+[node name="CloseSound" type="AudioStreamPlayer3D" parent="GoodHouse/Door2/DoorController" unique_id=644698556]
+transform = Transform3D(0.5153496, 0, -3.5527137e-15, 0, 0.58994806, 0, 0, 0, 0.68685937, 0, 0, 0)
+stream = ExtResource("7_8fxrl")
 
 [node name="InnerTrigger" type="Area3D" parent="GoodHouse/Door2/DoorController" unique_id=1362523175]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.75767684)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GoodHouse/Door2/DoorController/InnerTrigger" unique_id=688605189]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.38397253, -1.0300901)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.38397253, -0.81964684)
 shape = SubResource("BoxShape3D_y6uum")
 
 [node name="Door_016_22" type="Node3D" parent="GoodHouse/Door2" unique_id=818727118]
@@ -337,19 +355,19 @@ material = SubResource("FogMaterial_8yty6")
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="GoodHouse/HouseLights" unique_id=1590738821]
 transform = Transform3D(0.60606056, 0, 0, 0, 0.60606056, 0, 0, 0, 0.60606056, -3.4465375, 4.220494, 0)
-light_color = Color(1, 0.44705883, 0, 1)
+light_color = Color(1, 0, 0, 1)
 light_energy = 3.479
 omni_range = 5.621
 
 [node name="OmniLight3D5" type="OmniLight3D" parent="GoodHouse/HouseLights" unique_id=1969250960]
 transform = Transform3D(0.60606056, 0, 0, 0, 0.60606056, 0, 0, 0, 0.60606056, 5.181569, 4.220494, 0)
-light_color = Color(1, 0.44705883, 0, 1)
+light_color = Color(1, 0, 0, 1)
 light_energy = 3.479
 omni_range = 5.621
 
 [node name="OmniLight3D6" type="OmniLight3D" parent="GoodHouse/HouseLights" unique_id=1690045074]
 transform = Transform3D(0.60606056, 0, 0, 0, 0.60606056, 0, 0, 0, 0.60606056, 0.6441541, 5.277926, 0)
-light_color = Color(1, 0.44705883, 0, 1)
+light_color = Color(1, 0, 0, 1)
 light_energy = 3.479
 omni_range = 14.677
 

@@ -1,11 +1,11 @@
 extends Node3D
 
-@onready var music_warm = $MusicWarm
-@onready var music_eerie = $MusicEerie
-@onready var music_classical = $MusicClassical
-@onready var ambient_outside = $AmbientOutside
-@onready var voice_wife = $VoiceWife
-@onready var voice_daughter = $VoiceDaughter
+@onready var music_warm = $IntroAudio/MusicWarm
+@onready var music_eerie = $IntroAudio/MusicEerie
+@onready var music_classical = $IntroAudio/MusicClassical
+@onready var ambient_outside = $IntroAudio/AmbientOutside
+@onready var voice_wife = $IntroAudio/VoiceWife
+@onready var voice_daughter = $IntroAudio/VoiceDaughter
 
 var outside_triggered: bool = false
 
@@ -19,6 +19,7 @@ func trigger_wife() -> void:
 func trigger_inside() -> void:
 	_fade_out(music_warm, 1.5)
 	_fade_out(ambient_outside, 1.5)
+	_fade_out_3d(voice_wife, 0.5)
 	music_eerie.play()
 
 func trigger_outside() -> void:
@@ -31,6 +32,11 @@ func trigger_outside() -> void:
 	voice_daughter.play()
 
 func _fade_out(player: AudioStreamPlayer, duration: float) -> void:
+	var tween = create_tween()
+	tween.tween_property(player, "volume_db", -80.0, duration)
+	tween.tween_callback(func(): player.stop())
+
+func _fade_out_3d(player: AudioStreamPlayer3D, duration: float) -> void:
 	var tween = create_tween()
 	tween.tween_property(player, "volume_db", -80.0, duration)
 	tween.tween_callback(func(): player.stop())

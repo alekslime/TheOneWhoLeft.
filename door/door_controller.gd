@@ -5,6 +5,7 @@ extends Node3D
 @export var door_mesh: Node3D
 @export var creak_sound: AudioStreamPlayer3D = null
 @onready var audio = get_tree().get_root().find_child("Level1", true, false)
+@export var close_sound: AudioStreamPlayer3D = null
 
 var is_open: bool = false
 var is_animating: bool = false
@@ -22,9 +23,6 @@ func _ready() -> void:
 
 func _on_player_entered_outside(body: Node) -> void:
 	if body.is_in_group("player") and not is_open:
-		if not wife_played and not transformation_done:
-			wife_played = true
-			audio.trigger_wife()
 		_animate(open_angle, open_duration)
 		is_open = true
 
@@ -49,8 +47,12 @@ func _trigger_transformation() -> void:
 func _animate(target_angle: float, duration: float) -> void:
 	if tween and tween.is_valid():
 		tween.kill()
-	if creak_sound:
-		creak_sound.play()
+	if target_angle == 0.0:
+		if close_sound:
+			close_sound.play()
+	else:
+		if creak_sound:
+			creak_sound.play()
 	is_animating = true
 	tween = get_tree().create_tween()
 	tween.tween_property(
