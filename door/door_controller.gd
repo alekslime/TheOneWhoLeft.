@@ -4,15 +4,16 @@ extends Node3D
 @export var close_duration: float = 0.9
 @export var door_mesh: Node3D
 @export var creak_sound: AudioStreamPlayer3D = null
-@onready var audio = get_tree().get_root().find_child("Level1", true, false)
 @export var close_sound: AudioStreamPlayer3D = null
 
 var is_open: bool = false
 var is_animating: bool = false
 var tween: Tween = null
 var transformation_done: bool = false
-var wife_played: bool = false
 var cursed_env = preload("res://environment.tres")
+
+func _get_audio():
+	return get_tree().get_root().find_child("Level1", true, false)
 
 func _ready() -> void:
 	if has_node("TriggerArea"):
@@ -25,19 +26,23 @@ func _on_player_entered_outside(body: Node) -> void:
 	if body.is_in_group("player") and not is_open:
 		_animate(open_angle, open_duration)
 		is_open = true
+		if transformation_done:
+			var audio = _get_audio()
+			if audio:
+				audio.trigger_outside()
 
 func _on_player_entered_inner(body: Node) -> void:
 	if body.is_in_group("player") and not transformation_done:
 		transformation_done = true
 		_trigger_transformation()
-		audio.trigger_inside()
+		var audio = _get_audio()
+		if audio:
+			audio.trigger_inside()
 
 func _on_player_exited_outside(body: Node) -> void:
 	if body.is_in_group("player"):
 		_animate(0.0, close_duration)
 		is_open = false
-		if transformation_done:
-			audio.trigger_outside()
 
 func _trigger_transformation() -> void:
 	var world_env = get_tree().get_root().find_child("WorldEnvironment", true, false)
