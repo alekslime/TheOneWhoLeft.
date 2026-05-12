@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://omwyogxturip" path="res://assets/audio/intro/MusicClassical.mp3" id="11_gijeg"]
 [ext_resource type="AudioStream" uid="uid://bsd44ry0bnr6e" path="res://assets/audio/intro/VoiceWife.mp3" id="13_gijeg"]
 [ext_resource type="Script" uid="uid://deredh4gyiwm" path="res://scenes/intro/approach_trigger.gd" id="15_tp7jy"]
+[ext_resource type="Texture2D" uid="uid://kt75fjh2bw81" path="res://assets/sigil/sigil.png" id="18_6pa3g"]
 [ext_resource type="PackedScene" uid="uid://bqty0xxlecre1" path="res://Bari.tscn" id="18_8fxrl"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_teox7"]
@@ -198,6 +199,9 @@ shader_parameter/jitter_frequency = 13.41
 shader_parameter/chromatic_aberration_strength = 0.0
 shader_parameter/vignette_strength = 0.9470000449825
 shader_parameter/vignette_radius = 0.800000038
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jrfcs"]
+size = Vector3(19.125427, 10.305176, 0.4033203)
 
 [node name="Level1" type="Node3D" unique_id=2008775777]
 script = ExtResource("1_k2w6b")
@@ -436,3 +440,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 114.356544, -0.11250067, 100.
 
 [node name="Grass5" parent="." unique_id=1365126882 instance=ExtResource("18_8fxrl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -109.480034, -0.11250067, 100.81284)
+
+[node name="Sigils" type="Node3D" parent="." unique_id=42914360]
+
+[node name="Decal" type="Decal" parent="Sigils" unique_id=686504154]
+transform = Transform3D(-0.3825616, -0.11357483, 5.16962, -3.0543902, -4.177789, -0.3178152, 4.172358, -3.0687792, 0.24134225, 1.7494106, 1.1455355, 23.195442)
+texture_albedo = ExtResource("18_6pa3g")
+texture_emission = ExtResource("18_6pa3g")
+emission_energy = 0.0
+modulate = Color(1, 0.13333334, 0, 1)
+
+[node name="CultHum" type="AudioStreamPlayer3D" parent="." unique_id=208429654]
+
+[node name="EndTrigger" type="Area3D" parent="." unique_id=85942289]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EndTrigger" unique_id=748068386]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.26544, 4.6525917, -17.641788)
+shape = SubResource("BoxShape3D_jrfcs")
