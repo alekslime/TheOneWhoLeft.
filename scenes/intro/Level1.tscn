@@ -17,10 +17,10 @@
 [ext_resource type="AudioStream" uid="uid://bsd44ry0bnr6e" path="res://assets/audio/intro/VoiceWife.mp3" id="13_gijeg"]
 [ext_resource type="Script" uid="uid://deredh4gyiwm" path="res://scenes/intro/approach_trigger.gd" id="15_tp7jy"]
 [ext_resource type="Texture2D" uid="uid://kt75fjh2bw81" path="res://assets/sigil/sigil.png" id="18_6pa3g"]
-[ext_resource type="PackedScene" uid="uid://bqty0xxlecre1" path="res://Bari.tscn" id="18_8fxrl"]
 [ext_resource type="AudioStream" uid="uid://b0gq3nt3pjdxd" path="res://assets/audio/intro/CultHum.mp3" id="19_6pa3g"]
 [ext_resource type="Shader" uid="uid://bqxi5k2v0qq40" path="res://scenes/intro/sigil_pulse.gdshader" id="20_jrfcs"]
 [ext_resource type="Script" uid="uid://vd6mak14yc6x" path="res://scenes/intro/end_trigger.gd" id="21_eoj8g"]
+[ext_resource type="PackedScene" uid="uid://dweylrb55l4il" path="res://scenes/intro/Forest.tscn" id="21_gj0kd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_teox7"]
 sky_top_color = Color(0.08034753, 0.53571516, 0.8216351, 1)
@@ -230,6 +230,24 @@ shader_parameter/pulse_speed = 2.0
 shader_parameter/pulse_min = 0.4
 shader_parameter/pulse_max = 2.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gj0kd"]
+shader = ExtResource("7_2c2tb")
+shader_parameter/grain_strength = 0.08
+shader_parameter/grain_scale = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8i2dt"]
+shader = ExtResource("8_ptvbf")
+shader_parameter/resolution_x = 793
+shader_parameter/resolution_y = 484
+shader_parameter/color_bit_depth = 4
+shader_parameter/dither_strength = 0.0
+shader_parameter/jitter_amount = 0.001
+shader_parameter/jitter_speed = 0.11
+shader_parameter/jitter_frequency = 13.41
+shader_parameter/chromatic_aberration_strength = 0.0
+shader_parameter/vignette_strength = 0.9470000449825
+shader_parameter/vignette_radius = 0.800000038
+
 [node name="Level1" type="Node3D" unique_id=2008775777]
 script = ExtResource("1_k2w6b")
 
@@ -265,7 +283,7 @@ script = ExtResource("15_tp7jy")
 shape = SubResource("BoxShape3D_tp7jy")
 
 [node name="Player" parent="." unique_id=2004408079 instance=ExtResource("2_2c2tb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7015686, 9.999992, 40.031235)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7015686, 9.999992, 92.81207)
 
 [node name="GoodHouse" parent="." unique_id=1920522606 instance=ExtResource("3_ptvbf")]
 transform = Transform3D(1.6500001, 0, 0, 0, 1.6500001, 0, 0, 0, 1.6500001, -0.006309986, 1.0090117, 23.00054)
@@ -456,21 +474,6 @@ bus = &"HouseReverb"
 [node name="CultHum" type="AudioStreamPlayer3D" parent="IntroAudio" unique_id=208429654]
 stream = ExtResource("19_6pa3g")
 
-[node name="Grass" parent="." unique_id=1858996503 instance=ExtResource("18_8fxrl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.11250067, 134.922)
-
-[node name="Grass2" parent="." unique_id=216955415 instance=ExtResource("18_8fxrl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -101.12028, -0.11250067, -88.68551)
-
-[node name="Grass3" parent="." unique_id=1728388601 instance=ExtResource("18_8fxrl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96.2073, -0.11250067, -88.68551)
-
-[node name="Grass4" parent="." unique_id=1999544151 instance=ExtResource("18_8fxrl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 114.356544, -0.11250067, 100.81284)
-
-[node name="Grass5" parent="." unique_id=1365126882 instance=ExtResource("18_8fxrl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -109.480034, -0.11250067, 100.81284)
-
 [node name="Sigils" type="Node3D" parent="." unique_id=42914360]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Sigils" unique_id=2012355831]
@@ -553,3 +556,32 @@ material = SubResource("ShaderMaterial_eoj8g")
 offset_right = 637.0
 offset_bottom = 366.0
 color = Color(0, 0, 0, 1)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1984936036]
+layer = 10
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2" unique_id=1266394352]
+material = SubResource("ShaderMaterial_gj0kd")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer2" unique_id=1201256387]
+material = SubResource("ShaderMaterial_8i2dt")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect3" type="ColorRect" parent="CanvasLayer2" unique_id=750859378]
+material = SubResource("ShaderMaterial_8i2dt")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Forest" parent="." unique_id=405674404 instance=ExtResource("21_gj0kd")]
