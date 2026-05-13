@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://icf2ujinrhv5" path="res://scenes/intro/intro_audio.gd" id="1_k2w6b"]
 [ext_resource type="PackedScene" uid="uid://bsy4kx5xs0j6l" path="res://scenes/player/player.tscn" id="2_2c2tb"]
+[ext_resource type="Shader" uid="uid://dr8n8hbnf5qua" path="res://assets/sky/sunny_sky.gdshader" id="2_gj0kd"]
 [ext_resource type="PackedScene" uid="uid://i6qmjyspjyp6" path="res://assets/house/GoodHouse.glb" id="3_ptvbf"]
 [ext_resource type="Script" uid="uid://buwfmn2hw1nqf" path="res://door/door_controller.gd" id="4_hxyfr"]
 [ext_resource type="Texture2D" uid="uid://cpk3q1cmd2uxx" path="res://assets/door/door_Image_6.jpg" id="5_jvk70"]
@@ -22,27 +23,30 @@
 [ext_resource type="Script" uid="uid://vd6mak14yc6x" path="res://scenes/intro/end_trigger.gd" id="21_eoj8g"]
 [ext_resource type="PackedScene" uid="uid://dweylrb55l4il" path="res://scenes/intro/Forest.tscn" id="21_gj0kd"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_teox7"]
-sky_top_color = Color(0.08034753, 0.53571516, 0.8216351, 1)
-sky_horizon_color = Color(0.2834242, 0.7178859, 0.8308035, 1)
-sky_curve = 0.0941015
-ground_horizon_color = Color(0.22211146, 0.7182164, 0.8684773, 1)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_av31h"]
+shader = ExtResource("2_gj0kd")
+shader_parameter/top_color = Color(0.3, 0.6, 1, 1)
+shader_parameter/horizon_color = Color(0.8, 0.9, 1, 1)
+shader_parameter/cloud_color = Color(1, 1, 1, 1)
+shader_parameter/sun_color = Color(1, 0.95, 0.8, 1)
+shader_parameter/cloud_speed = 0.02
+shader_parameter/cloud_scale = 3.0
+shader_parameter/cloud_density = 0.5
+shader_parameter/sun_size = 0.05
 
-[sub_resource type="Sky" id="Sky_8twl8"]
-sky_material = SubResource("ProceduralSkyMaterial_teox7")
+[sub_resource type="Sky" id="Sky_eoj8g"]
+sky_material = SubResource("ShaderMaterial_av31h")
 
 [sub_resource type="Environment" id="Environment_ir5dn"]
 background_mode = 2
-sky = SubResource("Sky_8twl8")
+sky = SubResource("Sky_eoj8g")
 ssao_radius = 1.15
 glow_enabled = true
 glow_intensity = 3.35
 glow_bloom = 0.05
-fog_enabled = true
 fog_light_color = Color(0, 0.28627452, 0.5411765, 1)
 fog_light_energy = 5.95
 fog_density = 0.0001
-volumetric_fog_enabled = true
 volumetric_fog_density = 0.0053
 volumetric_fog_albedo = Color(0, 0.9019608, 1, 1)
 
@@ -183,7 +187,7 @@ albedo_texture = ExtResource("5_jvk70")
 
 [sub_resource type="FogMaterial" id="FogMaterial_8yty6"]
 density = 0.05
-albedo = Color(1, 0.8821839, 0.86264116, 1)
+albedo = Color(0.307569, 0, 0.0011820431, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hxyfr"]
 shader = ExtResource("7_2c2tb")
@@ -255,7 +259,8 @@ script = ExtResource("1_k2w6b")
 environment = SubResource("Environment_ir5dn")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=559350526]
-light_energy = 0.01
+transform = Transform3D(1, 0, 0, 0, 0.71933997, 0.6946582, 0, -0.6946582, 0.71933997, 0, 0, 0)
+light_energy = 1.042
 
 [node name="Ground" type="Node3D" parent="." unique_id=285604726]
 transform = Transform3D(1, 0, 0, 0, 0.417, 0, 0, 0, 1, 0, 0, 0)
@@ -283,7 +288,7 @@ script = ExtResource("15_tp7jy")
 shape = SubResource("BoxShape3D_tp7jy")
 
 [node name="Player" parent="." unique_id=2004408079 instance=ExtResource("2_2c2tb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7015686, 9.999992, 92.81207)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7015686, 9.999992, 41.91086)
 
 [node name="GoodHouse" parent="." unique_id=1920522606 instance=ExtResource("3_ptvbf")]
 transform = Transform3D(1.6500001, 0, 0, 0, 1.6500001, 0, 0, 0, 1.6500001, -0.006309986, 1.0090117, 23.00054)
