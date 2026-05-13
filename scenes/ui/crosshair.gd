@@ -26,10 +26,8 @@ func _process(delta: float) -> void:
 		var vel = Vector3(player.velocity.x, 0, player.velocity.z)
 		if vel.length() > 1.0:
 			target_spread = 0.4
-		if player.is_sliding:
-			target_spread = 0.9
-		if player.is_dashing:
-			target_spread = 1.2
+		if player.is_raging:
+			target_spread = 0.7
 	spread = lerp(spread, target_spread, delta * 12.0)
 	crit_flash = move_toward(crit_flash, 0.0, delta * 6.0)
 	_check_enemy_aim()

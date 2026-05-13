@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://icf2ujinrhv5" path="res://scenes/intro/intro_audio.gd" id="1_k2w6b"]
 [ext_resource type="PackedScene" uid="uid://bsy4kx5xs0j6l" path="res://scenes/player/player.tscn" id="2_2c2tb"]
-[ext_resource type="Shader" uid="uid://dr8n8hbnf5qua" path="res://assets/sky/sunny_sky.gdshader" id="2_gj0kd"]
+[ext_resource type="Environment" uid="uid://cialxde7mrnmh" path="res://goodday.tres" id="2_gj0kd"]
 [ext_resource type="PackedScene" uid="uid://i6qmjyspjyp6" path="res://assets/house/GoodHouse.glb" id="3_ptvbf"]
 [ext_resource type="Script" uid="uid://buwfmn2hw1nqf" path="res://door/door_controller.gd" id="4_hxyfr"]
 [ext_resource type="Texture2D" uid="uid://cpk3q1cmd2uxx" path="res://assets/door/door_Image_6.jpg" id="5_jvk70"]
@@ -19,36 +19,10 @@
 [ext_resource type="Script" uid="uid://deredh4gyiwm" path="res://scenes/intro/approach_trigger.gd" id="15_tp7jy"]
 [ext_resource type="Texture2D" uid="uid://kt75fjh2bw81" path="res://assets/sigil/sigil.png" id="18_6pa3g"]
 [ext_resource type="AudioStream" uid="uid://b0gq3nt3pjdxd" path="res://assets/audio/intro/CultHum.mp3" id="19_6pa3g"]
+[ext_resource type="AudioStream" uid="uid://cygqd8bpn3cyu" path="res://assets/audio/intro/VoiceMysterious.mp3" id="19_8i2dt"]
 [ext_resource type="Shader" uid="uid://bqxi5k2v0qq40" path="res://scenes/intro/sigil_pulse.gdshader" id="20_jrfcs"]
 [ext_resource type="Script" uid="uid://vd6mak14yc6x" path="res://scenes/intro/end_trigger.gd" id="21_eoj8g"]
 [ext_resource type="PackedScene" uid="uid://dweylrb55l4il" path="res://scenes/intro/Forest.tscn" id="21_gj0kd"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_av31h"]
-shader = ExtResource("2_gj0kd")
-shader_parameter/top_color = Color(0.3, 0.6, 1, 1)
-shader_parameter/horizon_color = Color(0.8, 0.9, 1, 1)
-shader_parameter/cloud_color = Color(1, 1, 1, 1)
-shader_parameter/sun_color = Color(1, 0.95, 0.8, 1)
-shader_parameter/cloud_speed = 0.02
-shader_parameter/cloud_scale = 3.0
-shader_parameter/cloud_density = 0.5
-shader_parameter/sun_size = 0.05
-
-[sub_resource type="Sky" id="Sky_eoj8g"]
-sky_material = SubResource("ShaderMaterial_av31h")
-
-[sub_resource type="Environment" id="Environment_ir5dn"]
-background_mode = 2
-sky = SubResource("Sky_eoj8g")
-ssao_radius = 1.15
-glow_enabled = true
-glow_intensity = 3.35
-glow_bloom = 0.05
-fog_light_color = Color(0, 0.28627452, 0.5411765, 1)
-fog_light_energy = 5.95
-fog_density = 0.0001
-volumetric_fog_density = 0.0053
-volumetric_fog_albedo = Color(0, 0.9019608, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pqli2"]
 size = Vector3(156.64, 1.325, 272.08)
@@ -62,7 +36,7 @@ albedo_color = Color(0.4627451, 0.79607844, 0.3019608, 1)
 size = Vector3(107.125, 14.95, 147.285)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0okxm"]
-size = Vector3(1.1966858, 1.7827148, 3.3128896)
+size = Vector3(1.1966858, 1.7827148, 2.5436153)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y6uum"]
 size = Vector3(1, 1.6837158, 0.36839676)
@@ -256,11 +230,11 @@ shader_parameter/vignette_radius = 0.800000038
 script = ExtResource("1_k2w6b")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1278234781]
-environment = SubResource("Environment_ir5dn")
+environment = ExtResource("2_gj0kd")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=559350526]
 transform = Transform3D(1, 0, 0, 0, 0.71933997, 0.6946582, 0, -0.6946582, 0.71933997, 0, 0, 0)
-light_energy = 1.042
+light_energy = 0.054
 
 [node name="Ground" type="Node3D" parent="." unique_id=285604726]
 transform = Transform3D(1, 0, 0, 0, 0.417, 0, 0, 0, 1, 0, 0, 0)
@@ -306,7 +280,7 @@ close_sound = NodePath("../CreakSound")
 [node name="TriggerArea" type="Area3D" parent="GoodHouse/Door2/DoorController" unique_id=829998844]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GoodHouse/Door2/DoorController/TriggerArea" unique_id=735605927]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.045913696, 0.39135742, 0.16132331)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.045913696, 0.39135742, -0.123057604)
 shape = SubResource("BoxShape3D_0okxm")
 
 [node name="InnerTrigger" type="Area3D" parent="GoodHouse/Door2/DoorController" unique_id=1362523175]
@@ -422,11 +396,10 @@ light_color = Color(1, 0, 0, 1)
 light_energy = 3.479
 omni_range = 5.621
 
-[node name="OmniLight3D6" type="OmniLight3D" parent="GoodHouse/HouseLights" unique_id=1690045074]
-transform = Transform3D(0.60606056, 0, 0, 0, 0.60606056, 0, 0, 0, 0.60606056, 0.6441541, 5.277926, 0)
-light_color = Color(1, 0, 0, 1)
-light_energy = 3.479
-omni_range = 14.677
+[node name="OmniLight3D" type="OmniLight3D" parent="GoodHouse/HouseLights" unique_id=1311859371]
+transform = Transform3D(0.60606056, 0, 0, 0, 0.60606056, 0, 0, 0, 0.60606056, 0, 3.2414634, 0)
+light_energy = 20.89
+omni_range = 5.84
 
 [node name="Filter" type="CanvasLayer" parent="." unique_id=512618908]
 layer = 10
@@ -478,6 +451,9 @@ bus = &"HouseReverb"
 
 [node name="CultHum" type="AudioStreamPlayer3D" parent="IntroAudio" unique_id=208429654]
 stream = ExtResource("19_6pa3g")
+
+[node name="VoiceMysterious" type="AudioStreamPlayer" parent="IntroAudio" unique_id=1932600793]
+stream = ExtResource("19_8i2dt")
 
 [node name="Sigils" type="Node3D" parent="." unique_id=42914360]
 

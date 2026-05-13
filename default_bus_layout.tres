@@ -25,6 +25,16 @@ resource_name = "Reverb"
 room_size = 0.5
 wet = 0.3
 
+[sub_resource type="AudioEffectPhaser" id="AudioEffectPhaser_j3pel"]
+resource_name = "Phaser"
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_5t1r3"]
+resource_name = "Reverb"
+room_size = 0.9
+damping = 0.3
+dry = 0.7
+wet = 0.4
+
 [resource]
 bus/1/name = &"Mara"
 bus/1/solo = false
@@ -56,9 +66,13 @@ bus/3/effect/0/effect = SubResource("AudioEffectLowPassFilter_g28q7")
 bus/3/effect/0/enabled = true
 bus/3/effect/1/effect = SubResource("AudioEffectReverb_n8wo2")
 bus/3/effect/1/enabled = false
-bus/4/name = &"New Bus"
+bus/4/name = &"VoiceMysterious"
 bus/4/solo = false
 bus/4/mute = false
 bus/4/bypass_fx = false
 bus/4/volume_db = 0.0
 bus/4/send = &"Master"
+bus/4/effect/0/effect = SubResource("AudioEffectPhaser_j3pel")
+bus/4/effect/0/enabled = true
+bus/4/effect/1/effect = SubResource("AudioEffectReverb_5t1r3")
+bus/4/effect/1/enabled = true

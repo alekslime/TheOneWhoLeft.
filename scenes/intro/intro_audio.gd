@@ -5,6 +5,7 @@ extends Node3D
 @onready var music_classical = $IntroAudio/MusicClassical
 @onready var ambient_outside = $IntroAudio/AmbientOutside
 @onready var voice_wife = $IntroAudio/VoiceWife
+@onready var voice_mysterious = $IntroAudio/VoiceMysterious	
 
 var outside_triggered: bool = false
 
@@ -24,6 +25,8 @@ func trigger_inside() -> void:
 	_fade_out(ambient_outside, 1.5)
 	_fade_out_3d(voice_wife, 0.5)
 	music_eerie.play()
+	await get_tree().create_timer(7.0).timeout
+	voice_mysterious.play()
 
 func trigger_outside() -> void:
 	if outside_triggered:

@@ -1,0 +1,36 @@
+[gd_resource type="Environment" format=3 uid="uid://cialxde7mrnmh"]
+
+[ext_resource type="Shader" uid="uid://dr8n8hbnf5qua" path="res://assets/sky/sunny_sky.gdshader" id="1_h143m"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_av31h"]
+shader = ExtResource("1_h143m")
+shader_parameter/top_color = Color(0.3, 0.6, 1, 1)
+shader_parameter/horizon_color = Color(0.8, 0.9, 1, 1)
+shader_parameter/cloud_color = Color(1, 1, 1, 1)
+shader_parameter/sun_color = Color(1, 0.95, 0.8, 1)
+shader_parameter/cloud_speed = 0.02
+shader_parameter/cloud_scale = 3.0
+shader_parameter/cloud_density = 0.5
+shader_parameter/sun_size = 0.05
+
+[sub_resource type="Sky" id="Sky_eoj8g"]
+sky_material = SubResource("ShaderMaterial_av31h")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_eoj8g")
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.3
+ssr_enabled = true
+ssao_enabled = true
+ssao_radius = 1.15
+ssil_enabled = true
+glow_enabled = true
+glow_intensity = 3.35
+glow_bloom = 0.05
+fog_light_color = Color(0, 0.28627452, 0.5411765, 1)
+fog_light_energy = 5.95
+fog_density = 0.0001
+volumetric_fog_density = 0.0053
+volumetric_fog_albedo = Color(0, 0.9019608, 1, 1)

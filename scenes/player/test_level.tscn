@@ -25,6 +25,7 @@
 [ext_resource type="AudioStream" uid="uid://7ey03odyetkj" path="res://assets/audio/mara/they came in the night.ogg" id="26_8yd48"]
 [ext_resource type="AudioStream" uid="uid://bgucyvrgppxq" path="res://assets/audio/mara/they didnt scream.ogg" id="26_rui7k"]
 [ext_resource type="PackedScene" uid="uid://bqty0xxlecre1" path="res://Bari.tscn" id="28_aa4jf"]
+[ext_resource type="PackedScene" uid="uid://dweylrb55l4il" path="res://scenes/intro/Forest.tscn" id="30_77k2j"]
 [ext_resource type="PackedScene" uid="uid://b1rg435musikf" path="res://door/DoorController.tscn" id="31_t0ar4"]
 [ext_resource type="PackedScene" uid="uid://k60sfbhvduh5" path="res://door/DoorAnimatable.tscn" id="31_wnmek"]
 [ext_resource type="Environment" uid="uid://c7ryv36kk50e3" path="res://environment.tres" id="31_wo3vv"]
@@ -105,7 +106,7 @@ grow_vertical = 2
 visible = false
 
 [node name="Player" parent="." unique_id=2004408079 instance=ExtResource("1_ddwea")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.73086, 3.5612335, -10.943848)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.73086, 16.446472, -10.943848)
 
 [node name="Enemies" type="Node3D" parent="." unique_id=1956567446]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 543.9769)
@@ -358,3 +359,6 @@ light_indirect_energy = 13.8
 light_volumetric_fog_energy = 15.109
 directional_shadow_mode = 0
 sky_mode = 1
+
+[node name="Forest" parent="." unique_id=405674404 instance=ExtResource("30_77k2j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.185753, 0)
