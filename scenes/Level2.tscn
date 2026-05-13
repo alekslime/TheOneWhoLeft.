@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://xx8cipgy5k4d"]
+
+[ext_resource type="Script" uid="uid://cwttldbjmci7s" path="res://scenes/level_2.gd" id="1_kkoku"]
+[ext_resource type="Shader" uid="uid://bqxi5k2v0qq40" path="res://scenes/intro/sigil_pulse.gdshader" id="2_l6gr7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sp0w3"]
+render_priority = 0
+shader = ExtResource("2_l6gr7")
+shader_parameter/sigil_color = Color(0.6, 0, 1, 1)
+shader_parameter/pulse_speed = 2.0
+shader_parameter/pulse_min = 0.4
+shader_parameter/pulse_max = 2.0
+
+[node name="Level2" type="Node3D" unique_id=1901875535]
+script = ExtResource("1_kkoku")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=2104623963]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=677423602]
+
+[node name="FadeRect" type="ColorRect" parent="CanvasLayer" unique_id=1964136499]
+modulate = Color(1, 1, 1, 0)
+material = SubResource("ShaderMaterial_sp0w3")
+offset_right = 637.0
+offset_bottom = 366.0
+color = Color(0, 0, 0, 1)

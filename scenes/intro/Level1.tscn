@@ -19,6 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://kt75fjh2bw81" path="res://assets/sigil/sigil.png" id="18_6pa3g"]
 [ext_resource type="PackedScene" uid="uid://bqty0xxlecre1" path="res://Bari.tscn" id="18_8fxrl"]
 [ext_resource type="AudioStream" uid="uid://b0gq3nt3pjdxd" path="res://assets/audio/intro/CultHum.mp3" id="19_6pa3g"]
+[ext_resource type="Shader" uid="uid://bqxi5k2v0qq40" path="res://scenes/intro/sigil_pulse.gdshader" id="20_jrfcs"]
+[ext_resource type="Script" uid="uid://vd6mak14yc6x" path="res://scenes/intro/end_trigger.gd" id="21_eoj8g"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_teox7"]
 sky_top_color = Color(0.08034753, 0.53571516, 0.8216351, 1)
@@ -201,8 +203,32 @@ shader_parameter/chromatic_aberration_strength = 0.0
 shader_parameter/vignette_strength = 0.9470000449825
 shader_parameter/vignette_radius = 0.800000038
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jrfcs"]
+render_priority = 0
+shader = ExtResource("20_jrfcs")
+shader_parameter/sigil_color = Color(0.39723974, 0.39723974, 0.32999846, 1)
+shader_parameter/pulse_speed = 5.0
+shader_parameter/pulse_min = 0.0850000040375
+shader_parameter/pulse_max = 4.00000019
+shader_parameter/texture_albedo = ExtResource("18_6pa3g")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eoj8g"]
+transparency = 1
+albedo_texture = ExtResource("18_6pa3g")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_gj0kd"]
+material = SubResource("StandardMaterial3D_eoj8g")
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_jrfcs"]
 size = Vector3(19.125427, 10.305176, 0.4033203)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eoj8g"]
+render_priority = 0
+shader = ExtResource("20_jrfcs")
+shader_parameter/sigil_color = Color(0.6, 0, 1, 1)
+shader_parameter/pulse_speed = 2.0
+shader_parameter/pulse_min = 0.4
+shader_parameter/pulse_max = 2.0
 
 [node name="Level1" type="Node3D" unique_id=2008775777]
 script = ExtResource("1_k2w6b")
@@ -239,7 +265,7 @@ script = ExtResource("15_tp7jy")
 shape = SubResource("BoxShape3D_tp7jy")
 
 [node name="Player" parent="." unique_id=2004408079 instance=ExtResource("2_2c2tb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 52.743332)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7015686, 9.999992, 40.031235)
 
 [node name="GoodHouse" parent="." unique_id=1920522606 instance=ExtResource("3_ptvbf")]
 transform = Transform3D(1.6500001, 0, 0, 0, 1.6500001, 0, 0, 0, 1.6500001, -0.006309986, 1.0090117, 23.00054)
@@ -447,111 +473,73 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -109.480034, -0.11250067, 100
 
 [node name="Sigils" type="Node3D" parent="." unique_id=42914360]
 
-[node name="Decal" type="Decal" parent="Sigils" unique_id=686504154]
-transform = Transform3D(-0.3825616, -0.11357483, 5.16962, -3.0543902, -4.177789, -0.3178152, 4.172358, -3.0687792, 0.24134225, 1.7494106, 1.1455355, 23.195442)
-visible = false
-texture_albedo = ExtResource("18_6pa3g")
-texture_emission = ExtResource("18_6pa3g")
-emission_energy = 0.0
-modulate = Color(1, 0.13333334, 0, 1)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Sigils" unique_id=2012355831]
+transform = Transform3D(-0.25625563, 0, -0.96660906, 0, 1, 0, 0.96660906, 0, -0.25625563, 1.8431726, 1.3480787, 33.024097)
+material_override = SubResource("ShaderMaterial_jrfcs")
+mesh = SubResource("PlaneMesh_gj0kd")
 
-[node name="Decal2" type="Decal" parent="Sigils" unique_id=1746369461]
-transform = Transform3D(-0.13562135, 0.6767226, 1.2295337, -0.63163376, -1.1325206, 0.5536564, 1.2532935, -0.4975369, 0.4120815, 2.1083272, 1.1455355, 32.858673)
-visible = false
-texture_albedo = ExtResource("18_6pa3g")
-texture_emission = ExtResource("18_6pa3g")
-emission_energy = 0.0
-modulate = Color(1, 0.13333334, 0, 1)
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Sigils" unique_id=1930507110]
+transform = Transform3D(-0.7329467, 0, 0.68028617, 0, 1, 0, -0.68028617, 0, -0.7329467, 1.4643768, 1.3480787, 37.695053)
+material_override = SubResource("ShaderMaterial_jrfcs")
+mesh = SubResource("PlaneMesh_gj0kd")
 
-[node name="Decal3" type="Decal" parent="Sigils" unique_id=104697388]
-transform = Transform3D(-0.794633, -0.0709262, -1.0516311, -0.5913168, -1.0602322, 0.51831686, -0.87252665, 0.7831203, 0.6064815, 1.5193589, 1.1455355, 37.90668)
-visible = false
-texture_albedo = ExtResource("18_6pa3g")
-texture_emission = ExtResource("18_6pa3g")
-emission_energy = 0.0
-modulate = Color(1, 0.13333334, 0, 1)
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Sigils" unique_id=298682377]
+transform = Transform3D(0.17294356, 0, 0.9849318, 0, 1, 0, -0.9849318, 0, 0.17294356, -6.9941287, 1.3480787, 41.104595)
+material_override = SubResource("ShaderMaterial_jrfcs")
+mesh = SubResource("PlaneMesh_gj0kd")
 
-[node name="Decal4" type="Decal" parent="Sigils" unique_id=1718699377]
-transform = Transform3D(-0.14020033, -0.4150725, -1.008989, -0.492764, -0.88352674, 0.43193072, -0.97341025, 0.5070457, -0.073329136, -6.751443, 1.1455355, 41.385353)
-visible = false
-texture_albedo = ExtResource("18_6pa3g")
-texture_emission = ExtResource("18_6pa3g")
-emission_energy = 0.0
-modulate = Color(1, 0.13333334, 0, 1)
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Sigils" unique_id=757778041]
+transform = Transform3D(0.89344996, 0, 0.44916302, 0, 1, 0, -0.44916302, 0, 0.89344996, -13.613256, 1.3480787, 34.499954)
+material_override = SubResource("ShaderMaterial_jrfcs")
+mesh = SubResource("PlaneMesh_gj0kd")
 
-[node name="Decal5" type="Decal" parent="Sigils" unique_id=2144794609]
-transform = Transform3D(0.61216205, -0.653672, -0.63872576, -0.20820478, -0.8483019, 0.6686064, -0.88989234, -0.2511907, -0.5958144, -13.83958, 1.1455369, 34.053802)
-visible = false
-texture_albedo = ExtResource("18_6pa3g")
-texture_emission = ExtResource("18_6pa3g")
-emission_energy = 0.0
-modulate = Color(1, 0.13333334, 0, 1)
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Sigils" unique_id=955795628]
+transform = Transform3D(0.65846634, 0, 0.7526103, 0, 1, 0, -0.7526103, 0, 0.65846634, -19.30808, 1.3480787, 26.156075)
+material_override = SubResource("ShaderMaterial_jrfcs")
+mesh = SubResource("PlaneMesh_gj0kd")
 
-[node name="Decal6" type="Decal" parent="Sigils" unique_id=224839182]
-transform = Transform3D(1.4706498, -0.80070055, -0.5579358, -0.33407408, -1.3611389, 1.0728095, -0.9169559, -0.7882918, -1.2856953, -19.199312, 1.1455369, 26.638435)
-visible = false
-texture_albedo = ExtResource("18_6pa3g")
-texture_emission = ExtResource("18_6pa3g")
-emission_energy = 0.0
-modulate = Color(1, 0.13333334, 0, 1)
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Sigils" unique_id=642463726]
+transform = Transform3D(0.99008274, 0, 0.14048642, 0, 1, 0, -0.14048642, 0, 0.99008274, -31.073994, 1.3480787, 16.056662)
+material_override = SubResource("ShaderMaterial_jrfcs")
+mesh = SubResource("PlaneMesh_gj0kd")
 
-[node name="Decal7" type="Decal" parent="Sigils" unique_id=1986918710]
-transform = Transform3D(1.2498441, -0.68048203, -0.47416645, -0.2839157, -1.1567755, 0.91173595, -0.77928275, -0.66993636, -1.092659, -30.683023, 1.1455369, 16.229715)
-visible = false
-texture_albedo = ExtResource("18_6pa3g")
-texture_emission = ExtResource("18_6pa3g")
-emission_energy = 0.0
-modulate = Color(1, 0.13333334, 0, 1)
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Sigils" unique_id=795819507]
+transform = Transform3D(0.7239674, 0, 0.68983436, 0, 1, 0, -0.68983436, 0, 0.7239674, -37.00464, 1.3480787, -3.4918718)
+material_override = SubResource("ShaderMaterial_jrfcs")
+mesh = SubResource("PlaneMesh_gj0kd")
 
-[node name="Decal8" type="Decal" parent="Sigils" unique_id=2019229695]
-transform = Transform3D(1.545986, -1.3139775, -1.1857023, -0.44480127, -1.8122816, 1.4283861, -1.7130613, -0.7152609, -1.440945, -37.845795, 1.1455369, -4.1319714)
-visible = false
-texture_albedo = ExtResource("18_6pa3g")
-texture_emission = ExtResource("18_6pa3g")
-emission_energy = 0.0
-modulate = Color(1, 0.13333334, 0, 1)
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Sigils" unique_id=1939761529]
+transform = Transform3D(0.7239674, 0, 0.68983436, 0, 1, 0, -0.68983436, 0, 0.7239674, -54.019417, 1.3480787, -19.78183)
+material_override = SubResource("ShaderMaterial_jrfcs")
+mesh = SubResource("PlaneMesh_gj0kd")
 
-[node name="Decal9" type="Decal" parent="Sigils" unique_id=2038247995]
-transform = Transform3D(0.8585154, -0.729677, -0.6584434, -0.24700665, -1.0063946, 0.79321015, -0.9512959, -0.3971979, -0.8001842, -54.3783, 1.1455369, -19.831656)
-visible = false
-texture_albedo = ExtResource("18_6pa3g")
-texture_emission = ExtResource("18_6pa3g")
-emission_energy = 0.0
-modulate = Color(1, 0.13333334, 0, 1)
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Sigils" unique_id=1267619506]
+transform = Transform3D(0.9967142, 0, -0.080999285, 0, 1, 0, 0.080999285, 0, 0.9967142, -73.15546, 1.3480787, -31.51108)
+material_override = SubResource("ShaderMaterial_jrfcs")
+mesh = SubResource("PlaneMesh_gj0kd")
 
-[node name="Decal10" type="Decal" parent="Sigils" unique_id=715878809]
-transform = Transform3D(1.127845, -0.32403788, -0.05991447, -0.2224007, -0.9061408, 0.71419305, -0.24316311, -0.67419076, -0.9311087, -73.05255, 1.1455369, -31.020372)
-visible = false
-texture_albedo = ExtResource("18_6pa3g")
-texture_emission = ExtResource("18_6pa3g")
-emission_energy = 0.0
-modulate = Color(1, 0.13333334, 0, 1)
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Sigils" unique_id=1959312048]
+transform = Transform3D(0.71540016, 0, 0.6987149, 0, 1, 0, -0.6987149, 0, 0.71540016, -78.51138, 1.3480787, -58.202843)
+material_override = SubResource("ShaderMaterial_jrfcs")
+mesh = SubResource("PlaneMesh_gj0kd")
 
-[node name="Decal11" type="Decal" parent="Sigils" unique_id=371934897]
-transform = Transform3D(1.127845, -0.32403788, -0.05991447, -0.2224007, -0.9061408, 0.71419305, -0.24316311, -0.67419076, -0.9311087, -78.34489, 1.1455369, -58.04646)
-visible = false
-texture_albedo = ExtResource("18_6pa3g")
-texture_emission = ExtResource("18_6pa3g")
-emission_energy = 0.0
-modulate = Color(1, 0.13333334, 0, 1)
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="Sigils" unique_id=233872692]
+transform = Transform3D(0.9648378, 0, -0.26284608, 0, 1, 0, 0.26284608, 0, 0.9648378, -96.60105, 1.3480787, -76.42912)
+material_override = SubResource("ShaderMaterial_jrfcs")
+mesh = SubResource("PlaneMesh_gj0kd")
 
-[node name="Decal12" type="Decal" parent="Sigils" unique_id=359463861]
-transform = Transform3D(1.127845, -0.32403788, -0.05991447, -0.2224007, -0.9061408, 0.71419305, -0.24316311, -0.67419076, -0.9311087, -95.94049, 1.1455369, -76.570526)
-visible = false
-texture_albedo = ExtResource("18_6pa3g")
-texture_emission = ExtResource("18_6pa3g")
-emission_energy = 0.0
-modulate = Color(1, 0.13333334, 0, 1)
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="Sigils" unique_id=86617748]
+transform = Transform3D(0.9478686, 0, 0.31866145, 0, 1, 0, -0.31866145, 0, 0.9478686, -101.20633, 1.3480787, -97.5574)
+material_override = SubResource("ShaderMaterial_jrfcs")
+mesh = SubResource("PlaneMesh_gj0kd")
 
-[node name="Decal13" type="Decal" parent="Sigils" unique_id=731155346]
-transform = Transform3D(1.127845, -0.32403788, -0.05991447, -0.2224007, -0.9061408, 0.71419305, -0.24316311, -0.67419076, -0.9311087, -100.88945, 1.1455369, -97.59277)
-visible = false
-texture_albedo = ExtResource("18_6pa3g")
-texture_emission = ExtResource("18_6pa3g")
-emission_energy = 0.0
-modulate = Color(1, 0.13333334, 0, 1)
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="Sigils" unique_id=324508995]
+transform = Transform3D(0.99998885, 0, 0.004747182, 0, 1, 0, -0.004747182, 0, 0.99998885, -99.69179, 1.3480806, -109.6172)
+material_override = SubResource("ShaderMaterial_jrfcs")
+mesh = SubResource("PlaneMesh_gj0kd")
 
 [node name="EndTrigger" type="Area3D" parent="." unique_id=85942289]
+script = ExtResource("21_eoj8g")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EndTrigger" unique_id=748068386]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100.21698, 4.6525917, -90.65904)
@@ -561,6 +549,7 @@ shape = SubResource("BoxShape3D_jrfcs")
 
 [node name="FadeRect" type="ColorRect" parent="CanvasLayer" unique_id=1906562462]
 modulate = Color(1, 1, 1, 0)
-offset_right = 322.0
-offset_bottom = 242.0
+material = SubResource("ShaderMaterial_eoj8g")
+offset_right = 637.0
+offset_bottom = 366.0
 color = Color(0, 0, 0, 1)
