@@ -14,8 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://d1rli67t08upl" path="res://weapons/HollowRoundProjectile.tscn" id="8_myrg7"]
 [ext_resource type="AudioStream" uid="uid://3wo65aecbkbu" path="res://assets/sounds/enemy_hit.mp3" id="10_h17s1"]
 [ext_resource type="AudioStream" uid="uid://i7ki6lnrffo3" path="res://assets/sounds/enemy_death.mp3" id="11_je7p5"]
-[ext_resource type="AudioStream" uid="uid://delob7wi3xj4" path="res://assets/sounds/dash.mp3" id="12_fm80t"]
-[ext_resource type="AudioStream" uid="uid://b7ragc7ke3g7f" path="res://assets/sounds/slide.mp3" id="13_gx1jg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x7p2l"]
 radius = 0.4
@@ -87,10 +85,3 @@ stream = ExtResource("10_h17s1")
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="." unique_id=2019986628]
 stream = ExtResource("11_je7p5")
-
-[node name="DashSound" type="AudioStreamPlayer" parent="." unique_id=1828159159]
-stream = ExtResource("12_fm80t")
-pitch_scale = 1.43
-
-[node name="SlideSound" type="AudioStreamPlayer" parent="." unique_id=234316658]
-stream = ExtResource("13_gx1jg")

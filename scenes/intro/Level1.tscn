@@ -18,6 +18,7 @@
 [ext_resource type="Script" uid="uid://deredh4gyiwm" path="res://scenes/intro/approach_trigger.gd" id="15_tp7jy"]
 [ext_resource type="Texture2D" uid="uid://kt75fjh2bw81" path="res://assets/sigil/sigil.png" id="18_6pa3g"]
 [ext_resource type="PackedScene" uid="uid://bqty0xxlecre1" path="res://Bari.tscn" id="18_8fxrl"]
+[ext_resource type="AudioStream" uid="uid://b0gq3nt3pjdxd" path="res://assets/audio/intro/CultHum.mp3" id="19_6pa3g"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_teox7"]
 sky_top_color = Color(0.08034753, 0.53571516, 0.8216351, 1)
@@ -238,7 +239,7 @@ script = ExtResource("15_tp7jy")
 shape = SubResource("BoxShape3D_tp7jy")
 
 [node name="Player" parent="." unique_id=2004408079 instance=ExtResource("2_2c2tb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 102.55436)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 52.743332)
 
 [node name="GoodHouse" parent="." unique_id=1920522606 instance=ExtResource("3_ptvbf")]
 transform = Transform3D(1.6500001, 0, 0, 0, 1.6500001, 0, 0, 0, 1.6500001, -0.006309986, 1.0090117, 23.00054)
@@ -378,10 +379,10 @@ light_color = Color(1, 0, 0, 1)
 light_energy = 3.479
 omni_range = 14.677
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=512618908]
+[node name="Filter" type="CanvasLayer" parent="." unique_id=512618908]
 layer = 10
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=429702135]
+[node name="ColorRect" type="ColorRect" parent="Filter" unique_id=429702135]
 material = SubResource("ShaderMaterial_hxyfr")
 anchors_preset = 15
 anchor_right = 1.0
@@ -389,7 +390,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect2" type="ColorRect" parent="CanvasLayer" unique_id=203015320]
+[node name="ColorRect2" type="ColorRect" parent="Filter" unique_id=203015320]
 visible = false
 material = SubResource("ShaderMaterial_jvk70")
 anchors_preset = 15
@@ -398,7 +399,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect3" type="ColorRect" parent="CanvasLayer" unique_id=1707653550]
+[node name="ColorRect3" type="ColorRect" parent="Filter" unique_id=1707653550]
 visible = false
 material = SubResource("ShaderMaterial_jvk70")
 anchors_preset = 15
@@ -426,6 +427,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 23.93254)
 stream = ExtResource("13_gijeg")
 bus = &"HouseReverb"
 
+[node name="CultHum" type="AudioStreamPlayer3D" parent="IntroAudio" unique_id=208429654]
+stream = ExtResource("19_6pa3g")
+
 [node name="Grass" parent="." unique_id=1858996503 instance=ExtResource("18_8fxrl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.11250067, 134.922)
 
@@ -445,6 +449,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -109.480034, -0.11250067, 100
 
 [node name="Decal" type="Decal" parent="Sigils" unique_id=686504154]
 transform = Transform3D(-0.3825616, -0.11357483, 5.16962, -3.0543902, -4.177789, -0.3178152, 4.172358, -3.0687792, 0.24134225, 1.7494106, 1.1455355, 23.195442)
+visible = false
 texture_albedo = ExtResource("18_6pa3g")
 texture_emission = ExtResource("18_6pa3g")
 emission_energy = 0.0
@@ -452,6 +457,7 @@ modulate = Color(1, 0.13333334, 0, 1)
 
 [node name="Decal2" type="Decal" parent="Sigils" unique_id=1746369461]
 transform = Transform3D(-0.13562135, 0.6767226, 1.2295337, -0.63163376, -1.1325206, 0.5536564, 1.2532935, -0.4975369, 0.4120815, 2.1083272, 1.1455355, 32.858673)
+visible = false
 texture_albedo = ExtResource("18_6pa3g")
 texture_emission = ExtResource("18_6pa3g")
 emission_energy = 0.0
@@ -459,6 +465,7 @@ modulate = Color(1, 0.13333334, 0, 1)
 
 [node name="Decal3" type="Decal" parent="Sigils" unique_id=104697388]
 transform = Transform3D(-0.794633, -0.0709262, -1.0516311, -0.5913168, -1.0602322, 0.51831686, -0.87252665, 0.7831203, 0.6064815, 1.5193589, 1.1455355, 37.90668)
+visible = false
 texture_albedo = ExtResource("18_6pa3g")
 texture_emission = ExtResource("18_6pa3g")
 emission_energy = 0.0
@@ -466,6 +473,7 @@ modulate = Color(1, 0.13333334, 0, 1)
 
 [node name="Decal4" type="Decal" parent="Sigils" unique_id=1718699377]
 transform = Transform3D(-0.14020033, -0.4150725, -1.008989, -0.492764, -0.88352674, 0.43193072, -0.97341025, 0.5070457, -0.073329136, -6.751443, 1.1455355, 41.385353)
+visible = false
 texture_albedo = ExtResource("18_6pa3g")
 texture_emission = ExtResource("18_6pa3g")
 emission_energy = 0.0
@@ -473,6 +481,7 @@ modulate = Color(1, 0.13333334, 0, 1)
 
 [node name="Decal5" type="Decal" parent="Sigils" unique_id=2144794609]
 transform = Transform3D(0.61216205, -0.653672, -0.63872576, -0.20820478, -0.8483019, 0.6686064, -0.88989234, -0.2511907, -0.5958144, -13.83958, 1.1455369, 34.053802)
+visible = false
 texture_albedo = ExtResource("18_6pa3g")
 texture_emission = ExtResource("18_6pa3g")
 emission_energy = 0.0
@@ -480,6 +489,7 @@ modulate = Color(1, 0.13333334, 0, 1)
 
 [node name="Decal6" type="Decal" parent="Sigils" unique_id=224839182]
 transform = Transform3D(1.4706498, -0.80070055, -0.5579358, -0.33407408, -1.3611389, 1.0728095, -0.9169559, -0.7882918, -1.2856953, -19.199312, 1.1455369, 26.638435)
+visible = false
 texture_albedo = ExtResource("18_6pa3g")
 texture_emission = ExtResource("18_6pa3g")
 emission_energy = 0.0
@@ -487,6 +497,7 @@ modulate = Color(1, 0.13333334, 0, 1)
 
 [node name="Decal7" type="Decal" parent="Sigils" unique_id=1986918710]
 transform = Transform3D(1.2498441, -0.68048203, -0.47416645, -0.2839157, -1.1567755, 0.91173595, -0.77928275, -0.66993636, -1.092659, -30.683023, 1.1455369, 16.229715)
+visible = false
 texture_albedo = ExtResource("18_6pa3g")
 texture_emission = ExtResource("18_6pa3g")
 emission_energy = 0.0
@@ -494,6 +505,7 @@ modulate = Color(1, 0.13333334, 0, 1)
 
 [node name="Decal8" type="Decal" parent="Sigils" unique_id=2019229695]
 transform = Transform3D(1.545986, -1.3139775, -1.1857023, -0.44480127, -1.8122816, 1.4283861, -1.7130613, -0.7152609, -1.440945, -37.845795, 1.1455369, -4.1319714)
+visible = false
 texture_albedo = ExtResource("18_6pa3g")
 texture_emission = ExtResource("18_6pa3g")
 emission_energy = 0.0
@@ -501,6 +513,7 @@ modulate = Color(1, 0.13333334, 0, 1)
 
 [node name="Decal9" type="Decal" parent="Sigils" unique_id=2038247995]
 transform = Transform3D(0.8585154, -0.729677, -0.6584434, -0.24700665, -1.0063946, 0.79321015, -0.9512959, -0.3971979, -0.8001842, -54.3783, 1.1455369, -19.831656)
+visible = false
 texture_albedo = ExtResource("18_6pa3g")
 texture_emission = ExtResource("18_6pa3g")
 emission_energy = 0.0
@@ -508,6 +521,7 @@ modulate = Color(1, 0.13333334, 0, 1)
 
 [node name="Decal10" type="Decal" parent="Sigils" unique_id=715878809]
 transform = Transform3D(1.127845, -0.32403788, -0.05991447, -0.2224007, -0.9061408, 0.71419305, -0.24316311, -0.67419076, -0.9311087, -73.05255, 1.1455369, -31.020372)
+visible = false
 texture_albedo = ExtResource("18_6pa3g")
 texture_emission = ExtResource("18_6pa3g")
 emission_energy = 0.0
@@ -515,6 +529,7 @@ modulate = Color(1, 0.13333334, 0, 1)
 
 [node name="Decal11" type="Decal" parent="Sigils" unique_id=371934897]
 transform = Transform3D(1.127845, -0.32403788, -0.05991447, -0.2224007, -0.9061408, 0.71419305, -0.24316311, -0.67419076, -0.9311087, -78.34489, 1.1455369, -58.04646)
+visible = false
 texture_albedo = ExtResource("18_6pa3g")
 texture_emission = ExtResource("18_6pa3g")
 emission_energy = 0.0
@@ -522,6 +537,7 @@ modulate = Color(1, 0.13333334, 0, 1)
 
 [node name="Decal12" type="Decal" parent="Sigils" unique_id=359463861]
 transform = Transform3D(1.127845, -0.32403788, -0.05991447, -0.2224007, -0.9061408, 0.71419305, -0.24316311, -0.67419076, -0.9311087, -95.94049, 1.1455369, -76.570526)
+visible = false
 texture_albedo = ExtResource("18_6pa3g")
 texture_emission = ExtResource("18_6pa3g")
 emission_energy = 0.0
@@ -529,15 +545,22 @@ modulate = Color(1, 0.13333334, 0, 1)
 
 [node name="Decal13" type="Decal" parent="Sigils" unique_id=731155346]
 transform = Transform3D(1.127845, -0.32403788, -0.05991447, -0.2224007, -0.9061408, 0.71419305, -0.24316311, -0.67419076, -0.9311087, -100.88945, 1.1455369, -97.59277)
+visible = false
 texture_albedo = ExtResource("18_6pa3g")
 texture_emission = ExtResource("18_6pa3g")
 emission_energy = 0.0
 modulate = Color(1, 0.13333334, 0, 1)
-
-[node name="CultHum" type="AudioStreamPlayer3D" parent="." unique_id=208429654]
 
 [node name="EndTrigger" type="Area3D" parent="." unique_id=85942289]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EndTrigger" unique_id=748068386]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100.21698, 4.6525917, -90.65904)
 shape = SubResource("BoxShape3D_jrfcs")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=833762812]
+
+[node name="FadeRect" type="ColorRect" parent="CanvasLayer" unique_id=1906562462]
+modulate = Color(1, 1, 1, 0)
+offset_right = 322.0
+offset_bottom = 242.0
+color = Color(0, 0, 0, 1)
