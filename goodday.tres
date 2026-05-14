@@ -4,8 +4,8 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_av31h"]
 shader = ExtResource("1_h143m")
-shader_parameter/top_color = Color(0.3, 0.6, 1, 1)
-shader_parameter/horizon_color = Color(0.8, 0.9, 1, 1)
+shader_parameter/top_color = Color(0.113238044, 0.6340159, 0.9489854, 1)
+shader_parameter/horizon_color = Color(0.82060677, 0.8956197, 0.9955881, 1)
 shader_parameter/cloud_color = Color(1, 1, 1, 1)
 shader_parameter/sun_color = Color(1, 0.95, 0.8, 1)
 shader_parameter/cloud_speed = 0.02
