@@ -23,6 +23,11 @@
 [ext_resource type="Shader" uid="uid://bqxi5k2v0qq40" path="res://scenes/intro/sigil_pulse.gdshader" id="20_jrfcs"]
 [ext_resource type="Script" uid="uid://vd6mak14yc6x" path="res://scenes/intro/end_trigger.gd" id="21_eoj8g"]
 [ext_resource type="PackedScene" uid="uid://dweylrb55l4il" path="res://scenes/intro/Forest.tscn" id="21_gj0kd"]
+[ext_resource type="PackedScene" uid="uid://c6ix4jobydd5a" path="res://assets/car/fiat_uno_1998.glb" id="24_av31h"]
+[ext_resource type="PackedScene" uid="uid://bft7am5oflypt" path="res://assets/table/psx_wooden_table.glb" id="25_7jdfn"]
+[ext_resource type="PackedScene" uid="uid://2txlktcn8pxp" path="res://assets/chair/psx_wooden_chair.glb" id="26_0iknq"]
+[ext_resource type="PackedScene" uid="uid://dbgwafdwls4d0" path="res://assets/drawer/psx_wooden_drawers.glb" id="27_w47bh"]
+[ext_resource type="PackedScene" uid="uid://p1opq8lt1x5e" path="res://assets/tv/psx_old_tv.glb" id="28_kvcfw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pqli2"]
 size = Vector3(156.64, 1.325, 272.08)
@@ -566,3 +571,41 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Forest" parent="." unique_id=405674404 instance=ExtResource("21_gj0kd")]
+
+[node name="Car" type="Node3D" parent="." unique_id=1239934960]
+
+[node name="Sketchfab_Scene" parent="Car" unique_id=942317922 instance=ExtResource("24_av31h")]
+transform = Transform3D(1.1132927, 0, 0.1430111, 0, 1.1224405, 0, -0.1430111, 0, 1.1132927, -15.71697, 1.6148324, 24.846983)
+
+[node name="Table" type="Node3D" parent="." unique_id=828078305]
+
+[node name="Sketchfab_Scene2" parent="Table" unique_id=1506795572 instance=ExtResource("25_7jdfn")]
+transform = Transform3D(-1.938275, 0, 0.23651391, 0, 1.1889075, 0, -0.23651391, 0, -1.938275, 0.67581534, 1.8341742, 28.624163)
+
+[node name="Chair" type="Node3D" parent="." unique_id=82152334]
+
+[node name="Sketchfab_Scene" parent="Chair" unique_id=708231693 instance=ExtResource("26_0iknq")]
+transform = Transform3D(-1.2036347, 0.733419, -0.1421049, -0.1291487, 0.06113155, 1.4094028, 0.73581094, 1.210451, 0.014922738, 3.4886353, 2.1523798, 28.598396)
+
+[node name="Sketchfab_Scene2" parent="Chair" unique_id=1560635046 instance=ExtResource("26_0iknq")]
+transform = Transform3D(1.4051543, 0, -0.17992963, 0, 1.4166269, 0, 0.17992963, 0, 1.405154, 1.3509048, 1.73419, 27.718584)
+
+[node name="Sketchfab_Scene4" parent="Chair" unique_id=1807994535 instance=ExtResource("26_0iknq")]
+transform = Transform3D(1.0655853, 0.93137014, -0.06253247, 0.17937471, -0.11117194, 1.4008203, 0.916071, -1.061613, -0.20155445, -0.5704508, 2.324271, 27.58153)
+
+[node name="Sketchfab_Scene3" parent="Chair" unique_id=162329068 instance=ExtResource("26_0iknq")]
+transform = Transform3D(-0.35279968, -1.3717238, 0.027169056, -0.1291487, 0.06113155, 1.4094028, -1.3659015, 0.34852389, -0.14027949, -2.969858, 2.1523798, 28.774578)
+
+[node name="Food" type="Node3D" parent="." unique_id=664541940]
+
+[node name="Sketchfab_Scene" parent="." unique_id=364987332 instance=ExtResource("27_w47bh")]
+transform = Transform3D(-4.371139e-08, 0, 1.6452081, 0, 1, 0, -1, 0, -7.191433e-08, -8.524609, 1.834012, 24.651726)
+
+[node name="Sketchfab_Scene2" parent="." unique_id=1394528635 instance=ExtResource("27_w47bh")]
+transform = Transform3D(-4.371139e-08, 0, 1.6452081, 0, 1, 0, -1, 0, -7.191433e-08, -8.524609, 1.834012, 23.497862)
+
+[node name="Sketchfab_Scene3" parent="." unique_id=353759659 instance=ExtResource("27_w47bh")]
+transform = Transform3D(-4.371139e-08, 0, 1.6452081, 0, 1, 0, -1, 0, -7.191433e-08, -8.524609, 1.834012, 22.311079)
+
+[node name="Sketchfab_Scene4" parent="." unique_id=675129584 instance=ExtResource("28_kvcfw")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.476218, 2.8659217, 23.51773)
