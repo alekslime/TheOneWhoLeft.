@@ -23,11 +23,16 @@
 [ext_resource type="Shader" uid="uid://bqxi5k2v0qq40" path="res://scenes/intro/sigil_pulse.gdshader" id="20_jrfcs"]
 [ext_resource type="Script" uid="uid://vd6mak14yc6x" path="res://scenes/intro/end_trigger.gd" id="21_eoj8g"]
 [ext_resource type="PackedScene" uid="uid://dweylrb55l4il" path="res://scenes/intro/Forest.tscn" id="21_gj0kd"]
+[ext_resource type="Shader" uid="uid://db2j2vg44t6md" path="res://nausea.gdshader" id="23_xp702"]
 [ext_resource type="PackedScene" uid="uid://c6ix4jobydd5a" path="res://assets/car/fiat_uno_1998.glb" id="24_av31h"]
 [ext_resource type="PackedScene" uid="uid://bft7am5oflypt" path="res://assets/table/psx_wooden_table.glb" id="25_7jdfn"]
 [ext_resource type="PackedScene" uid="uid://2txlktcn8pxp" path="res://assets/chair/psx_wooden_chair.glb" id="26_0iknq"]
 [ext_resource type="PackedScene" uid="uid://dbgwafdwls4d0" path="res://assets/drawer/psx_wooden_drawers.glb" id="27_w47bh"]
 [ext_resource type="PackedScene" uid="uid://p1opq8lt1x5e" path="res://assets/tv/psx_old_tv.glb" id="28_kvcfw"]
+[ext_resource type="PackedScene" uid="uid://dmgboavbu168t" path="res://assets/sofa/psx_armchair.glb" id="29_nn2q5"]
+[ext_resource type="PackedScene" uid="uid://dv5fkon4wdqj4" path="res://assets/couch/psx_sofa.glb" id="30_x37lk"]
+[ext_resource type="Script" uid="uid://bypgt5s2yytdu" path="res://nausea_controller.gd" id="31_x37lk"]
+[ext_resource type="PackedScene" uid="uid://djrfvc8rcgek7" path="res://assets/blood/blood_stain.glb" id="33_qwvh1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pqli2"]
 size = Vector3(156.64, 1.325, 272.08)
@@ -231,6 +236,11 @@ shader_parameter/chromatic_aberration_strength = 0.0
 shader_parameter/vignette_strength = 0.9470000449825
 shader_parameter/vignette_radius = 0.800000038
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b5eys"]
+shader = ExtResource("23_xp702")
+shader_parameter/intensity = 0.0
+shader_parameter/time_offset = 0.0
+
 [node name="Level1" type="Node3D" unique_id=2008775777]
 script = ExtResource("1_k2w6b")
 
@@ -390,19 +400,22 @@ material = SubResource("FogMaterial_8yty6")
 [node name="HouseLights" type="Node3D" parent="GoodHouse" unique_id=1752350874]
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="GoodHouse/HouseLights" unique_id=1590738821]
-transform = Transform3D(0.60606056, 0, 0, 0, 0.60606056, 0, 0, 0, 0.60606056, -3.4465375, 4.220494, 0)
+transform = Transform3D(0.60606056, 0, 0, 0, 0.60606056, 0, 0, 0, 0.60606056, -4.493915, 4.220494, 0)
+visible = false
 light_color = Color(1, 0, 0, 1)
 light_energy = 3.479
 omni_range = 5.621
 
 [node name="OmniLight3D5" type="OmniLight3D" parent="GoodHouse/HouseLights" unique_id=1969250960]
-transform = Transform3D(0.60606056, 0, 0, 0, 0.60606056, 0, 0, 0, 0.60606056, 5.181569, 4.220494, 0)
+transform = Transform3D(0.60606056, 0, 0, 0, 0.60606056, 0, 0, 0, 0.60606056, 2.647086, 4.220494, -1.9866877)
+visible = false
 light_color = Color(1, 0, 0, 1)
 light_energy = 3.479
 omni_range = 5.621
 
 [node name="OmniLight3D" type="OmniLight3D" parent="GoodHouse/HouseLights" unique_id=1311859371]
-transform = Transform3D(0.60606056, 0, 0, 0, 0.60606056, 0, 0, 0, 0.60606056, 0, 3.2414634, 0)
+transform = Transform3D(0.60606056, 0, 0, 0, 0.60606056, 0, 0, 0, 0.60606056, 1.0334032, 3.2414634, 0)
+visible = false
 light_energy = 20.89
 omni_range = 5.84
 
@@ -570,6 +583,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="CanvasLayer3" type="CanvasLayer" parent="." unique_id=630670187]
+layer = 10
+
+[node name="NauseaRect" type="ColorRect" parent="CanvasLayer3" unique_id=1042230927]
+modulate = Color(1, 1, 1, 0)
+material = SubResource("ShaderMaterial_b5eys")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="Forest" parent="." unique_id=405674404 instance=ExtResource("21_gj0kd")]
 
 [node name="Car" type="Node3D" parent="." unique_id=1239934960]
@@ -598,14 +623,44 @@ transform = Transform3D(-0.35279968, -1.3717238, 0.027169056, -0.1291487, 0.0611
 
 [node name="Food" type="Node3D" parent="." unique_id=664541940]
 
-[node name="Sketchfab_Scene" parent="." unique_id=364987332 instance=ExtResource("27_w47bh")]
-transform = Transform3D(-4.371139e-08, 0, 1.6452081, 0, 1, 0, -1, 0, -7.191433e-08, -8.524609, 1.834012, 24.651726)
+[node name="TV" type="Node3D" parent="." unique_id=1963885088]
+transform = Transform3D(-8.332128e-08, 0, 1.9061688, 0, 1.9061688, 0, -1.9061688, 0, -8.332128e-08, -7.976766, 3.099839, 23.51773)
 
-[node name="Sketchfab_Scene2" parent="." unique_id=1394528635 instance=ExtResource("27_w47bh")]
-transform = Transform3D(-4.371139e-08, 0, 1.6452081, 0, 1, 0, -1, 0, -7.191433e-08, -8.524609, 1.834012, 23.497862)
+[node name="Sketchfab_Scene" parent="TV" unique_id=364987332 instance=ExtResource("27_w47bh")]
+transform = Transform3D(0.8612524, 0, -1.4210855e-14, 0, 0.6561665, 0, 3.5527137e-15, 0, 1.6728472, -0.9870386, -0.66406864, -0.050076008)
 
-[node name="Sketchfab_Scene3" parent="." unique_id=353759659 instance=ExtResource("27_w47bh")]
-transform = Transform3D(-4.371139e-08, 0, 1.6452081, 0, 1, 0, -1, 0, -7.191433e-08, -8.524609, 1.834012, 22.311079)
+[node name="Sketchfab_Scene2" parent="TV" unique_id=1394528635 instance=ExtResource("27_w47bh")]
+transform = Transform3D(0.8612524, 0, -1.4210855e-14, 0, 0.6561665, 0, 3.5527137e-15, 0, 1.6728472, 0.0067300797, -0.66406864, -0.050076008)
 
-[node name="Sketchfab_Scene4" parent="." unique_id=675129584 instance=ExtResource("28_kvcfw")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.476218, 2.8659217, 23.51773)
+[node name="Sketchfab_Scene3" parent="TV" unique_id=353759659 instance=ExtResource("27_w47bh")]
+transform = Transform3D(0.8612524, 0, -1.4210855e-14, 0, 0.6561665, 0, 3.5527137e-15, 0, 1.6728472, 1.0288506, -0.66406864, -0.050076008)
+
+[node name="Sketchfab_Scene4" parent="TV" unique_id=675129584 instance=ExtResource("28_kvcfw")]
+transform = Transform3D(0.99999994, 0, -3.5527137e-15, 0, 0.99999994, 0, 3.5527137e-15, 0, 0.99999994, 0, 0, 0)
+
+[node name="Sofa" type="Node3D" parent="." unique_id=1945322385]
+
+[node name="Sketchfab_Scene" parent="Sofa" unique_id=2146473239 instance=ExtResource("29_nn2q5")]
+transform = Transform3D(1.1110027, 0.46650407, -0.064727925, 0.0013164321, 0.16276631, 1.195679, 0.47097123, -1.1009197, 0.14934838, -4.2390194, 2.227947, 19.631174)
+
+[node name="Couch" type="Node3D" parent="." unique_id=632103806]
+
+[node name="Sketchfab_Scene" parent="Couch" unique_id=1315791477 instance=ExtResource("30_x37lk")]
+transform = Transform3D(-0.42170405, 0.0029041576, 0.96447796, 0.014020968, 1.2069587, -0.0003574304, -1.6415001, 0.009563222, -0.247779, -3.7753544, 1.9735303, 23.346497)
+
+[node name="NauseaController" type="Node" parent="." unique_id=665374904]
+script = ExtResource("31_x37lk")
+
+[node name="Blood" type="Node3D" parent="." unique_id=1145548342]
+
+[node name="blood_stain" parent="Blood" unique_id=1460485551 instance=ExtResource("33_qwvh1")]
+transform = Transform3D(9.605, 0, 0, 0, 9.605, 0, 0, 0, 9.605, 3.4537053, 1.839474, 27.488508)
+
+[node name="blood_stain3" parent="Blood" unique_id=16447473 instance=ExtResource("33_qwvh1")]
+transform = Transform3D(9.605, 0, 0, 0, 9.605, 0, 0, 0, 9.605, -3.5192237, 1.8233335, 22.307283)
+
+[node name="blood_stain4" parent="Blood" unique_id=1693890819 instance=ExtResource("33_qwvh1")]
+transform = Transform3D(19.431973, 0.3429165, 0, -0.3429165, 19.431973, 0, 0, 0, 19.434996, -4.157462, 1.7839217, 29.595907)
+
+[node name="blood_stain2" parent="Blood" unique_id=607003790 instance=ExtResource("33_qwvh1")]
+transform = Transform3D(-0.26909244, -21.792181, -0.8393153, -13.960388, 0.8169895, -16.736671, 16.754438, 0.3307407, -13.959064, 9.438372, 4.0419545, 26.746494)
