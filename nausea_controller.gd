@@ -15,6 +15,10 @@ var voice_low_played := false
 var voice_mid_played := false
 var voice_high_played := false
 
+var look_away_timer := 0.0
+const LOOK_AWAY_DELAY := 0.3
+
+
 @onready var voice_low = get_tree().get_root().find_child("VoiceLow", true, false)
 @onready var voice_mid = get_tree().get_root().find_child("VoiceMid", true, false)
 @onready var voice_high = get_tree().get_root().find_child("VoiceHigh", true, false)
@@ -40,29 +44,35 @@ func _check_gore_look() -> void:
 		return
 	var space = player.get_world_3d().direct_space_state
 	var origin = camera.global_position
-	var target = origin + (-camera.global_transform.basis.z * 10.0)
+	var target = origin + (-camera.global_transform.basis.z * 2.0)
 	var query = PhysicsRayQueryParameters3D.create(origin, target)
 	query.exclude = [player.get_rid()]
+	query.collide_with_areas = true
+	query.collide_with_bodies = true
 	var result = space.intersect_ray(query)
+	if result.has("collider"):
+		print("Hit: ", result["collider"].name, " groups: ", result["collider"].get_groups())
 	if result.has("collider") and result["collider"].is_in_group("gore"):
 		is_looking_at_gore = true
 	else:
 		is_looking_at_gore = false
 
+
 func _update_trauma(delta: float) -> void:
 	if is_looking_at_gore:
+		look_away_timer = 0.0
 		trauma = min(trauma + build_rate * delta, max_trauma)
-		# auto zoom
 		if player:
 			player.is_ads = true
 	else:
-		var was_above_zero = trauma > 0.0
-		trauma = max(trauma - decay_rate * delta, 0.0)
-		# disable zoom when looking away
-		if player:
-			player.is_ads = false
-		if was_above_zero and trauma <= 0.0:
-			_fade_voices()
+		look_away_timer += delta
+		if look_away_timer >= LOOK_AWAY_DELAY:
+			var was_above_zero = trauma > 0.0
+			trauma = max(trauma - decay_rate * delta, 0.0)
+			if player:
+				player.is_ads = false
+			if was_above_zero and trauma <= 0.0:
+				_fade_voices()
 
 func _update_shader() -> void:
 	if not nausea_rect:

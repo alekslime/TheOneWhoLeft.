@@ -308,7 +308,18 @@ func heal(amount: float) -> void:
 
 
 func _handle_ads_input() -> void:
+	var wm = weapon_manager
+	if not wm or not wm.get("current_weapon"):
+		return
+	var weapon = wm.current_weapon
+	if weapon.weapon_name == "The Flame":
+		return
 	if Input.is_action_just_pressed("ads"):
 		is_ads = true
+		weapon.start_ads()
 	elif Input.is_action_just_released("ads"):
 		is_ads = false
+		weapon.stop_ads()
+	if is_ads and not Input.is_action_pressed("ads"):
+		is_ads = false
+		weapon.stop_ads()

@@ -836,7 +836,7 @@ transform = Transform3D(6.0711327, 0, 0, 0, 1.02, 0, 0, 0, 16.786871, 10.240803,
 [node name="blood_stain_3" parent="Blood_2" unique_id=718822019 instance=ExtResource("34_qwvh1")]
 transform = Transform3D(4.405, 0, 0, 0, 1.02, 0, 0, 0, 5.48, 1.5007224, 2.9626555, 29.39137)
 
-[node name="Knife" type="Node3D" parent="." unique_id=1097422221 groups=["gore"]]
+[node name="Knife" type="Node3D" parent="." unique_id=1097422221]
 transform = Transform3D(0.3139256, 0.018554524, -0.9492662, -0.03053602, 0.99948925, 0.009437977, 0.94895655, 0.02602396, 0.3143318, 0.91852236, 3.0395215, 27.969912)
 
 [node name="high_poly" type="MeshInstance3D" parent="Knife" unique_id=815423081]
