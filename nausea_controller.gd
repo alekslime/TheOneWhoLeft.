@@ -19,6 +19,11 @@ var voice_high_played := false
 @onready var voice_mid = get_tree().get_root().find_child("VoiceMid", true, false)
 @onready var voice_high = get_tree().get_root().find_child("VoiceHigh", true, false)
 
+func _ready() -> void:
+	print("NauseaController ready")
+	print("Player: ", player)
+	print("NauseaRect: ", nausea_rect)
+
 func _process(delta: float) -> void:
 	if not player:
 		return
@@ -47,10 +52,15 @@ func _check_gore_look() -> void:
 func _update_trauma(delta: float) -> void:
 	if is_looking_at_gore:
 		trauma = min(trauma + build_rate * delta, max_trauma)
+		# auto zoom
+		if player:
+			player.is_ads = true
 	else:
 		var was_above_zero = trauma > 0.0
 		trauma = max(trauma - decay_rate * delta, 0.0)
-		# echo fade when looking away
+		# disable zoom when looking away
+		if player:
+			player.is_ads = false
 		if was_above_zero and trauma <= 0.0:
 			_fade_voices()
 

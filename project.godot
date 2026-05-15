@@ -39,6 +39,7 @@ window/stretch/aspect="expand"
 [global_group]
 
 death_overlay=""
+gore=""
 
 [input]
 

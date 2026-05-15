@@ -347,6 +347,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_tfx3y")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_80k5t"]
+size = Vector3(1.31604, 1.1385498, 1.8786316)
+
 [node name="Level1" type="Node3D" unique_id=2008775777]
 script = ExtResource("1_k2w6b")
 
@@ -689,18 +692,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CanvasLayer3" type="CanvasLayer" parent="." unique_id=630670187]
-layer = 10
-
-[node name="NauseaRect" type="ColorRect" parent="CanvasLayer3" unique_id=1042230927]
-modulate = Color(1, 1, 1, 0)
-material = SubResource("ShaderMaterial_b5eys")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
 [node name="Forest" parent="." unique_id=405674404 instance=ExtResource("21_gj0kd")]
 
 [node name="Car" type="Node3D" parent="." unique_id=1239934960]
@@ -753,6 +744,18 @@ transform = Transform3D(1.1110027, 0.46650407, -0.064727925, 0.0013164321, 0.162
 
 [node name="Sketchfab_Scene" parent="Couch" unique_id=1315791477 instance=ExtResource("30_x37lk")]
 transform = Transform3D(-0.42170405, 0.0029041576, 0.96447796, 0.014020968, 1.2069587, -0.0003574304, -1.6415001, 0.009563222, -0.247779, -3.7753544, 1.9735303, 23.346497)
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="." unique_id=630670187]
+layer = 10
+
+[node name="NauseaRect" type="ColorRect" parent="CanvasLayer3" unique_id=1042230927]
+modulate = Color(1, 1, 1, 0)
+material = SubResource("ShaderMaterial_b5eys")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="NauseaController" type="Node" parent="." unique_id=665374904]
 script = ExtResource("31_x37lk")
@@ -833,7 +836,7 @@ transform = Transform3D(6.0711327, 0, 0, 0, 1.02, 0, 0, 0, 16.786871, 10.240803,
 [node name="blood_stain_3" parent="Blood_2" unique_id=718822019 instance=ExtResource("34_qwvh1")]
 transform = Transform3D(4.405, 0, 0, 0, 1.02, 0, 0, 0, 5.48, 1.5007224, 2.9626555, 29.39137)
 
-[node name="Knife" type="Node3D" parent="." unique_id=1097422221]
+[node name="Knife" type="Node3D" parent="." unique_id=1097422221 groups=["gore"]]
 transform = Transform3D(0.3139256, 0.018554524, -0.9492662, -0.03053602, 0.99948925, 0.009437977, 0.94895655, 0.02602396, 0.3143318, 0.91852236, 3.0395215, 27.969912)
 
 [node name="high_poly" type="MeshInstance3D" parent="Knife" unique_id=815423081]
@@ -845,6 +848,12 @@ mesh = SubResource("ArrayMesh_e4xwq")
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_lmtan")
 mesh = SubResource("ArrayMesh_q1fpk")
+
+[node name="Area3D" type="Area3D" parent="Knife" unique_id=572310613 groups=["gore"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Knife/Area3D" unique_id=1129113051]
+transform = Transform3D(1.0000007, 2.2351742e-08, -8.940697e-08, -4.209578e-07, 1.0000141, 0, 2.3841858e-07, 2.6635826e-07, 1, -0.04656601, 0.06927633, 0.04520893)
+shape = SubResource("BoxShape3D_80k5t")
 
 [node name="Eye" type="Node3D" parent="." unique_id=389291150]
 
