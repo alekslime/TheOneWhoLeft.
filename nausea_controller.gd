@@ -5,7 +5,7 @@ extends Node
 
 var trauma := 0.0
 var max_trauma := 100.0
-var build_rate := 45.0
+var build_rate := 25.0
 var decay_rate := 80.0
 var is_looking_at_gore := false
 var time_offset := 0.0
