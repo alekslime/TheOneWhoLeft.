@@ -5,8 +5,8 @@ extends Node
 
 var trauma := 0.0
 var max_trauma := 100.0
-var build_rate := 15.0
-var decay_rate := 20.0
+var build_rate := 45.0
+var decay_rate := 80.0
 var is_looking_at_gore := false
 var time_offset := 0.0
 
@@ -76,11 +76,15 @@ func _update_trauma(delta: float) -> void:
 
 func _update_shader() -> void:
 	if not nausea_rect:
+		print("NO NAUSEA RECT")
 		return
 	var mat = nausea_rect.material
-	if mat:
-		mat.set_shader_parameter("intensity", trauma / max_trauma)
-		mat.set_shader_parameter("time_offset", time_offset)
+	if not mat:
+		print("NO MATERIAL")
+		return
+	print("Trauma: ", trauma, " intensity: ", trauma / max_trauma)
+	mat.set_shader_parameter("intensity", trauma / max_trauma)
+	mat.set_shader_parameter("time_offset", time_offset)
 
 func _handle_voices() -> void:
 	var t = trauma / max_trauma

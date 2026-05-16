@@ -175,7 +175,7 @@ func _handle_camera_fov(delta: float) -> void:
 		target_fov = FOV_SPRINT
 	else:
 		target_fov = FOV_DEFAULT
-	camera.fov = lerp(camera.fov, target_fov, delta * FOV_SPEED)
+	camera.fov = lerp(camera.fov, target_fov, delta * 2.0)
 
 
 

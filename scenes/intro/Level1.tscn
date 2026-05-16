@@ -241,7 +241,7 @@ shader_parameter/vignette_radius = 0.800000038
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b5eys"]
 shader = ExtResource("23_xp702")
-shader_parameter/intensity = 0.0
+shader_parameter/intensity = 1.0
 shader_parameter/time_offset = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jujra"]
@@ -749,7 +749,6 @@ transform = Transform3D(-0.42170405, 0.0029041576, 0.96447796, 0.014020968, 1.20
 layer = 10
 
 [node name="NauseaRect" type="ColorRect" parent="CanvasLayer3" unique_id=1042230927]
-modulate = Color(1, 1, 1, 0)
 material = SubResource("ShaderMaterial_b5eys")
 anchors_preset = 15
 anchor_right = 1.0
