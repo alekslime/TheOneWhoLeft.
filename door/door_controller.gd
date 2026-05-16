@@ -48,6 +48,9 @@ func _trigger_transformation() -> void:
 	var world_env = get_tree().get_root().find_child("WorldEnvironment", true, false)
 	if world_env:
 		world_env.environment = cursed_env
+	var sun = get_tree().get_root().find_child("DirectionalLight3D", true, false)
+	if sun:
+		sun.visible = false
 
 func _animate(target_angle: float, duration: float) -> void:
 	if tween and tween.is_valid():

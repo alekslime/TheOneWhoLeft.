@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bt8tdcsojentc"]
+
+[ext_resource type="PackedScene" uid="uid://bv58fxl7vpoqx" path="res://dungeon/Models/Candle_03.fbx" id="1_vvkw6"]
+[ext_resource type="Texture2D" uid="uid://bhs1uq1frlwof" path="res://dungeon/Textures/TEX_Candle_01.png" id="2_gvn8p"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j477m"]
+albedo_texture = ExtResource("2_gvn8p")
+
+[node name="Candle_03" unique_id=13504707 instance=ExtResource("1_vvkw6")]
+
+[node name="Cylinder_030" parent="." index="0" unique_id=2016767518]
+material_override = SubResource("StandardMaterial3D_j477m")

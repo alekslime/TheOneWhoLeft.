@@ -369,8 +369,7 @@ script = ExtResource("1_k2w6b")
 environment = ExtResource("2_gj0kd")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=559350526]
-transform = Transform3D(1, 0, 0, 0, 0.71933997, 0.6946582, 0, -0.6946582, 0.71933997, 0, 0, 0)
-light_energy = 0.054
+transform = Transform3D(1, 0, 0, 0, -0.5075384, 0.8616291, 0, -0.8616291, -0.5075384, 0, 0, 0)
 
 [node name="Ground" type="Node3D" parent="." unique_id=285604726]
 transform = Transform3D(1, 0, 0, 0, 0.417, 0, 0, 0, 1, 0, 0, 0)
