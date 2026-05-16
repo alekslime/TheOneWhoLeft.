@@ -63,14 +63,14 @@ func _update_trauma(delta: float) -> void:
 		look_away_timer = 0.0
 		trauma = min(trauma + build_rate * delta, max_trauma)
 		if player:
-			player.is_ads = true
+			player.gore_ads = true
 	else:
 		look_away_timer += delta
 		if look_away_timer >= LOOK_AWAY_DELAY:
 			var was_above_zero = trauma > 0.0
 			trauma = max(trauma - decay_rate * delta, 0.0)
 			if player:
-				player.is_ads = false
+				player.gore_ads = false
 			if was_above_zero and trauma <= 0.0:
 				_fade_voices()
 

@@ -74,7 +74,7 @@ var rage := 0.0
 var is_raging := false
 var rage_timer := 0.0
 var rage_vignette_alpha := 0.0
-
+var gore_ads := false
 
 func _ready() -> void:
 	weapon_manager = $Head/Camera3D/WeaponHolder
@@ -306,8 +306,10 @@ func heal(amount: float) -> void:
 		hud.update_health(current_health, max_health)
 		hud.flash_heal()
 
-
 func _handle_ads_input() -> void:
+	if gore_ads:
+		is_ads = true
+		return
 	var wm = weapon_manager
 	if not wm or not wm.get("current_weapon"):
 		return

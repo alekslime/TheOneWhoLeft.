@@ -756,6 +756,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="NauseaController" type="Node" parent="." unique_id=665374904]
 script = ExtResource("31_x37lk")
