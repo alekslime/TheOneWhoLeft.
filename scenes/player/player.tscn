@@ -38,7 +38,6 @@ script = ExtResource("2_qek5x")
 
 [node name="WeaponHolder" type="Node3D" parent="Head/Camera3D" unique_id=867462404]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, -0.5)
-visible = false
 script = ExtResource("2_gmlin")
 
 [node name="Remnant" parent="Head/Camera3D/WeaponHolder" unique_id=79001301 instance=ExtResource("4_fm80t")]

@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://xx8cipgy5k4d"]
+
+[ext_resource type="Script" uid="uid://cwttldbjmci7s" path="res://scenes/level_4.gd" id="1_edif7"]
+[ext_resource type="Environment" uid="uid://dohphynqjymla" path="res://level4.tres" id="2_lqbo2"]
+[ext_resource type="PackedScene" uid="uid://bsy4kx5xs0j6l" path="res://scenes/player/player.tscn" id="3_77sgn"]
+[ext_resource type="Shader" uid="uid://cfsunswhajpkq" path="res://scenes/player/test_level.gdshader" id="3_jgolr"]
+[ext_resource type="PackedScene" uid="uid://dweylrb55l4il" path="res://scenes/intro/Forest.tscn" id="4_lqbo2"]
+[ext_resource type="Shader" uid="uid://d0de685sshyn4" path="res://scenes/player/crt.gdshader" id="4_p7dpe"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sp0w3"]
+size = Vector3(156.64, 1.325, 272.08)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qe5b6"]
+albedo_color = Color(0.4627451, 0.79607844, 0.3019608, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4p0dt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eoiwq"]
+shader = ExtResource("3_jgolr")
+shader_parameter/grain_strength = 0.0400000019
+shader_parameter/grain_scale = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bejdq"]
+shader = ExtResource("4_p7dpe")
+shader_parameter/resolution_x = 793
+shader_parameter/resolution_y = 484
+shader_parameter/color_bit_depth = 4
+shader_parameter/dither_strength = 0.0
+shader_parameter/jitter_amount = 0.001
+shader_parameter/jitter_speed = 0.11
+shader_parameter/jitter_frequency = 13.41
+shader_parameter/chromatic_aberration_strength = 0.0
+shader_parameter/vignette_strength = 0.9470000449825
+shader_parameter/vignette_radius = 0.800000038
+
+[node name="Level4" type="Node3D" unique_id=1901875535]
+script = ExtResource("1_edif7")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1660158930]
+environment = ExtResource("2_lqbo2")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=375767559]
+
+[node name="Ground" type="Node3D" parent="." unique_id=67124563]
+transform = Transform3D(1, 0, 0, 0, 0.417, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ground" unique_id=663932120]
+transform = Transform3D(3.095704, 0, 0, 0, 1, 0, 0, 0, 3.4310956, -25.934486, 0, 1097.892)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D" unique_id=718105871]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.970244, 2.0187225, -317.68646)
+shape = SubResource("BoxShape3D_sp0w3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground/StaticBody3D" unique_id=1779482483]
+transform = Transform3D(159.40506, 0, 0, 0, 2.7999997, 0, 0, 0, 271.27698, 13.215961, 1.256018, -318.05313)
+material_override = SubResource("StandardMaterial3D_qe5b6")
+mesh = SubResource("BoxMesh_4p0dt")
+
+[node name="Player" parent="." unique_id=2004408079 instance=ExtResource("3_77sgn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.068569, 398.36514)
+
+[node name="Forest" parent="." unique_id=405674404 instance=ExtResource("4_lqbo2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.735817, 0, 268.44894)
+
+[node name="Forest2" parent="." unique_id=1603524086 instance=ExtResource("4_lqbo2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.735817, 0, 14.241119)
+
+[node name="Forest3" parent="." unique_id=1748464892 instance=ExtResource("4_lqbo2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.735817, 0, -237.29008)
+
+[node name="Filter" type="CanvasLayer" parent="." unique_id=908973929]
+layer = 10
+
+[node name="ColorRect" type="ColorRect" parent="Filter" unique_id=1588643760]
+material = SubResource("ShaderMaterial_eoiwq")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect2" type="ColorRect" parent="Filter" unique_id=1868051444]
+material = SubResource("ShaderMaterial_bejdq")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect3" type="ColorRect" parent="Filter" unique_id=1604390235]
+material = SubResource("ShaderMaterial_bejdq")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
