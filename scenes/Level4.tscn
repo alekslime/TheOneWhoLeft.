@@ -6,6 +6,9 @@
 [ext_resource type="Shader" uid="uid://cfsunswhajpkq" path="res://scenes/player/test_level.gdshader" id="3_jgolr"]
 [ext_resource type="PackedScene" uid="uid://dweylrb55l4il" path="res://scenes/intro/Forest.tscn" id="4_lqbo2"]
 [ext_resource type="Shader" uid="uid://d0de685sshyn4" path="res://scenes/player/crt.gdshader" id="4_p7dpe"]
+[ext_resource type="PackedScene" uid="uid://pma15aj477pn" path="res://assets/candle/psx_candle.glb" id="7_p7dpe"]
+[ext_resource type="Script" uid="uid://naorkclbehd2" path="res://scenes/flicker.gd" id="8_eoiwq"]
+[ext_resource type="Script" uid="uid://cx4t813khmmvb" path="res://scenes/candle_trigger.gd" id="9_bejdq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sp0w3"]
 size = Vector3(156.64, 1.325, 272.08)
@@ -33,13 +36,14 @@ shader_parameter/chromatic_aberration_strength = 0.0
 shader_parameter/vignette_strength = 0.9470000449825
 shader_parameter/vignette_radius = 0.800000038
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_eoiwq"]
+size = Vector3(3.5873413, 2.89563, 5.649658)
+
 [node name="Level4" type="Node3D" unique_id=1901875535]
 script = ExtResource("1_edif7")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1660158930]
 environment = ExtResource("2_lqbo2")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=375767559]
 
 [node name="Ground" type="Node3D" parent="." unique_id=67124563]
 transform = Transform3D(1, 0, 0, 0, 0.417, 0, 0, 0, 1, 0, 0, 0)
@@ -94,3 +98,26 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Candle" type="Node3D" parent="." unique_id=392572235]
+
+[node name="Sketchfab_Scene" parent="Candle" unique_id=1751413196 instance=ExtResource("7_p7dpe")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.9447408, 1.7456603, 388.07233)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Candle/Sketchfab_Scene" unique_id=1064039562]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.034659863, 1.7592058, 0.2331543)
+light_color = Color(1, 0.6986019, 0.24269372, 1)
+light_energy = 1.5
+shadow_enabled = true
+omni_range = 3.5
+omni_attenuation = 0.602
+script = ExtResource("8_eoiwq")
+
+[node name="CandleTrigger1" type="Area3D" parent="Candle" unique_id=1156623029 node_paths=PackedStringArray("candle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 387.9386)
+script = ExtResource("9_bejdq")
+candle = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Candle/CandleTrigger1" unique_id=459805540]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3340002, 3.2892222, 0.1481328)
+shape = SubResource("BoxShape3D_eoiwq")
