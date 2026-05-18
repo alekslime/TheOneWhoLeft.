@@ -1,0 +1,586 @@
+[gd_scene format=3 uid="uid://btahm6egtheee"]
+
+[ext_resource type="PackedScene" uid="uid://pma15aj477pn" path="res://assets/candle/psx_candle.glb" id="1_q0rdh"]
+[ext_resource type="Script" uid="uid://naorkclbehd2" path="res://scenes/flicker.gd" id="2_l0r4r"]
+[ext_resource type="Script" uid="uid://cx4t813khmmvb" path="res://scenes/candle_trigger.gd" id="3_urylx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eoiwq"]
+size = Vector3(6.3159237, 2.89563, 5.677622)
+
+[node name="CandleTunnel" type="Node3D" unique_id=1350201870]
+
+[node name="Candle" type="Node3D" parent="." unique_id=1602493367]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48534858, 0, 415.9581)
+
+[node name="Sketchfab_Scene" parent="Candle" unique_id=1751413196 instance=ExtResource("1_q0rdh")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.9447408, 1.7456603, 0.98617554)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Candle/Sketchfab_Scene" unique_id=1586610474]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.034659863, 1.7592058, 0.2331543)
+light_color = Color(1, 0.6986019, 0.24269372, 1)
+light_energy = 1.5
+shadow_enabled = true
+omni_range = 3.5
+omni_attenuation = 0.602
+script = ExtResource("2_l0r4r")
+
+[node name="CandleTrigger1" type="Area3D" parent="Candle" unique_id=720572946 node_paths=PackedStringArray("candle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8524475)
+script = ExtResource("3_urylx")
+candle = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Candle/CandleTrigger1" unique_id=349373365]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6587977, 3.2892222, 2.3902893)
+shape = SubResource("BoxShape3D_eoiwq")
+
+[node name="Candle2" type="Node3D" parent="." unique_id=1273387539]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9908416, 0, 415.9581)
+
+[node name="Sketchfab_Scene" parent="Candle2" unique_id=669430719 instance=ExtResource("1_q0rdh")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2.6825392, 1.7456603, 0.98617554)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Candle2/Sketchfab_Scene" unique_id=1752357881]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.034659863, 1.7592058, 0.2331543)
+light_color = Color(1, 0.6986019, 0.24269372, 1)
+light_energy = 1.5
+shadow_enabled = true
+omni_range = 3.5
+omni_attenuation = 0.602
+script = ExtResource("2_l0r4r")
+
+[node name="CandleTrigger1" type="Area3D" parent="Candle2" unique_id=35588815 node_paths=PackedStringArray("candle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8524475)
+script = ExtResource("3_urylx")
+candle = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Candle2/CandleTrigger1" unique_id=986578758]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1555048, 3.2892222, 2.3902893)
+shape = SubResource("BoxShape3D_eoiwq")
+
+[node name="Candle3" type="Node3D" parent="." unique_id=1183118080]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48534858, 0, 409.19852)
+
+[node name="Sketchfab_Scene" parent="Candle3" unique_id=1619911863 instance=ExtResource("1_q0rdh")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.9447408, 1.7456603, 0.98617554)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Candle3/Sketchfab_Scene" unique_id=1637447116]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.034659863, 1.7592058, 0.2331543)
+light_color = Color(1, 0.6986019, 0.24269372, 1)
+light_energy = 1.5
+shadow_enabled = true
+omni_range = 3.5
+omni_attenuation = 0.602
+script = ExtResource("2_l0r4r")
+
+[node name="CandleTrigger1" type="Area3D" parent="Candle3" unique_id=673481759 node_paths=PackedStringArray("candle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8524475)
+script = ExtResource("3_urylx")
+candle = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Candle3/CandleTrigger1" unique_id=626021676]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6587977, 3.2892222, 2.3902893)
+shape = SubResource("BoxShape3D_eoiwq")
+
+[node name="Candle4" type="Node3D" parent="." unique_id=329933862]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9908416, 0, 409.19852)
+
+[node name="Sketchfab_Scene" parent="Candle4" unique_id=518552498 instance=ExtResource("1_q0rdh")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2.6825392, 1.7456603, 0.98617554)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Candle4/Sketchfab_Scene" unique_id=1031296198]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.034659863, 1.7592058, 0.2331543)
+light_color = Color(1, 0.6986019, 0.24269372, 1)
+light_energy = 1.5
+shadow_enabled = true
+omni_range = 3.5
+omni_attenuation = 0.602
+script = ExtResource("2_l0r4r")
+
+[node name="CandleTrigger1" type="Area3D" parent="Candle4" unique_id=1361248826 node_paths=PackedStringArray("candle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8524475)
+script = ExtResource("3_urylx")
+candle = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Candle4/CandleTrigger1" unique_id=661002155]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1555048, 3.2892222, 2.3902893)
+shape = SubResource("BoxShape3D_eoiwq")
+
+[node name="Candle5" type="Node3D" parent="." unique_id=370806588]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48534858, 0, 402.0783)
+
+[node name="Sketchfab_Scene" parent="Candle5" unique_id=98476807 instance=ExtResource("1_q0rdh")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.9447408, 1.7456603, 0.98617554)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Candle5/Sketchfab_Scene" unique_id=1591672491]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.034659863, 1.7592058, 0.2331543)
+light_color = Color(1, 0.6986019, 0.24269372, 1)
+light_energy = 1.5
+shadow_enabled = true
+omni_range = 3.5
+omni_attenuation = 0.602
+script = ExtResource("2_l0r4r")
+
+[node name="CandleTrigger1" type="Area3D" parent="Candle5" unique_id=1577257684 node_paths=PackedStringArray("candle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8524475)
+script = ExtResource("3_urylx")
+candle = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Candle5/CandleTrigger1" unique_id=4069608]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6587977, 3.2892222, 2.3902893)
+shape = SubResource("BoxShape3D_eoiwq")
+
+[node name="Candle6" type="Node3D" parent="." unique_id=1333449140]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9908416, 0, 402.0783)
+
+[node name="Sketchfab_Scene" parent="Candle6" unique_id=957460271 instance=ExtResource("1_q0rdh")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2.6825392, 1.7456603, 0.98617554)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Candle6/Sketchfab_Scene" unique_id=28912704]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.034659863, 1.7592058, 0.2331543)
+light_color = Color(1, 0.6986019, 0.24269372, 1)
+light_energy = 1.5
+shadow_enabled = true
+omni_range = 3.5
+omni_attenuation = 0.602
+script = ExtResource("2_l0r4r")
+
+[node name="CandleTrigger1" type="Area3D" parent="Candle6" unique_id=1265886396 node_paths=PackedStringArray("candle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8524475)
+script = ExtResource("3_urylx")
+candle = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Candle6/CandleTrigger1" unique_id=2042652718]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1555048, 3.2892222, 2.3902893)
+shape = SubResource("BoxShape3D_eoiwq")
+
+[node name="Candle7" type="Node3D" parent="." unique_id=1461784673]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48534858, 0, 395.1919)
+
+[node name="Sketchfab_Scene" parent="Candle7" unique_id=36632535 instance=ExtResource("1_q0rdh")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.9447408, 1.7456603, 0.98617554)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Candle7/Sketchfab_Scene" unique_id=1341892349]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.034659863, 1.7592058, 0.2331543)
+light_color = Color(1, 0.6986019, 0.24269372, 1)
+light_energy = 1.5
+shadow_enabled = true
+omni_range = 3.5
+omni_attenuation = 0.602
+script = ExtResource("2_l0r4r")
+
+[node name="CandleTrigger1" type="Area3D" parent="Candle7" unique_id=1080253106 node_paths=PackedStringArray("candle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8524475)
+script = ExtResource("3_urylx")
+candle = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Candle7/CandleTrigger1" unique_id=1181684327]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6587977, 3.2892222, 2.3902893)
+shape = SubResource("BoxShape3D_eoiwq")
+
+[node name="Candle8" type="Node3D" parent="." unique_id=1067871810]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9908416, 0, 395.1919)
+
+[node name="Sketchfab_Scene" parent="Candle8" unique_id=270826143 instance=ExtResource("1_q0rdh")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2.6825392, 1.7456603, 0.98617554)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Candle8/Sketchfab_Scene" unique_id=773189392]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.034659863, 1.7592058, 0.2331543)
+light_color = Color(1, 0.6986019, 0.24269372, 1)
+light_energy = 1.5
+shadow_enabled = true
+omni_range = 3.5
+omni_attenuation = 0.602
+script = ExtResource("2_l0r4r")
+
+[node name="CandleTrigger1" type="Area3D" parent="Candle8" unique_id=1298556887 node_paths=PackedStringArray("candle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8524475)
+script = ExtResource("3_urylx")
+candle = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Candle8/CandleTrigger1" unique_id=974372740]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1555048, 3.2892222, 2.3902893)
+shape = SubResource("BoxShape3D_eoiwq")
+
+[node name="Candle9" type="Node3D" parent="." unique_id=642677539]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48534858, 0, 388.45602)
+
+[node name="Sketchfab_Scene" parent="Candle9" unique_id=1467372859 instance=ExtResource("1_q0rdh")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.9447408, 1.7456603, 0.98617554)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Candle9/Sketchfab_Scene" unique_id=1924337404]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.034659863, 1.7592058, 0.2331543)
+light_color = Color(1, 0.6986019, 0.24269372, 1)
+light_energy = 1.5
+shadow_enabled = true
+omni_range = 3.5
+omni_attenuation = 0.602
+script = ExtResource("2_l0r4r")
+
+[node name="CandleTrigger1" type="Area3D" parent="Candle9" unique_id=912069583 node_paths=PackedStringArray("candle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8524475)
+script = ExtResource("3_urylx")
+candle = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Candle9/CandleTrigger1" unique_id=662635911]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6587977, 3.2892222, 2.3902893)
+shape = SubResource("BoxShape3D_eoiwq")
+
+[node name="Candle10" type="Node3D" parent="." unique_id=1836345671]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9908416, 0, 388.45602)
+
+[node name="Sketchfab_Scene" parent="Candle10" unique_id=1875552449 instance=ExtResource("1_q0rdh")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2.6825392, 1.7456603, 0.98617554)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Candle10/Sketchfab_Scene" unique_id=1664433812]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.034659863, 1.7592058, 0.2331543)
+light_color = Color(1, 0.6986019, 0.24269372, 1)
+light_energy = 1.5
+shadow_enabled = true
+omni_range = 3.5
+omni_attenuation = 0.602
+script = ExtResource("2_l0r4r")
+
+[node name="CandleTrigger1" type="Area3D" parent="Candle10" unique_id=232346484 node_paths=PackedStringArray("candle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8524475)
+script = ExtResource("3_urylx")
+candle = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Candle10/CandleTrigger1" unique_id=1645645272]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1555048, 3.2892222, 2.3902893)
+shape = SubResource("BoxShape3D_eoiwq")
+
+[node name="Candle11" type="Node3D" parent="." unique_id=1108564421]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48534858, 0, 381.68567)
+
+[node name="Sketchfab_Scene" parent="Candle11" unique_id=1666519016 instance=ExtResource("1_q0rdh")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.9447408, 1.7456603, 0.98617554)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Candle11/Sketchfab_Scene" unique_id=29043770]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.034659863, 1.7592058, 0.2331543)
+light_color = Color(1, 0.6986019, 0.24269372, 1)
+light_energy = 1.5
+shadow_enabled = true
+omni_range = 3.5
+omni_attenuation = 0.602
+script = ExtResource("2_l0r4r")
+
+[node name="CandleTrigger1" type="Area3D" parent="Candle11" unique_id=1028081651 node_paths=PackedStringArray("candle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8524475)
+script = ExtResource("3_urylx")
+candle = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Candle11/CandleTrigger1" unique_id=2133466763]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6587977, 3.2892222, 2.3902893)
+shape = SubResource("BoxShape3D_eoiwq")
+
+[node name="Candle12" type="Node3D" parent="." unique_id=220608355]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9908416, 0, 381.68567)
+
+[node name="Sketchfab_Scene" parent="Candle12" unique_id=1554812116 instance=ExtResource("1_q0rdh")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2.6825392, 1.7456603, 0.98617554)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Candle12/Sketchfab_Scene" unique_id=620397823]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.034659863, 1.7592058, 0.2331543)
+light_color = Color(1, 0.6986019, 0.24269372, 1)
+light_energy = 1.5
+shadow_enabled = true
+omni_range = 3.5
+omni_attenuation = 0.602
+script = ExtResource("2_l0r4r")
+
+[node name="CandleTrigger1" type="Area3D" parent="Candle12" unique_id=616024511 node_paths=PackedStringArray("candle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8524475)
+script = ExtResource("3_urylx")
+candle = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Candle12/CandleTrigger1" unique_id=1240800926]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1555048, 3.2892222, 2.3902893)
+shape = SubResource("BoxShape3D_eoiwq")
+
+[node name="Candle13" type="Node3D" parent="." unique_id=976534483]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48534858, 0, 374.95285)
+
+[node name="Sketchfab_Scene" parent="Candle13" unique_id=456562883 instance=ExtResource("1_q0rdh")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.9447408, 1.7456603, 0.98617554)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Candle13/Sketchfab_Scene" unique_id=1318930693]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.034659863, 1.7592058, 0.2331543)
+light_color = Color(1, 0.6986019, 0.24269372, 1)
+light_energy = 1.5
+shadow_enabled = true
+omni_range = 3.5
+omni_attenuation = 0.602
+script = ExtResource("2_l0r4r")
+
+[node name="CandleTrigger1" type="Area3D" parent="Candle13" unique_id=1987526041 node_paths=PackedStringArray("candle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8524475)
+script = ExtResource("3_urylx")
+candle = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Candle13/CandleTrigger1" unique_id=86713991]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6587977, 3.2892222, 2.3902893)
+shape = SubResource("BoxShape3D_eoiwq")
+
+[node name="Candle14" type="Node3D" parent="." unique_id=1909170290]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9908416, 0, 374.95285)
+
+[node name="Sketchfab_Scene" parent="Candle14" unique_id=1450391424 instance=ExtResource("1_q0rdh")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2.6825392, 1.7456603, 0.98617554)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Candle14/Sketchfab_Scene" unique_id=442523086]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.034659863, 1.7592058, 0.2331543)
+light_color = Color(1, 0.6986019, 0.24269372, 1)
+light_energy = 1.5
+shadow_enabled = true
+omni_range = 3.5
+omni_attenuation = 0.602
+script = ExtResource("2_l0r4r")
+
+[node name="CandleTrigger1" type="Area3D" parent="Candle14" unique_id=226635930 node_paths=PackedStringArray("candle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8524475)
+script = ExtResource("3_urylx")
+candle = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Candle14/CandleTrigger1" unique_id=787747190]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1555048, 3.2892222, 2.3902893)
+shape = SubResource("BoxShape3D_eoiwq")
+
+[node name="Candle15" type="Node3D" parent="." unique_id=1221827955]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48534858, 0, 367.95285)
+
+[node name="Sketchfab_Scene" parent="Candle15" unique_id=1170530265 instance=ExtResource("1_q0rdh")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.9447408, 1.7456603, 0.98617554)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Candle15/Sketchfab_Scene" unique_id=1209809797]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.034659863, 1.7592058, 0.2331543)
+light_color = Color(1, 0.6986019, 0.24269372, 1)
+light_energy = 1.5
+shadow_enabled = true
+omni_range = 3.5
+omni_attenuation = 0.602
+script = ExtResource("2_l0r4r")
+
+[node name="CandleTrigger1" type="Area3D" parent="Candle15" unique_id=847978584 node_paths=PackedStringArray("candle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8524475)
+script = ExtResource("3_urylx")
+candle = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Candle15/CandleTrigger1" unique_id=668571085]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6587977, 3.2892222, 2.3902893)
+shape = SubResource("BoxShape3D_eoiwq")
+
+[node name="Candle16" type="Node3D" parent="." unique_id=623154285]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9908416, 0, 367.95285)
+
+[node name="Sketchfab_Scene" parent="Candle16" unique_id=2125308396 instance=ExtResource("1_q0rdh")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2.6825392, 1.7456603, 0.98617554)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Candle16/Sketchfab_Scene" unique_id=1764527412]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.034659863, 1.7592058, 0.2331543)
+light_color = Color(1, 0.6986019, 0.24269372, 1)
+light_energy = 1.5
+shadow_enabled = true
+omni_range = 3.5
+omni_attenuation = 0.602
+script = ExtResource("2_l0r4r")
+
+[node name="CandleTrigger1" type="Area3D" parent="Candle16" unique_id=434370319 node_paths=PackedStringArray("candle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8524475)
+script = ExtResource("3_urylx")
+candle = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Candle16/CandleTrigger1" unique_id=894022736]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1555048, 3.2892222, 2.3902893)
+shape = SubResource("BoxShape3D_eoiwq")
+
+[node name="Candle17" type="Node3D" parent="." unique_id=2028038186]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48534858, 0, 360.76605)
+
+[node name="Sketchfab_Scene" parent="Candle17" unique_id=975926812 instance=ExtResource("1_q0rdh")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.9447408, 1.7456603, 0.98617554)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Candle17/Sketchfab_Scene" unique_id=835731069]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.034659863, 1.7592058, 0.2331543)
+light_color = Color(1, 0.6986019, 0.24269372, 1)
+light_energy = 1.5
+shadow_enabled = true
+omni_range = 3.5
+omni_attenuation = 0.602
+script = ExtResource("2_l0r4r")
+
+[node name="CandleTrigger1" type="Area3D" parent="Candle17" unique_id=1830076479 node_paths=PackedStringArray("candle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8524475)
+script = ExtResource("3_urylx")
+candle = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Candle17/CandleTrigger1" unique_id=1487723234]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6587977, 3.2892222, 2.3902893)
+shape = SubResource("BoxShape3D_eoiwq")
+
+[node name="Candle18" type="Node3D" parent="." unique_id=2085177532]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9908416, 0, 360.76605)
+
+[node name="Sketchfab_Scene" parent="Candle18" unique_id=944680584 instance=ExtResource("1_q0rdh")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2.6825392, 1.7456603, 0.98617554)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Candle18/Sketchfab_Scene" unique_id=158495210]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.034659863, 1.7592058, 0.2331543)
+light_color = Color(1, 0.6986019, 0.24269372, 1)
+light_energy = 1.5
+shadow_enabled = true
+omni_range = 3.5
+omni_attenuation = 0.602
+script = ExtResource("2_l0r4r")
+
+[node name="CandleTrigger1" type="Area3D" parent="Candle18" unique_id=1591598100 node_paths=PackedStringArray("candle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8524475)
+script = ExtResource("3_urylx")
+candle = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Candle18/CandleTrigger1" unique_id=1004349542]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1555048, 3.2892222, 2.3902893)
+shape = SubResource("BoxShape3D_eoiwq")
+
+[node name="Candle19" type="Node3D" parent="." unique_id=558026470]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48534858, 0, 353.6809)
+
+[node name="Sketchfab_Scene" parent="Candle19" unique_id=2043034342 instance=ExtResource("1_q0rdh")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.9447408, 1.7456603, 0.98617554)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Candle19/Sketchfab_Scene" unique_id=1080358606]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.034659863, 1.7592058, 0.2331543)
+light_color = Color(1, 0.6986019, 0.24269372, 1)
+light_energy = 1.5
+shadow_enabled = true
+omni_range = 3.5
+omni_attenuation = 0.602
+script = ExtResource("2_l0r4r")
+
+[node name="CandleTrigger1" type="Area3D" parent="Candle19" unique_id=1982971822 node_paths=PackedStringArray("candle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8524475)
+script = ExtResource("3_urylx")
+candle = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Candle19/CandleTrigger1" unique_id=330599111]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6587977, 3.2892222, 2.3902893)
+shape = SubResource("BoxShape3D_eoiwq")
+
+[node name="Candle20" type="Node3D" parent="." unique_id=1091790837]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9908416, 0, 353.6809)
+
+[node name="Sketchfab_Scene" parent="Candle20" unique_id=107471666 instance=ExtResource("1_q0rdh")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2.6825392, 1.7456603, 0.98617554)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Candle20/Sketchfab_Scene" unique_id=307626335]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.034659863, 1.7592058, 0.2331543)
+light_color = Color(1, 0.6986019, 0.24269372, 1)
+light_energy = 1.5
+shadow_enabled = true
+omni_range = 3.5
+omni_attenuation = 0.602
+script = ExtResource("2_l0r4r")
+
+[node name="CandleTrigger1" type="Area3D" parent="Candle20" unique_id=1200119450 node_paths=PackedStringArray("candle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8524475)
+script = ExtResource("3_urylx")
+candle = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Candle20/CandleTrigger1" unique_id=830522936]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1555048, 3.2892222, 2.3902893)
+shape = SubResource("BoxShape3D_eoiwq")
+
+[node name="Candle21" type="Node3D" parent="." unique_id=1625755965]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48534858, 0, 346.16162)
+
+[node name="Sketchfab_Scene" parent="Candle21" unique_id=1820608014 instance=ExtResource("1_q0rdh")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.9447408, 1.7456603, 0.98617554)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Candle21/Sketchfab_Scene" unique_id=450839047]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.034659863, 1.7592058, 0.2331543)
+light_color = Color(1, 0.6986019, 0.24269372, 1)
+light_energy = 1.5
+shadow_enabled = true
+omni_range = 3.5
+omni_attenuation = 0.602
+script = ExtResource("2_l0r4r")
+
+[node name="CandleTrigger1" type="Area3D" parent="Candle21" unique_id=896641070 node_paths=PackedStringArray("candle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8524475)
+script = ExtResource("3_urylx")
+candle = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Candle21/CandleTrigger1" unique_id=636576379]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6587977, 3.2892222, 2.3902893)
+shape = SubResource("BoxShape3D_eoiwq")
+
+[node name="Candle22" type="Node3D" parent="." unique_id=1156860135]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9908416, 0, 346.16162)
+
+[node name="Sketchfab_Scene" parent="Candle22" unique_id=1663960291 instance=ExtResource("1_q0rdh")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2.6825392, 1.7456603, 0.98617554)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Candle22/Sketchfab_Scene" unique_id=1315339368]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.034659863, 1.7592058, 0.2331543)
+light_color = Color(1, 0.6986019, 0.24269372, 1)
+light_energy = 1.5
+shadow_enabled = true
+omni_range = 3.5
+omni_attenuation = 0.602
+script = ExtResource("2_l0r4r")
+
+[node name="CandleTrigger1" type="Area3D" parent="Candle22" unique_id=1575636759 node_paths=PackedStringArray("candle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8524475)
+script = ExtResource("3_urylx")
+candle = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Candle22/CandleTrigger1" unique_id=971520083]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1555048, 3.2892222, 2.3902893)
+shape = SubResource("BoxShape3D_eoiwq")
+
+[node name="Candle23" type="Node3D" parent="." unique_id=1393049223]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48534858, 0, 339.28738)
+
+[node name="Sketchfab_Scene" parent="Candle23" unique_id=1075646209 instance=ExtResource("1_q0rdh")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.9447408, 1.7456603, 0.98617554)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Candle23/Sketchfab_Scene" unique_id=397372879]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.034659863, 1.7592058, 0.2331543)
+light_color = Color(1, 0.6986019, 0.24269372, 1)
+light_energy = 1.5
+shadow_enabled = true
+omni_range = 3.5
+omni_attenuation = 0.602
+script = ExtResource("2_l0r4r")
+
+[node name="CandleTrigger1" type="Area3D" parent="Candle23" unique_id=1304734987 node_paths=PackedStringArray("candle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8524475)
+script = ExtResource("3_urylx")
+candle = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Candle23/CandleTrigger1" unique_id=1530594086]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6587977, 3.2892222, 2.3902893)
+shape = SubResource("BoxShape3D_eoiwq")
+
+[node name="Candle24" type="Node3D" parent="." unique_id=376293610]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9908416, 0, 339.28738)
+
+[node name="Sketchfab_Scene" parent="Candle24" unique_id=120467090 instance=ExtResource("1_q0rdh")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2.6825392, 1.7456603, 0.98617554)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Candle24/Sketchfab_Scene" unique_id=1934344833]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.034659863, 1.7592058, 0.2331543)
+light_color = Color(1, 0.6986019, 0.24269372, 1)
+light_energy = 1.5
+shadow_enabled = true
+omni_range = 3.5
+omni_attenuation = 0.602
+script = ExtResource("2_l0r4r")
+
+[node name="CandleTrigger1" type="Area3D" parent="Candle24" unique_id=765191007 node_paths=PackedStringArray("candle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8524475)
+script = ExtResource("3_urylx")
+candle = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Candle24/CandleTrigger1" unique_id=227312817]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1555048, 3.2892222, 2.3902893)
+shape = SubResource("BoxShape3D_eoiwq")
