@@ -11,8 +11,8 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_sp0w3"]
 size = Vector3(156.64, 1.325, 272.08)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qe5b6"]
-albedo_color = Color(0.4627451, 0.79607844, 0.3019608, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p7dpe"]
+albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_4p0dt"]
 
@@ -96,7 +96,7 @@ shape = SubResource("BoxShape3D_sp0w3")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground/StaticBody3D" unique_id=1779482483]
 transform = Transform3D(159.40506, 0, 0, 0, 2.7999997, 0, 0, 0, 271.27698, 13.215961, 1.256018, -318.05313)
-material_override = SubResource("StandardMaterial3D_qe5b6")
+material_override = SubResource("StandardMaterial3D_p7dpe")
 mesh = SubResource("BoxMesh_4p0dt")
 
 [node name="Player" parent="." unique_id=2004408079 instance=ExtResource("3_77sgn")]
