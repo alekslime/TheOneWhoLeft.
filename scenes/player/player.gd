@@ -76,6 +76,8 @@ var rage_timer := 0.0
 var rage_vignette_alpha := 0.0
 var gore_ads := false
 
+const STEP_HEIGHT := 0.4
+
 func _ready() -> void:
 	weapon_manager = $Head/Camera3D/WeaponHolder
 	if weapon_manager == null:
@@ -325,3 +327,11 @@ func _handle_ads_input() -> void:
 	if is_ads and not Input.is_action_pressed("ads"):
 		is_ads = false
 		weapon.stop_ads()
+
+func _handle_step_climb() -> void:
+	if is_on_floor():
+		return
+	var forward = -transform.basis.z
+	var step_check = global_position + forward * 0.3 + Vector3.UP * STEP_HEIGHT
+	if not test_move(transform, Vector3.UP * STEP_HEIGHT):
+		velocity.y = 4.0

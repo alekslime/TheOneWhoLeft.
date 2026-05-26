@@ -40,7 +40,8 @@ materials/extract_path=""
 _subresources={
 "nodes": {
 "PATH:Scene/Circle": {
-"generate/physics": true
+"generate/physics": true,
+"physics/shape_type": 0
 },
 "PATH:Scene/Empty": {
 "import/skip_import": true

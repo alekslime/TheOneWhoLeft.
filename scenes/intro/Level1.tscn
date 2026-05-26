@@ -521,21 +521,18 @@ material = SubResource("FogMaterial_8yty6")
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="GoodHouse/HouseLights" unique_id=1590738821]
 transform = Transform3D(0.60606056, 0, 0, 0, 0.60606056, 0, 0, 0, 0.60606056, -4.493915, 4.220494, 0)
-visible = false
 light_color = Color(1, 0, 0, 1)
 light_energy = 3.479
 omni_range = 5.621
 
 [node name="OmniLight3D5" type="OmniLight3D" parent="GoodHouse/HouseLights" unique_id=1969250960]
 transform = Transform3D(0.60606056, 0, 0, 0, 0.60606056, 0, 0, 0, 0.60606056, 2.647086, 4.220494, -1.9866877)
-visible = false
 light_color = Color(1, 0, 0, 1)
 light_energy = 3.479
 omni_range = 5.621
 
 [node name="OmniLight3D" type="OmniLight3D" parent="GoodHouse/HouseLights" unique_id=1311859371]
 transform = Transform3D(0.60606056, 0, 0, 0, 0.60606056, 0, 0, 0, 0.60606056, 1.0334032, 3.2414634, 0)
-visible = false
 light_energy = 20.89
 omni_range = 5.84
 
