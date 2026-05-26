@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://dweylrb55l4il" path="res://scenes/intro/Forest.tscn" id="4_lqbo2"]
 [ext_resource type="Shader" uid="uid://d0de685sshyn4" path="res://scenes/player/crt.gdshader" id="4_p7dpe"]
 [ext_resource type="PackedScene" uid="uid://btahm6egtheee" path="res://scenes/CandleTunnel.tscn" id="7_eoiwq"]
-[ext_resource type="PackedScene" uid="uid://c1bl7wsk6de1o" path="res://assets/stairway/stairs_optimized.glb" id="8_bejdq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sp0w3"]
 size = Vector3(156.64, 1.325, 272.08)
@@ -162,53 +161,135 @@ metadata/extras = {
 visible = false
 shape = SubResource("ConcavePolygonShape3D_uuj05")
 
-[node name="AuxScene2" type="Node3D" parent="." unique_id=1402929377]
-transform = Transform3D(-18.424469, 0, -29.546093, 0, 34.820004, 0, 29.546093, 0, -18.424469, 0.4207697, 13.34385, 331.5859)
+[node name="AuxScene2" type="Node3D" parent="." unique_id=153837893]
+transform = Transform3D(29.720642, 0, -18.141558, 0, 34.820004, 0, 18.141558, 0, 29.720642, 0.47410583, 11.551298, 331.74625)
 
-[node name="Scene" type="Node3D" parent="AuxScene2" unique_id=533090001]
+[node name="Scene" type="Node3D" parent="AuxScene2" unique_id=1027685851]
 transform = Transform3D(0.07566296, 0, 0, 0, 0.07566296, 0, 0, 0, 0.07566296, 0, 0.02089965, 0)
 
-[node name="Circle" type="MeshInstance3D" parent="AuxScene2/Scene" unique_id=1753896427]
-transform = Transform3D(1.608605, 0, 0, 0, 1.608605, 0, 0, 0, 1.608605, 0, -1.9481852, 0)
+[node name="Circle" type="MeshInstance3D" parent="AuxScene2/Scene" unique_id=1958007398]
+transform = Transform3D(1.7658845, 0, -1.1920929e-07, 0, 1, 0, 1.7881393e-07, 0, 2.2281978, 0, -2.0086174, 0)
 mesh = SubResource("ArrayMesh_frqm0")
 metadata/extras = {
 "name": "Circle"
 }
 
-[node name="StaticBody3D" type="StaticBody3D" parent="AuxScene2/Scene/Circle" unique_id=217778776]
+[node name="StaticBody3D" type="StaticBody3D" parent="AuxScene2/Scene/Circle" unique_id=997887082]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="AuxScene2/Scene/Circle/StaticBody3D" unique_id=1640071915]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AuxScene2/Scene/Circle/StaticBody3D" unique_id=743960067]
+visible = false
 shape = SubResource("ConcavePolygonShape3D_uuj05")
 
-[node name="AuxScene3" type="Node3D" parent="." unique_id=629324349]
-transform = Transform3D(-18.424469, 0, -29.546093, 0, 34.820004, 0, 29.546093, 0, -18.424469, 0.3862772, 20.563269, 331.74625)
+[node name="AuxScene3" type="Node3D" parent="." unique_id=1006363767]
+transform = Transform3D(18.141552, 0, 29.720644, 0, 34.820004, 0, -29.720644, 0, 18.141552, 0.47410583, 16.937283, 331.74625)
 
-[node name="Scene" type="Node3D" parent="AuxScene3" unique_id=1741468815]
+[node name="Scene" type="Node3D" parent="AuxScene3" unique_id=444118847]
 transform = Transform3D(0.07566296, 0, 0, 0, 0.07566296, 0, 0, 0, 0.07566296, 0, 0.02089965, 0)
 
-[node name="Circle" type="MeshInstance3D" parent="AuxScene3/Scene" unique_id=215232301]
-transform = Transform3D(1.608605, 0, 0, 0, 1.608605, 0, 0, 0, 1.608605, 0, -1.9481852, 0)
+[node name="Circle" type="MeshInstance3D" parent="AuxScene3/Scene" unique_id=523793926]
+transform = Transform3D(1.7658845, 0, -1.1920929e-07, 0, 1, 0, 1.7881393e-07, 0, 2.2281978, 0, -2.0086174, 0)
 mesh = SubResource("ArrayMesh_frqm0")
 metadata/extras = {
 "name": "Circle"
 }
 
-[node name="StaticBody3D" type="StaticBody3D" parent="AuxScene3/Scene/Circle" unique_id=2029571599]
+[node name="StaticBody3D" type="StaticBody3D" parent="AuxScene3/Scene/Circle" unique_id=714410493]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="AuxScene3/Scene/Circle/StaticBody3D" unique_id=1305758776]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AuxScene3/Scene/Circle/StaticBody3D" unique_id=785103703]
+visible = false
 shape = SubResource("ConcavePolygonShape3D_uuj05")
 
-[node name="AuxScene4" parent="." unique_id=1750635679 instance=ExtResource("8_bejdq")]
-transform = Transform3D(-18.424469, 0, -29.546093, 0, 34.820004, 0, 29.546093, 0, -18.424469, 0.33294106, 27.822548, 331.5859)
+[node name="AuxScene4" type="Node3D" parent="." unique_id=927168344]
+transform = Transform3D(-29.5612, 0, 18.40022, 0, 34.820004, 0, -18.40022, 0, -29.5612, 0.47410583, 22.404013, 331.74625)
 
-[node name="AuxScene5" parent="." unique_id=869333739 instance=ExtResource("8_bejdq")]
-transform = Transform3D(-18.424469, 0, -29.546093, 0, 34.820004, 0, 29.546093, 0, -18.424469, 0.47410583, 35.183407, 331.74625)
+[node name="Scene" type="Node3D" parent="AuxScene4" unique_id=188817952]
+transform = Transform3D(0.07566296, 0, 0, 0, 0.07566296, 0, 0, 0, 0.07566296, 0, 0.02089965, 0)
 
-[node name="AuxScene6" parent="." unique_id=2131686378 instance=ExtResource("8_bejdq")]
-transform = Transform3D(-18.424469, 0, -29.546093, 0, 34.820004, 0, 29.546093, 0, -18.424469, 0.4207697, 42.442684, 331.5859)
+[node name="Circle" type="MeshInstance3D" parent="AuxScene4/Scene" unique_id=1843461278]
+transform = Transform3D(1.7658845, 0, -1.1920929e-07, 0, 1, 0, 1.7881393e-07, 0, 2.2281978, 0, -2.0086174, 0)
+mesh = SubResource("ArrayMesh_frqm0")
+metadata/extras = {
+"name": "Circle"
+}
 
-[node name="AuxScene7" parent="." unique_id=560441177 instance=ExtResource("8_bejdq")]
-transform = Transform3D(-18.424469, 0, -29.546093, 0, 34.820004, 0, 29.546093, 0, -18.424469, 0.3862772, 49.662106, 331.74625)
+[node name="StaticBody3D" type="StaticBody3D" parent="AuxScene4/Scene/Circle" unique_id=1202696623]
 
-[node name="AuxScene8" parent="." unique_id=706973278 instance=ExtResource("8_bejdq")]
-transform = Transform3D(-18.424469, 0, -29.546093, 0, 34.820004, 0, 29.546093, 0, -18.424469, 0.33294106, 56.921383, 331.5859)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AuxScene4/Scene/Circle/StaticBody3D" unique_id=1426165290]
+visible = false
+shape = SubResource("ConcavePolygonShape3D_uuj05")
+
+[node name="AuxScene5" type="Node3D" parent="." unique_id=819118517]
+transform = Transform3D(-18.400225, 0, -29.5612, 0, 34.820004, 0, 29.5612, 0, -18.400225, 0.474, 27.893, 331.746)
+
+[node name="Scene" type="Node3D" parent="AuxScene5" unique_id=300234759]
+transform = Transform3D(0.07566296, 0, 0, 0, 0.07566296, 0, 0, 0, 0.07566296, 0, 0.02089965, 0)
+
+[node name="Circle" type="MeshInstance3D" parent="AuxScene5/Scene" unique_id=660715629]
+transform = Transform3D(1.7658845, 0, -1.1920929e-07, 0, 1, 0, 1.7881393e-07, 0, 2.2281978, 0, -2.0086174, 0)
+mesh = SubResource("ArrayMesh_frqm0")
+metadata/extras = {
+"name": "Circle"
+}
+
+[node name="StaticBody3D" type="StaticBody3D" parent="AuxScene5/Scene/Circle" unique_id=1238628735]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AuxScene5/Scene/Circle/StaticBody3D" unique_id=15489594]
+visible = false
+shape = SubResource("ConcavePolygonShape3D_uuj05")
+
+[node name="AuxScene6" type="Node3D" parent="." unique_id=1369740742]
+transform = Transform3D(29.877823, 0, -17.88151, 0, 34.820004, 0, 17.88151, 0, 29.877823, 0.474, 33.34, 331.746)
+
+[node name="Scene" type="Node3D" parent="AuxScene6" unique_id=451316665]
+transform = Transform3D(0.07566296, 0, 0, 0, 0.07566296, 0, 0, 0, 0.07566296, 0, 0.02089965, 0)
+
+[node name="Circle" type="MeshInstance3D" parent="AuxScene6/Scene" unique_id=1965254489]
+transform = Transform3D(1.7658845, 0, -1.1920929e-07, 0, 1, 0, 1.7881393e-07, 0, 2.2281978, 0, -2.0086174, 0)
+mesh = SubResource("ArrayMesh_frqm0")
+metadata/extras = {
+"name": "Circle"
+}
+
+[node name="StaticBody3D" type="StaticBody3D" parent="AuxScene6/Scene/Circle" unique_id=1342985317]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AuxScene6/Scene/Circle/StaticBody3D" unique_id=175032448]
+visible = false
+shape = SubResource("ConcavePolygonShape3D_uuj05")
+
+[node name="AuxScene7" type="Node3D" parent="." unique_id=1281822663]
+transform = Transform3D(17.357346, 0, 30.185349, 0, 34.820004, 0, -30.185349, 0, 17.357346, 0.47410583, 38.8006, 331.74625)
+
+[node name="Scene" type="Node3D" parent="AuxScene7" unique_id=2052034142]
+transform = Transform3D(0.07566296, 0, 0, 0, 0.07566296, 0, 0, 0, 0.07566296, 0, 0.02089965, 0)
+
+[node name="Circle" type="MeshInstance3D" parent="AuxScene7/Scene" unique_id=1504776053]
+transform = Transform3D(1.7658845, 0, -1.1920929e-07, 0, 1, 0, 1.7881393e-07, 0, 2.2281978, 0, -2.0086174, 0)
+mesh = SubResource("ArrayMesh_frqm0")
+metadata/extras = {
+"name": "Circle"
+}
+
+[node name="StaticBody3D" type="StaticBody3D" parent="AuxScene7/Scene/Circle" unique_id=1897649208]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AuxScene7/Scene/Circle/StaticBody3D" unique_id=817256269]
+visible = false
+shape = SubResource("ConcavePolygonShape3D_uuj05")
+
+[node name="AuxScene8" type="Node3D" parent="." unique_id=2020699848]
+transform = Transform3D(-29.5612, 0, 18.40022, 0, 34.820004, 0, -18.40022, 0, -29.5612, 0.47410583, 44.267326, 331.74625)
+
+[node name="Scene" type="Node3D" parent="AuxScene8" unique_id=93779429]
+transform = Transform3D(0.07566296, 0, 0, 0, 0.07566296, 0, 0, 0, 0.07566296, 0, 0.02089965, 0)
+
+[node name="Circle" type="MeshInstance3D" parent="AuxScene8/Scene" unique_id=1268544797]
+transform = Transform3D(1.7658845, 0, -1.1920929e-07, 0, 1, 0, 1.7881393e-07, 0, 2.2281978, 0, -2.0086174, 0)
+mesh = SubResource("ArrayMesh_frqm0")
+metadata/extras = {
+"name": "Circle"
+}
+
+[node name="StaticBody3D" type="StaticBody3D" parent="AuxScene8/Scene/Circle" unique_id=1267446582]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AuxScene8/Scene/Circle/StaticBody3D" unique_id=1473892892]
+visible = false
+shape = SubResource("ConcavePolygonShape3D_uuj05")
