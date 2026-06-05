@@ -251,7 +251,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.70444, 2.9429126, 22.99129
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.446915, 2.9429126, 19.96429)
 
 [node name="Chapel" parent="." unique_id=1544220290 instance=ExtResource("16_kdquw")]
-transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 20.16505, 8.329899, 39.822083)
+transform = Transform3D(-8.653962e-08, 0.28356484, 1.9797957, 0.07872892, 1.9782611, -0.28334504, -1.9984498, 0.07793357, -0.011162463, 20.16505, -4.929695, 39.822083)
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="Chapel" unique_id=1710544918]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 49.800964, 6.82244, -27.750242)
@@ -265,7 +265,7 @@ light_color = Color(0.56028485, 0.24683918, 0.20021337, 1)
 light_energy = 9.582
 light_indirect_energy = 7.982
 light_volumetric_fog_energy = 11.704
-omni_range = 585.959
+omni_range = 11.694
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="Chapel" unique_id=1598044093]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 46.312576, 6.4556456, -27.765879)
@@ -284,6 +284,49 @@ upper_fade = 0.1
 lower_fade = 0.1
 
 [node name="Decal2" type="Decal" parent="Chapel" unique_id=221296712]
+transform = Transform3D(4.2120013, -13.966634, 2.0588186, -4.590599, -3.3867104, -13.583194, 13.350355, 3.2418947, -5.320214, 51.52774, 5.1382847, -26.847363)
+size = Vector3(2.2373047, 2, 2.1726074)
+texture_albedo = ExtResource("24_at43v")
+texture_emission = ExtResource("24_at43v")
+emission_energy = 0.0
+modulate = Color(1, 0.13333334, 0, 1)
+upper_fade = 0.1
+lower_fade = 0.1
+
+[node name="Chapel2" parent="." unique_id=2136877242 instance=ExtResource("16_kdquw")]
+transform = Transform3D(3.2509305, -0.23304395, 2.3188663, 0.1897247, 3.9932055, 0.13532932, -2.3228118, 0, 3.256462, -29.241402, 5.8020515, 158.38206)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Chapel2" unique_id=1702648681]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 49.800964, 6.82244, -27.750242)
+light_color = Color(0.7515759, 0.30485228, 0, 1)
+light_energy = 3.413
+omni_range = 21.125116
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="Chapel2" unique_id=586850780]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 50.75186, 4.088373, -27.711288)
+light_color = Color(0.56028485, 0.24683918, 0.20021337, 1)
+light_energy = 9.582
+light_indirect_energy = 7.982
+light_volumetric_fog_energy = 11.704
+omni_range = 11.694
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Chapel2" unique_id=835844823]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 46.312576, 6.4556456, -27.765879)
+light_color = Color(0.7515759, 0.30485228, 0, 1)
+light_energy = 3.413
+omni_range = 21.125116
+
+[node name="Decal" type="Decal" parent="Chapel2" unique_id=1106877537]
+transform = Transform3D(0.14294948, -0.4740075, 0.069873564, -0.011671402, -0.07634039, -0.49399993, 0.47898778, 0.13960302, -0.03289031, 41.149292, -1.180515, -27.720589)
+size = Vector3(2.2373047, 2, 2.1726074)
+texture_albedo = ExtResource("24_at43v")
+texture_emission = ExtResource("24_at43v")
+emission_energy = 0.0
+modulate = Color(1, 0.13333334, 0, 1)
+upper_fade = 0.1
+lower_fade = 0.1
+
+[node name="Decal2" type="Decal" parent="Chapel2" unique_id=2053732046]
 transform = Transform3D(4.2120013, -13.966634, 2.0588186, -4.590599, -3.3867104, -13.583194, 13.350355, 3.2418947, -5.320214, 51.52774, 5.1382847, -26.847363)
 size = Vector3(2.2373047, 2, 2.1726074)
 texture_albedo = ExtResource("24_at43v")
