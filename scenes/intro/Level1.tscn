@@ -397,7 +397,7 @@ script = ExtResource("15_tp7jy")
 shape = SubResource("BoxShape3D_tp7jy")
 
 [node name="Player" parent="." unique_id=2004408079 instance=ExtResource("2_2c2tb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7015686, 9.999992, 41.91086)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5262957, 9.999992, 77.810135)
 
 [node name="GoodHouse" parent="." unique_id=1920522606 instance=ExtResource("3_ptvbf")]
 transform = Transform3D(1.6500001, 0, 0, 0, 1.6500001, 0, 0, 0, 1.6500001, -0.006309986, 1.0090117, 23.00054)

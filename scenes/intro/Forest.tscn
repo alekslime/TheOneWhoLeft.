@@ -20,6 +20,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.28883, 1.6561475, -13.619
 
 [node name="Trunks" parent="Forest3" unique_id=132157297 instance=ExtResource("2_u6jht")]
 
+[node name="Forest31" parent="." unique_id=481741656 instance=ExtResource("1_vywcw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.28883, 1.6561475, 17.73885)
+
+[node name="Trunks" parent="Forest31" unique_id=1794665165 instance=ExtResource("2_u6jht")]
+
 [node name="Forest4" parent="." unique_id=843950975 instance=ExtResource("1_vywcw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.14339, 1.6561322, 27.865635)
 
