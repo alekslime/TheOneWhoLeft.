@@ -1,102 +1,200 @@
-# Gods Blood
+# The One Who Left
 
-A first-person horror shooter built in **Godot 4.6** using GDScript.
+*A psychological horror experience about guilt, blindness, and the things we refuse to see.*
 
-You return home from war to find your wife and daughter slaughtered — victims of a cult serving a dying god that feeds on human flesh and souls to sustain itself. What starts as grief becomes a blood-soaked hunt through cursed forests, candlelit tunnels, and corrupted sanctuaries as you tear through the believers standing between you and the thing that took everything from you.
-
-Gods Blood is a game about rage. The world is gothic and brutal, the enemies are fanatical, and the only thing keeping you alive is the fury you can't let go of.
+Built with Godot 4.x.
 
 ---
 
-## Features
+## Overview
 
-- **First-person shooter** with smooth movement: walk, sprint, slide, dash, jump, and ADS
-- **Rage system** — fill your rage meter by killing enemies or taking damage, then activate it for a speed and damage boost
-- **Nausea mechanic** — looking at gore builds a trauma meter, triggering visual distortion and voice cues
-- **Multiple weapons**, each with unique stats, reload animations, and feel:
-  - *Ashen Repeater* — fast hitscan rifle
-  - *The Grief* — close-range shotgun with spread
-  - *Remnant* — long-range precision weapon
-  - *Hollow Round* — explosive projectile with implosion radius
-- **Procedural weapon animations** — no external animation files; idle sway, sprint bob, fire kick, reload, and landing impact are all code-driven
-- **Enemy roster**: Vicar (ranged), Echo, Ranged Enemy, Remnant Believer, The Bound, Demon, Fast Enemy
-- **PSX / CRT visual shaders** for a retro horror aesthetic
-- **Gore system** with decals
-- **Dynamic music manager** and audio bus layout
-- **Pause menu** and HUD with health, ammo, and rage display
+You return home from war expecting to find the life you left behind.
+Instead, you find silence. The house that once represented safety has become a grave.
+Your wife and daughter are dead. Something else is inside: a voice, a presence, a god that has been waiting.
+What begins as a search for the source of this evil becomes a journey through guilt, memory, and the consequences of the person you became.
 
 ---
 
-## Requirements
+# The Story
 
-- [Godot Engine 4.6](https://godotengine.org/) (Forward Plus renderer)
-- **Jolt Physics** plugin (configured in project settings — bundled with Godot 4.3+)
+The world was once green. The forests were alive, the fields were peaceful, and everything felt untouched.
 
----
+Then you returned.
+The moment you step back into your home, everything changes. The warmth disappears, the colors fade, and the place you once knew becomes unrecognizable.
+Inside, you find the bodies of your wife and daughter.
+You were away fighting a war. You told yourself it was necessary. You told yourself you would return.
+But while you were gone, something else arrived.
 
-## Getting Started
+A cult.
+A voice.
 
-1. Clone or download this repository.
-2. Open **Godot 4.6** and import the project by selecting the `project.godot` file.
-3. The main entry scene is `scenes/player/test_level.tscn` — press **F5** or click **Run** to play.
+Something they worshipped.
+Something that promises salvation through suffering.
+Something that sees everything.
 
----
+However, the truth is more complicated than simple abandonment.
+You did not leave because you stopped loving them.
+You left because you were afraid.
+Afraid of seeing what your absence had done. Afraid of admitting that the person who returned from war was no longer the same person who left.
+The war did not change you all at once. It happened slowly. You became distant. You stopped talking. You stopped noticing the pain of the people waiting for you.
 
-## Controls
-
-| Action | Input |
-|---|---|
-| Move | WASD |
-| Sprint | Left Shift |
-| Jump | Space |
-| Slide | Left Ctrl |
-| Dash | Left Alt |
-| Fire | Left Mouse Button |
-| Aim Down Sights | Right Mouse Button |
-| Melee | F |
-| Reload | R |
-| Rage | G |
-| Cycle Weapon | Q / E or Mouse Wheel |
-| Weapon Slots | 1–4 |
-| Restart | Enter |
+Your body came home.
+But part of you never did.
 
 ---
 
-## Project Structure
+# The One Who Left
 
-```
-gods-blood/
-├── enemies/          # Base enemy class and enemy variants (Echo, Bound, Ranged, etc.)
-├── Enemies/          # Vicar boss enemy
-├── door/             # Animatable door controller
-├── grass/            # Grass material and textures
-├── menus/            # Pause menu scene and script
-├── music/            # Music manager (autoload)
-├── pickupable/       # Health, ammo, and medkit pickups
-├── scenes/
-│   ├── player/       # Player controller, weapon holder, shaders, levels
-│   ├── enemies/      # Demon and fast enemy scenes
-│   ├── intro/        # Forest intro and Level 1
-│   ├── ui/           # HUD, crosshair, stats screen
-│   └── Level4.tscn   # Main combat level
-├── scripts/          # Game manager, gore system, level manager (autoloads)
-├── shaders/          # Death screen shader and overlay
-├── ui/               # Rage bar assets
-└── weapons/          # All weapon scripts and scenes
-```
+Nobody remembers your name.
+Nobody calls you by it.
+The cult does not know it. The dead do not speak it. Even the entity waiting at the end of your journey refuses to acknowledge it.
+To them, you are not a person.
+You are a memory. A mistake. A wound.
+
+> The One Who Left.
+
+The name is not only about leaving your home. It represents the moment you stopped seeing the people who needed you.
 
 ---
 
-## Autoloads
+# The Journey
 
-| Singleton | Purpose |
-|---|---|
-| `GoreManager` | Tracks and spawns gore decals |
-| `GameManager` | Global game state |
-| `MusicManager` | Controls music playback across scenes |
+## The House
+
+The place where everything ended.
+A home corrupted by absence. The rooms remain untouched, frozen in time: a child's toy, a family photograph, a dinner table prepared for people who will never return.
+The house does not simply haunt you.
+It remembers you.
 
 ---
 
-## License
+## The Forest
 
-*No license specified — all rights reserved by the author.*
+The world outside appears peaceful, almost too peaceful.
+
+The same forest that once represented life becomes the path toward something ancient.
+
+The deeper you travel, the less the forest feels like a place and the more it feels like something watching.
+
+---
+
+## The Mansion
+
+A beautiful place hiding something rotten.
+Candles burn endlessly. Rooms are prepared for guests who never arrive. Portraits show families with missing faces.
+Every hallway feels familiar. Every room feels like a memory you buried.
+At the center waits the person you lost.
+Your wife.
+
+Not alive, but not completely gone.
+She does not simply blame you for leaving.
+She wants you to understand what it felt like to love someone who was no longer truly there.
+
+---
+
+## The Stairway
+
+Near the end of your journey, you discover a place that should not exist.
+A hallway.
+A spiral staircase.
+A path leading somewhere beyond reality.
+The walls and sky are covered in eyes that follow your movements.
+They have always been watching.
+You thought blindness meant not seeing.
+You were wrong.
+Sometimes the worst thing is being forced to see everything.
+
+---
+
+# The God
+
+Nobody knows what it truly is.
+The cult calls it a god.
+Others call it a monster.
+Some believe it is the punishment humanity created for itself.
+It does not destroy worlds or conquer civilizations.
+
+It watches.
+It waits.
+It feeds on what people become when nobody is watching.
+Cruelty.
+Fear.
+Indifference.
+Abandonment.
+
+---
+
+# The Final Door
+
+At the top of the staircase, after hearing the voice that has followed you since the beginning, a door appears.
+There is no room behind it.
+No explanation.
+Only darkness.
+The entity mocks your journey, your pain, and your belief that destroying it will fix everything.
+Because the truth is worse:
+The god was never hiding.
+It was always present in the things people chose not to see.
+
+---
+
+# Themes
+
+## Blindness
+
+The greatest blindness is not the inability to see.
+It is seeing suffering and choosing to look away.
+
+## Guilt
+
+Can someone forgive themselves for something they cannot forgive?
+
+## Identity
+
+When everything is taken away, what remains?
+A name?
+A memory?
+A mistake?
+
+## Humanity
+
+What happens when people stop seeing each other as human?
+
+---
+
+# Inspirations
+
+Inspired by psychological horror, existential horror, and themes explored in:
+
+- *Blindness* — José Saramago
+- Cosmic horror
+- War trauma narratives
+- Gothic horror
+- Religious symbolism
+
+This is not a story about defeating evil.
+It is a story about confronting what happens when humanity loses sight of itself.
+
+---
+
+# Development
+
+Engine:
+- Godot 4.x
+
+Language:
+- GDScript
+
+Status:
+- In development
+
+---
+
+# Developer Note
+
+This project explores horror beyond monsters.
+The most terrifying things are not always the creatures waiting in the dark.
+Sometimes they are the memories we carry with us.
+
+> "You were not blind because you could not see.
+>
+> You were blind because you chose not to look."
