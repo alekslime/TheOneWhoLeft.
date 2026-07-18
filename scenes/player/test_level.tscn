@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://cf66vaypto2ba" path="res://scenes/ui/hud.gd" id="4_acnbp"]
 [ext_resource type="Script" uid="uid://bojnf7n3oyreg" path="res://scripts/level_manager.gd" id="6_lj68t"]
 [ext_resource type="Script" uid="uid://bp3ej00i1affb" path="res://scripts/end_zone.gd" id="7_opgfa"]
-[ext_resource type="PackedScene" uid="uid://pb1g2me3jg55" path="res://enemies/RangedEnemy.tscn" id="8_yfsjt"]
+[ext_resource type="PackedScene" uid="uid://pb1g2me3jg55" path="res://Enemies/RangedEnemy.tscn" id="8_yfsjt"]
 [ext_resource type="PackedScene" uid="uid://ds6sf5d1whcst" path="res://scenes/enemies/fast_enemy.tscn" id="10_daqkd"]
 [ext_resource type="PackedScene" uid="uid://cfe5po52luu80" path="res://pickupable/HealthPickup.tscn" id="11_uoxps"]
 [ext_resource type="PackedScene" uid="uid://brrfftrnv42ls" path="res://pickupable/Medkit.tscn" id="12_0ajne"]
@@ -16,9 +16,9 @@
 [ext_resource type="Shader" uid="uid://cfsunswhajpkq" path="res://scenes/player/test_level.gdshader" id="15_e14y5"]
 [ext_resource type="PackedScene" uid="uid://dpd2ur7mc21pd" path="res://Enemies/the_vicar.tscn" id="15_kdquw"]
 [ext_resource type="PackedScene" uid="uid://dt1pceq6yhijb" path="res://assets/chapel/low-poly_church.glb" id="16_kdquw"]
-[ext_resource type="PackedScene" uid="uid://1lj3jb270nl1" path="res://enemies/Echo.tscn" id="18_4v5r2"]
-[ext_resource type="PackedScene" uid="uid://bvdw5wp0ebksk" path="res://enemies/TheBound.tscn" id="19_fydxc"]
-[ext_resource type="PackedScene" uid="uid://djetk5lq8x13l" path="res://enemies/RemnantBeliever.tscn" id="20_cddy5"]
+[ext_resource type="PackedScene" uid="uid://1lj3jb270nl1" path="res://Enemies/Echo.tscn" id="18_4v5r2"]
+[ext_resource type="PackedScene" uid="uid://bvdw5wp0ebksk" path="res://Enemies/TheBound.tscn" id="19_fydxc"]
+[ext_resource type="PackedScene" uid="uid://djetk5lq8x13l" path="res://Enemies/RemnantBeliever.tscn" id="20_cddy5"]
 [ext_resource type="PackedScene" uid="uid://qbux8phgwvb4" path="res://assets/ui/DeathScreenOverlay.tscn" id="21_cddy5"]
 [ext_resource type="Texture2D" uid="uid://kt75fjh2bw81" path="res://assets/sigil/sigil.png" id="24_at43v"]
 [ext_resource type="Script" uid="uid://btk1jeveetki7" path="res://scenes/player/mara_zone.gd" id="25_ota02"]
@@ -26,9 +26,10 @@
 [ext_resource type="AudioStream" uid="uid://bgucyvrgppxq" path="res://assets/audio/mara/they didnt scream.ogg" id="26_rui7k"]
 [ext_resource type="PackedScene" uid="uid://bqty0xxlecre1" path="res://Bari.tscn" id="28_aa4jf"]
 [ext_resource type="PackedScene" uid="uid://dweylrb55l4il" path="res://scenes/intro/Forest.tscn" id="30_77k2j"]
+[ext_resource type="Shader" uid="uid://c4x6m1ibgufr8" path="res://shaders/uv_debug.gdshader" id="30_t0ar4"]
+[ext_resource type="Script" uid="uid://dl8r5g1lv0kxx" path="res://scripts/eye_controller.gd" id="31_20n3f"]
 [ext_resource type="PackedScene" uid="uid://b1rg435musikf" path="res://door/DoorController.tscn" id="31_t0ar4"]
 [ext_resource type="PackedScene" uid="uid://k60sfbhvduh5" path="res://door/DoorAnimatable.tscn" id="31_wnmek"]
-[ext_resource type="Environment" uid="uid://c7ryv36kk50e3" path="res://environment.tres" id="31_wo3vv"]
 [ext_resource type="PackedScene" uid="uid://cf3jr3e0ibn54" path="res://scenes/player/DoorFrame.tscn" id="32_wo3vv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kdquw"]
@@ -67,6 +68,21 @@ size = Vector3(161.88562, 1, 268.27426)
 [sub_resource type="BoxShape3D" id="BoxShape3D_at43v"]
 size = Vector3(337.51837, 17.444366, 7.229553)
 
+[sub_resource type="SphereMesh" id="SphereMesh_77k2j"]
+radius = 0.6
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t0ar4"]
+render_priority = 0
+shader = ExtResource("30_t0ar4")
+shader_parameter/open_amount = 1.0
+shader_parameter/pupil_offset = Vector2(0, 0)
+shader_parameter/stress = 0.0
+shader_parameter/sclera_color = Color(0.85, 0.82, 0.75, 1)
+shader_parameter/iris_color = Color(0.25, 0.18, 0.08, 1)
+shader_parameter/vein_color = Color(0.55, 0.05, 0.05, 1)
+shader_parameter/eyelid_color = Color(0.35, 0.22, 0.18, 1)
+shader_parameter/roughness_val = 0.25
+
 [node name="TestLevel" type="Node3D" unique_id=1500266787]
 
 [node name="MusicManager" parent="." unique_id=634783044 instance=ExtResource("14_fixga")]
@@ -77,6 +93,7 @@ script = ExtResource("4_acnbp")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=764981364]
 layer = 10
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=825763280]
 material = SubResource("ShaderMaterial_kdquw")
@@ -393,7 +410,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108.040436, 1.4104514, 951.63
 visible = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=800313407]
-environment = ExtResource("31_wo3vv")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=274841640]
 visible = false
@@ -405,3 +421,27 @@ sky_mode = 1
 
 [node name="Forest" parent="." unique_id=405674404 instance=ExtResource("30_77k2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.185753, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1296066964]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.100945, 9.567061, 2.4697533)
+mesh = SubResource("SphereMesh_77k2j")
+surface_material_override/0 = SubResource("ShaderMaterial_t0ar4")
+script = ExtResource("31_20n3f")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="MeshInstance3D" unique_id=797007288]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8267822, 1.0445604, 1.11587)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="MeshInstance3D" unique_id=1154044601]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0737, 1.4251461, -3.5741239)
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="MeshInstance3D" unique_id=1740964487]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0016403, 0.81477356, -3.1758175)
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="MeshInstance3D" unique_id=185797239]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3980255, 0.27579975, 1.042573)
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="MeshInstance3D" unique_id=1506294142]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2648468, -2.01256, -0.39092827)
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="MeshInstance3D" unique_id=1784803188]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0788193, -2.01256, -0.39092827)
